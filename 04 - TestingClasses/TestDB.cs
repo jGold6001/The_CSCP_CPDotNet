@@ -48,11 +48,11 @@ namespace _04___TestingClasses
         {
             return new List<Place>()
             {
-                new Place() { Number = 1, Client = Clients()[0], Car = Cars()[0], Tarriff= Tarriffs()[0], DateRegistred= new DateTime(2017, 01,01)},
-                new Place() { Number = 2, Client = Clients()[1], Car = Cars()[1], Tarriff= Tarriffs()[1], DateRegistred= new DateTime(2017, 01,02)},
-                new Place() { Number = 3, Client = Clients()[2], Car = Cars()[2], Tarriff= Tarriffs()[2], DateRegistred= new DateTime(2017, 01,03)},
-                new Place() { Number = 4, Client = Clients()[3], Car = Cars()[3], Tarriff= Tarriffs()[3], DateRegistred= new DateTime(2017, 01,04)},
-                new Place() { Number = 5, Client = Clients()[4], Car = Cars()[4], Tarriff= Tarriffs()[4], DateRegistred= new DateTime(2017, 01,05)}
+                new Place() { Number = 1, Client = Clients()[0], Car = Cars()[0], Tarriff= Tarriffs()[0]},
+                new Place() { Number = 2, Client = Clients()[1], Car = Cars()[1], Tarriff= Tarriffs()[1]},
+                new Place() { Number = 3, Client = Clients()[2], Car = Cars()[2], Tarriff= Tarriffs()[2]},
+                new Place() { Number = 4, Client = Clients()[3], Car = Cars()[3], Tarriff= Tarriffs()[3]},
+                new Place() { Number = 5, Client = Clients()[4], Car = Cars()[4], Tarriff= Tarriffs()[4]}
             };
         }
 
@@ -60,11 +60,11 @@ namespace _04___TestingClasses
         {
             return new List<Client>()
             {
-                new Client() { FirstName = "Джек", LastName = "Лондон", PassportID = "СМ123456", PhoneNumber = 0631234567, AdditionalInfo = "Американский Писака" },
-                new Client() { FirstName = "Джонни", LastName ="Уокер", PassportID = "ПР123456", PhoneNumber = 0731234567, AdditionalInfo = "Вискарик" },
-                new Client() { FirstName = "Богдан", LastName ="Хмельницкий", PassportID = "НО123456", PhoneNumber = 0501234567, AdditionalInfo = "Гетьман" },
-                new Client() { FirstName = "Олег", LastName = "ЛяшКо", PassportID = "ДЛ123456", PhoneNumber = 0971234567},
-                new Client() { FirstName = "Виктор", LastName = "ЯнИкович", PassportID = "ТР123456",  AdditionalInfo = "История Умалчивает" }
+                new Client() { FirstName = "Джек", LastName = "Лондон", PassportID = "СМ123456", PhoneNumber = 0631234567, AdditionalInfo = "Американский Писака", DateRegistred= new DateTime(2017, 01,01) },
+                new Client() { FirstName = "Джонни", LastName ="Уокер", PassportID = "ПР123456", PhoneNumber = 0731234567, AdditionalInfo = "Вискарик", DateRegistred= new DateTime(2017, 01,02) },
+                new Client() { FirstName = "Богдан", LastName ="Хмельницкий", PassportID = "НО123456", PhoneNumber = 0501234567, AdditionalInfo = "Гетьман", DateRegistred= new DateTime(2017, 01,03) },
+                new Client() { FirstName = "Олег", LastName = "ЛяшКо", PassportID = "ДЛ123456", PhoneNumber = 0971234567, DateRegistred= new DateTime(2017, 01,04)},
+                new Client() { FirstName = "Виктор", LastName = "ЯнИкович", PassportID = "ТР123456",  AdditionalInfo = "История Умалчивает", DateRegistred= new DateTime(2017, 01,05) }
             };
         }
 

@@ -14,8 +14,7 @@ namespace DataLayer.Model
         public int Id { get; set; }        
         public int Number { get; set; }      
         public int? ClientId { get; set; }       
-        public int? CarId { get; set; }
-        public DateTime DateRegistred { get; set; }
+        public int? CarId { get; set; }       
         public int? TarriffId { get; set; }
         public Client Client { get; set; }
         public Car Car { get; set; }
@@ -25,7 +24,7 @@ namespace DataLayer.Model
         {
             if(Client != null && Car !=null && Tarriff != null)
             {
-                return String.Format("Place #{0}\nClient: {1} {5}\ncar: {2} {6}\ndate register: {3}\ntarriff: {4}\n\n", Number, Client.LastName, Car.Brand, DateRegistred.ToShortDateString(), Tarriff.Cost, Client.FirstName, Car.Color);
+                return String.Format("Place #{0}\nClient: {1} {5}\ncar: {2} {6}\ndate register: {3}\ntarriff: {4}\n\n", Number, Client.LastName, Car.Brand, Client.DateRegistred.ToShortDateString(), Tarriff.Cost, Client.FirstName, Car.Color);
             }
             return String.Format("Place #{0} - Empty", Number);
         }

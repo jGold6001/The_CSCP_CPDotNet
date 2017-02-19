@@ -22,6 +22,7 @@ namespace DataLayer.Model
         [MaxLength(9)]
         public string PassportID { get; set; }
         public long PhoneNumber { get; set; }
+        public DateTime DateRegistred { get; set; }
         [Column(TypeName = "text")]
         public string AdditionalInfo { get; set; }
     
