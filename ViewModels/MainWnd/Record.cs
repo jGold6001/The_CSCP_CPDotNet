@@ -28,7 +28,7 @@ namespace DataLayer.Model
                     NumberPLace = p.Number,
                     ClientLastName = p.Client.LastName,
                     CarBrand = p.Car.Brand,
-                    DateRegistred = p.DateRegistred,
+                    DateRegistred = p.Client.DateRegistred,
                     DatePayment = p.Tarriff.DatePayment,
                     Deposit = p.Tarriff.Deposit,
                     Debt = p.Tarriff.Debt

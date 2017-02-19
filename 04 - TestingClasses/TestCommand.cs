@@ -17,10 +17,10 @@ namespace _04___TestingClasses
         {
             get
             {
-                Client client = new Client() { FirstName = "Антон", LastName = "Городецкий", PassportID = "ВП123459", PhoneNumber = 0969876543 };
+                Client client = new Client() { FirstName = "Антон", LastName = "Городецкий", PassportID = "ВП123459", PhoneNumber = 0969876543, DateRegistred = DateTime.Now.Date, };
                 Car car = new Car() { VehicleID = "Хз", Brand = "Toyota", VIN = "Хз", Color = "Red" };
                 Tarriff tarriff = new Tarriff() { Rental = RentValues.M, Cost = 15, Debt=30, Deposit=31, DatePayment = DateTime.Now.Date };
-                Place place = new Place() { Number = 8, DateRegistred = DateTime.Now.Date, Client = client, Car = car, Tarriff = tarriff };
+                Place place = new Place() { Number = 8,  Client = client, Car = car, Tarriff = tarriff };
 
                 Place place1 = new Place();
 
