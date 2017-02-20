@@ -19,10 +19,10 @@ namespace _02___TD_Logic
             string home = "name=DataBaseHome";
             string auditory = "name=DataBase";
 
-            /*тест кейсы*/
+            /*тесты*/
 
             //DbDrop(home);
-            DbLoad(home);
+            //DbLoad(home);
 
             
            

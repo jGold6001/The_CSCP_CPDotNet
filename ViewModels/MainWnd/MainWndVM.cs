@@ -10,7 +10,7 @@ namespace ViewModels.MainWnd
 {
     public class MainWndVM
     {
-        DbAdapter dbm = new DbAdapter("name= DataBase");
+        DbAdapter dbm = new DbAdapter("name= DataBaseHome");
 
         //DataGrid
         public List<Record> GetData
