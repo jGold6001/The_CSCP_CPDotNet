@@ -12,14 +12,16 @@
                 <ResourceDictionary Source="Themes/MetroDark/Styles.WPF.xaml" />
                 <ResourceDictionary Source="Themes/MetroDark/Theme.Colors.xaml" />
                 <ResourceDictionary Source="/Resources/Icons.xaml" />
-                
+                <ResourceDictionary Source="styles/Images.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-
+            
+            
+            
+            <!--for button deposit-->
             <SolidColorBrush x:Key="btnBackgroundBrush" Color="#FFF16530" />
             <SolidColorBrush x:Key="btnPressedBackgroundBrush" Color="OrangeRed" />
             <SolidColorBrush x:Key="btnPressedBorderBrush" Color="Red" />
             <SolidColorBrush x:Key="btnFontColor" Color="White" />
-            
 
             <Style x:Key="btnPayDeposit" TargetType="Button">
                 <Setter Property="Foreground" Value="{StaticResource btnFontColor}" />

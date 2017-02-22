@@ -14,7 +14,16 @@
     <DockPanel>
         <!-- wp menu-->
         <WrapPanel  Name="wpMenu" DockPanel.Dock="Top" Background="{StaticResource Brush04}" >
-            <Button></Button>
+            <MenuItem Name="mnuUnpin" Width="30">
+                <MenuItem.Icon>
+                    <Image Source="{DynamicResource new_note}"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Name="mnuUnpi"  >
+                <MenuItem.Icon>
+                    <Image Source="{DynamicResource new_note}"/>
+                </MenuItem.Icon>
+            </MenuItem>
         </WrapPanel>
         <Border DockPanel.Dock="Top" Margin="4,0,4,0" Height="1" BorderThickness="1" BorderBrush="{DynamicResource Brush04}"/>
 
