@@ -37,8 +37,9 @@ namespace DataLayer.Model
         }
     }
 
-    public class Record
+    public class Record 
     {
+                  
         public int NumberPLace { get; set; }
         public string ClientLastName { get; set; }
         public string CarBrand { get; set; }

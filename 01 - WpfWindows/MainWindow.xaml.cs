@@ -21,10 +21,41 @@ namespace _01___WpfWindows
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainWndVM mvvm = new MainWndVM();
         public MainWindow()
         {          
             InitializeComponent();
+        }
+
+      
+
+        private void dgRecords_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            switch (e.PropertyName)
+            {
+                case "NumberPLace":
+                    e.Column.Header = "Место";
+                    break;
+                case "ClientLastName":
+                    e.Column.Header = "Клиент";
+                    break;
+                case "CarBrand":
+                    e.Column.Header = "Автомобиль";
+                    break;
+                case "DateRegistred":
+                    e.Column.Header = "Дата Регистрации";
+                    break;
+                case "DatePayment":
+                    e.Column.Header = "Дата Оплаты";
+                    break;
+                case "Deposit":
+                    e.Column.Header = "Сумма Депозита";
+                    break;
+                case "Debt":
+                    e.Column.Header = "Задолжность";
+                    break;
+
+
+            }
         }
     }
 }
