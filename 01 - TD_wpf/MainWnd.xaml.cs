@@ -25,6 +25,7 @@ namespace _01___TD_wpf
         public MainWnd()
         {
             InitializeComponent();
+	   //hello
          
         }
     }
