@@ -25,9 +25,8 @@ namespace _01___TD_wpf
         public MainWnd()
         {
             InitializeComponent();
-            //DataBase db = new DataBase();
-            //DisplayPlaces dp = new DisplayPlaces(db);
-            //dataGrid.ItemsSource = dp.GetList();
+	   //hello
+         
         }
     }
 }
