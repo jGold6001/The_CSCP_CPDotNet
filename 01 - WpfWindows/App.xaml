@@ -33,9 +33,9 @@
                 <Setter Property="FontWeight" Value="Bold"/>
                 <Setter Property="Template">
                 <Setter.Value>
-              <ControlTemplate TargetType="Button">
-          <Grid>
-            <VisualStateManager.VisualStateGroups>
+                <ControlTemplate TargetType="Button">
+                <Grid>
+                    <VisualStateManager.VisualStateGroups>
               <VisualStateGroup x:Name="CommonStates">
                 <VisualState x:Name="Normal" />
                 <VisualState x:Name="MouseOver">
@@ -91,17 +91,19 @@
                 <VisualState x:Name="Unfocused" />
               </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
-            <Rectangle x:Name="Bd" Fill="{StaticResource btnBackgroundBrush}" Stroke="{StaticResource ButtonBorderBrush}" StrokeThickness="1" />
-            <ContentControl x:Name="ContentControl" Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                          <Rectangle x:Name="Bd" Fill="{StaticResource btnBackgroundBrush}" Stroke="{StaticResource ButtonBorderBrush}" StrokeThickness="1" />
+                        <ContentControl x:Name="ContentControl" Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
               <ContentPresenter x:Name="contentPresenter" />
             </ContentControl>
             <Rectangle x:Name="FocusedVisualElement" Stroke="{StaticResource btnPressedBorderBrush}" Visibility="Collapsed" StrokeThickness="2" />
             <Rectangle x:Name="DisabledVisualElement" Fill="{StaticResource DisabledVisualElement}" Visibility="Collapsed" />
           </Grid>
-        </ControlTemplate>
+                </ControlTemplate>
                 </Setter.Value>
-                 </Setter>
+                </Setter>
            </Style>
+
+        
             <!-- Dark Theme -->
             <!--<SolidColorBrush x:Key="BackgroundKey" Color="#FF181818" />
 
