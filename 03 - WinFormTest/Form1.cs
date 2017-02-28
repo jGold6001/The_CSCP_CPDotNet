@@ -141,6 +141,7 @@ namespace _03___WinFormTest
                 FirstName = aedf.tbName.Text,
                 LastName = aedf.tbSurname.Text,
                 PassportID = aedf.tbPassport.Text,
+                DateRegistred = DateTime.Now.Date,
                 PhoneNumber = Convert.ToInt64(aedf.tbPhone.Text),
                 AdditionalInfo = aedf.rtbAditionalInfo.Text
             };
@@ -160,8 +161,7 @@ namespace _03___WinFormTest
             {
                 Number = Convert.ToInt32(aedf.numericNumber.Value),
                 Client = client,
-                Car = car,
-                DateRegistred = DateTime.Now.Date,
+                Car = car,         
                 Tarriff = tarriff
             };
             return place;
