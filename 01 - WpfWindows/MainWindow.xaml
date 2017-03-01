@@ -20,7 +20,7 @@
                 <ColumnDefinition Width="115*"/>
             </Grid.ColumnDefinitions>
             <Menu Background="Transparent" Grid.ColumnSpan="3" Margin="10 0 0 0">
-                <MenuItem Name="AddClient" Header="Добавить Клиента"/>
+                <MenuItem Name="AddClient" Header="Добавить Клиента" Click="AddClient_Click"/>
                 <Separator Width="10"></Separator>
                 <MenuItem Name="FreePlace" Header="Свободные места"/>
                 <Separator Width="10"></Separator>

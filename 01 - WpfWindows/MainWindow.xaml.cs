@@ -27,7 +27,6 @@ namespace _01___WpfWindows
         }
 
       
-
         private void dgRecords_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
             switch (e.PropertyName)
@@ -56,6 +55,12 @@ namespace _01___WpfWindows
 
 
             }
+        }
+
+        private void AddClient_Click(object sender, RoutedEventArgs e)
+        {
+            DataWindow dw = new DataWindow();
+            dw.ShowDialog();
         }
     }
 }
