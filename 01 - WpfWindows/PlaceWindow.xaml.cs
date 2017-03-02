@@ -19,16 +19,23 @@ namespace _01___WpfWindows
     /// </summary>
     public partial class PlaceWindow : Window
     {
+        List<Button> listBtns;
         public PlaceWindow()
         {
             InitializeComponent();
-            UploadGgidVertical(gridSection1, 15, 1);
+            listBtns = new List<Button>();
+            UploadGgidVertical(gridSection1, 14, 1);
             UploadGgidVertical(gridSection2, 10, 16);
             UploadGgidVertical(gridSection3, 10, 26);
             UploadGgidVertical(gridSection4, 10, 36);
             UploadGgidVertical(gridSection5, 10, 46);
             UploadGgidVertical(gridSection6, 10, 56);
-            UploadGgidHorizontal(gridSection7, 17, 66);
+            UploadGgidHorizontal(gridSection7, 14, 66);
+
+            listBtns[2].Background = Brushes.LightGreen;
+            //listBtns[2].IsEnabled = false;
+           
+
 
         }
 
@@ -41,6 +48,7 @@ namespace _01___WpfWindows
                 grid.RowDefinitions.Add(rd);           
                 grid.Children.Add(btn);
                 Grid.SetRow(btn, i);
+                listBtns.Add(btn);
             }
         }
 
@@ -53,6 +61,7 @@ namespace _01___WpfWindows
                 grid.ColumnDefinitions.Add(cd);
                 grid.Children.Add(btn);
                 Grid.SetColumn(btn, i);
+                listBtns.Add(btn);
             }
         }
     }
