@@ -22,6 +22,38 @@ namespace _01___WpfWindows
         public PlaceWindow()
         {
             InitializeComponent();
+            UploadGgidVertical(gridSection1, 15, 1);
+            UploadGgidVertical(gridSection2, 10, 16);
+            UploadGgidVertical(gridSection3, 10, 26);
+            UploadGgidVertical(gridSection4, 10, 36);
+            UploadGgidVertical(gridSection5, 10, 46);
+            UploadGgidVertical(gridSection6, 10, 56);
+            UploadGgidHorizontal(gridSection7, 17, 66);
+
+        }
+
+        private void UploadGgidVertical(Grid grid, int amountRows, int startPosition)
+        {
+            for (int i = 0; i <amountRows; i++)
+            {
+                RowDefinition rd = new RowDefinition() { Height = new GridLength(35, GridUnitType.Star) };
+                Button btn = new Button() { Content = Convert.ToString(i + startPosition)};
+                grid.RowDefinitions.Add(rd);           
+                grid.Children.Add(btn);
+                Grid.SetRow(btn, i);
+            }
+        }
+
+        private void UploadGgidHorizontal(Grid grid, int amountRows, int startPosition)
+        {
+            for (int i = 0; i < amountRows; i++)
+            {
+                ColumnDefinition cd = new ColumnDefinition() { Width = new GridLength(35, GridUnitType.Star) };
+                Button btn = new Button() { Content = Convert.ToString(i + startPosition) };
+                grid.ColumnDefinitions.Add(cd);
+                grid.Children.Add(btn);
+                Grid.SetColumn(btn, i);
+            }
         }
     }
 }

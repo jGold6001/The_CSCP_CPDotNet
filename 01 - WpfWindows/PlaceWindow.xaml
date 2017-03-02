@@ -5,69 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01___WpfWindows"
         mc:Ignorable="d"
-        Title="PlaceWindow" Height="544" Width="900" MinHeight="500" MinWidth="900" Background="{StaticResource Brush05}">
+        Title="PlaceWindow" Height="550" Width="900" MinHeight="500" MinWidth="900" Background="{StaticResource Brush05}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>
-            <RowDefinition Height="504*"/>
+            <RowDefinition Height="290*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="78*"/>
+            <RowDefinition Height="18*"/>
+            <RowDefinition Height="35*"/>
             <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="22*"/>
+            <ColumnDefinition Width="20*"/>
             <ColumnDefinition Width="80*"/>
-            <ColumnDefinition Width="779*"/>
-            <ColumnDefinition Width="21*"/>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="1"  Grid.Row="1" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="1"/>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="1"/>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="1"/>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="1"/>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="1"/>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="35*"/>
-                <RowDefinition Height="1"/>
-                <RowDefinition Height="35*"/>
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <Button x:Name="button1" Content="Button" Grid.Column="0" Grid.Row="0" />
-            <Button x:Name="button2" Content="Button" Grid.Column="0" Grid.Row="2"/>
-            <Button x:Name="button3" Content="Button" Grid.Column="0" Grid.Row="4"/>
-            <Button x:Name="button4" Content="Button" Grid.Column="0" Grid.Row="6" />
-            <Button x:Name="button5" Content="Button" Grid.Column="0" Grid.Row="8"/>
-            <Button x:Name="button6" Content="Button" Grid.Column="0" Grid.Row="10"/>
-            <Button x:Name="button7" Content="Button" Grid.Column="0" Grid.Row="12" />
-            <Button x:Name="button8" Content="Button" Grid.Column="0" Grid.Row="14"/>
-            <Button x:Name="button9" Content="Button" Grid.Column="0" Grid.Row="16"/>
-            <Button x:Name="button10" Content="Button" Grid.Column="0" Grid.Row="18" />
-            <Button x:Name="button11" Content="Button" Grid.Column="0" Grid.Row="20"/>
-            <Button x:Name="button12" Content="Button" Grid.Column="0" Grid.Row="22"/>
-            <Button x:Name="button13" Content="Button" Grid.Column="0" Grid.Row="24"/>
-            <Button x:Name="button14" Content="Button" Grid.Column="0" Grid.Row="26"/>
-            <Button x:Name="button15" Content="Button" Grid.Column="0" Grid.Row="28"/>
-        </Grid>
 
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+
+            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="80*"/>
+
+
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Name="gridSection1" Grid.Column="1"  Grid.Row="1" Grid.RowSpan="3" Background="Black"/>
+
+        <Grid Name="gridSection2" Grid.Column="3"  Grid.Row="1" Background="Black" />
+        <Grid Name="gridSection3" Grid.Column="4"  Grid.Row="1" Background="Black" />
+
+        <Grid Name="gridSection4" Grid.Column="6"  Grid.Row="1" Background="Black" />
+        <Grid Name="gridSection5" Grid.Column="7"  Grid.Row="1" Background="Black" />
+
+        <Grid Name="gridSection6" Grid.Column="9"  Grid.Row="1" Background="Black" />
+
+        <Grid Name="gridSection7" Grid.Column="3"  Grid.Row="3" Grid.ColumnSpan="7" Background="Black"/>
+
+        <Grid Name="gridButtons" Grid.ColumnSpan="2" Grid.Column="8"  Grid.Row="5" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="75*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="button" Content="Ok" Grid.Column="0" />
+            <Button x:Name="button1" Content="Cancel" Grid.Column="2" />
+        </Grid>
 
 
     </Grid>
