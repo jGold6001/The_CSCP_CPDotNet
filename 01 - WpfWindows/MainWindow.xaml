@@ -22,7 +22,7 @@
             <Menu Background="Transparent" Grid.ColumnSpan="3" Margin="10 0 0 0">
                 <MenuItem Name="AddClient" Header="Добавить Клиента" Click="AddClient_Click"/>
                 <Separator Width="10"></Separator>
-                <MenuItem Name="FreePlace" Header="Свободные места"/>
+                <MenuItem Name="FreePlace" Header="Свободные места" Click="FreePlace_Click"/>
                 <Separator Width="10"></Separator>
                 <MenuItem Name="Manager" Header="Менеджер"/>
             </Menu>

@@ -62,5 +62,11 @@ namespace _01___WpfWindows
             DataWindow dw = new DataWindow();
             dw.ShowDialog();
         }
+
+        private void FreePlace_Click(object sender, RoutedEventArgs e)
+        {
+            PlaceWindow pw = new PlaceWindow();
+            pw.ShowDialog();
+        }
     }
 }

@@ -33,8 +33,7 @@ namespace _01___WpfWindows
             UploadGgidVertical(gridSection4, 10, 36);
             UploadGgidVertical(gridSection5, 10, 46);
             UploadGgidVertical(gridSection6, 10, 56);
-            UploadGgidHorizontal(gridSection7, 14, 66);
-            /*дописать*/
+            UploadGgidHorizontal(gridSection7, 14, 66);       
         }
 
         private void UploadGgidVertical(Grid grid, int amountRows, int startPosition)
