@@ -20,10 +20,13 @@ namespace _01___WpfWindows
     public partial class PlaceWindow : Window
     {
         List<Button> listBtns;
+        Style stylePlace;
+
         public PlaceWindow()
         {
             InitializeComponent();
             listBtns = new List<Button>();
+            stylePlace = this.FindResource("btnPayDeposit") as Style;
             UploadGgidVertical(gridSection1, 14, 1);
             UploadGgidVertical(gridSection2, 10, 16);
             UploadGgidVertical(gridSection3, 10, 26);
@@ -31,12 +34,7 @@ namespace _01___WpfWindows
             UploadGgidVertical(gridSection5, 10, 46);
             UploadGgidVertical(gridSection6, 10, 56);
             UploadGgidHorizontal(gridSection7, 14, 66);
-
-            listBtns[2].Background = Brushes.LightGreen;
-            //listBtns[2].IsEnabled = false;
-           
-
-
+            /*дописать*/
         }
 
         private void UploadGgidVertical(Grid grid, int amountRows, int startPosition)
@@ -45,6 +43,7 @@ namespace _01___WpfWindows
             {
                 RowDefinition rd = new RowDefinition() { Height = new GridLength(35, GridUnitType.Star) };
                 Button btn = new Button() { Content = Convert.ToString(i + startPosition)};
+                btn.Style = stylePlace;
                 grid.RowDefinitions.Add(rd);           
                 grid.Children.Add(btn);
                 Grid.SetRow(btn, i);
@@ -58,6 +57,7 @@ namespace _01___WpfWindows
             {
                 ColumnDefinition cd = new ColumnDefinition() { Width = new GridLength(35, GridUnitType.Star) };
                 Button btn = new Button() { Content = Convert.ToString(i + startPosition) };
+                btn.Style = stylePlace;
                 grid.ColumnDefinitions.Add(cd);
                 grid.Children.Add(btn);
                 Grid.SetColumn(btn, i);

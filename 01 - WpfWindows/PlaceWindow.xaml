@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="PlaceWindow" Height="550" Width="714.834" ResizeMode="NoResize" Background="{StaticResource Brush05}">
     <Window.Resources>
-        
         <!--button styles-->
         <SolidColorBrush x:Key="btnBackgroundBrush" Color="#FF00AADE" />
         <SolidColorBrush x:Key="btnPressedBackgroundBrush" Color="#FF565656" />
@@ -92,7 +91,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
     </Window.Resources>
     <Grid Margin="0,0,-6,0">
         <Grid.RowDefinitions>
@@ -140,10 +139,16 @@
                 <ColumnDefinition Width="20*"/>
                 <ColumnDefinition Width="75*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="button" Style="{DynamicResource btnData}" Content="Ok" Grid.Column="0" />
+            <Button x:Name="button" Style="{DynamicResource btnData}" Content="Ok" Grid.Column="0" IsHitTestVisible="True" />
             <Button x:Name="button1" Style="{DynamicResource btnData}" Content="Cancel" Grid.Column="2" />
         </Grid>
-
-
+        <Grid Grid.ColumnSpan="4" Grid.Column="1" Grid.Row="5" Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" VerticalAlignment="Center" Foreground="White">Свободные: </TextBlock>
+            <TextBlock Grid.Column="1" VerticalAlignment="Center" Foreground="White">Занятые:</TextBlock>
+        </Grid>
     </Grid>
 </Window>
