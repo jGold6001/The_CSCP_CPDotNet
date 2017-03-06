@@ -133,21 +133,21 @@
 
         <Grid Name="gridSection7" Grid.Column="3"  Grid.Row="3" Grid.ColumnSpan="7" Background="Black"/>
 
-        <Grid Name="gridButtons" Grid.ColumnSpan="2" Grid.Column="8"  Grid.Row="5" >
+        <Grid Name="gridButtons" Grid.ColumnSpan="3" Grid.Column="7"  Grid.Row="5" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="75*"/>
                 <ColumnDefinition Width="20*"/>
                 <ColumnDefinition Width="75*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnOk" Style="{DynamicResource btnData}" Content="Ok" Grid.Column="0" IsHitTestVisible="True" />
-            <Button x:Name="btnCancel" Style="{DynamicResource btnData}" Content="Cancel" Grid.Column="2" />
+            <Button x:Name="btnCancel" Style="{DynamicResource btnData}" Content="Cancel" Grid.Column="0" />
+            <Button x:Name="btnOk" Style="{DynamicResource btnData}" Content="Ok" Grid.Column="2"/>
         </Grid>
         <Grid Grid.ColumnSpan="4" Grid.Column="1" Grid.Row="5" Background="Transparent">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" VerticalAlignment="Center" Foreground="White">Свободные: </TextBlock>
+            <TextBlock Grid.Column="0" VerticalAlignment="Center" Foreground="White">Свободные:</TextBlock>
             <TextBlock Grid.Column="1" VerticalAlignment="Center" Foreground="White">Занятые:</TextBlock>
         </Grid>
     </Grid>
