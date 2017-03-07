@@ -192,10 +192,5 @@
         <Button x:Name="btnCancel" Style="{StaticResource btnData}" Content="Cancel" Grid.Column="2" Grid.Row="21" BorderBrush="White"/>
         <Button x:Name="btnOk" Style="{StaticResource btnData}" Content="Ok" Grid.Column="4"  Grid.Row="21" />
 
-
-
-
-
-
     </Grid>
 </Window>
