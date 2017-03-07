@@ -108,7 +108,7 @@
                     </Grid.ColumnDefinitions>
                     <Button x:Name="btnDelete" Content="Удалить запись" Grid.Column="0" />
                     <Button x:Name="btnEdit" Content="Редактировать"  Grid.Column="2"/>
-                    <Button x:Name="btnFullInfo" Content="Полная инфо"  Grid.Column="4"/>
+                    <Button x:Name="btnFullInfo" Content="Полная инфо"  Grid.Column="4" Click="btnFullInfo_Click"/>
                     <Button Style="{DynamicResource btnPayDeposit}" x:Name="btnPay" Content="Внести оплату" Grid.Column="6" />
 
                 </Grid>

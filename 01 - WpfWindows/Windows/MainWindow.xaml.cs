@@ -68,5 +68,10 @@ namespace _01___WpfWindows
             PlaceWindow pw = new PlaceWindow();
             pw.ShowDialog();
         }
+
+        private void btnFullInfo_Click(object sender, RoutedEventArgs e)
+        {
+           
+        }
     }
 }
