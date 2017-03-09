@@ -71,7 +71,32 @@ namespace _01___WpfWindows
 
         private void btnFullInfo_Click(object sender, RoutedEventArgs e)
         {
-           
+            FullInfoWindow fiw = new FullInfoWindow();
+            fiw.ShowDialog();
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            DataWindow dw = new DataWindow();
+            dw.ShowDialog();
+        }
+
+        private void Manager_Click(object sender, RoutedEventArgs e)
+        {
+            AdminWindow aw = new AdminWindow();
+            aw.ShowDialog();
+        }
+
+        private void btnPay_Click(object sender, RoutedEventArgs e)
+        {
+            DepositWindow dw = new DepositWindow();
+            dw.ShowDialog();
+        }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            AuthorizationWindow aw = new AuthorizationWindow();
+            aw.ShowDialog();
         }
     }
 }

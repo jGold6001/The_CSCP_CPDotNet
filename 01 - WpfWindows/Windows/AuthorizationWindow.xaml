@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01___WpfWindows"
         mc:Ignorable="d"
-        Title="AuthorizationWindow" Height="200" Width="400" ResizeMode="NoResize"  Background="{StaticResource Brush05}">
+        Title="AuthorizationWindow" Height="200" Width="400" ResizeMode="NoResize"  Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="{x:Type TextBlock}" TargetType="TextBlock">
             <Setter Property="Foreground" Value="White"/>

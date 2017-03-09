@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace _01___WpfWindows.Windows
+namespace _01___WpfWindows
 {
     /// <summary>
     /// Interaction logic for FullInfoWindow.xaml

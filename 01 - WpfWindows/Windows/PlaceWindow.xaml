@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01___WpfWindows"
         mc:Ignorable="d"
-        Title="PlaceWindow" Height="550" Width="714.834" ResizeMode="NoResize" Background="{StaticResource Brush05}">
+        Title="PlaceWindow" Height="550" Width="714.834" ResizeMode="NoResize" Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <!--button styles-->
         <SolidColorBrush x:Key="btnBackgroundBrush" Color="#FF00AADE" />

@@ -24,10 +24,10 @@
                 <Separator Width="10"></Separator>
                 <MenuItem Name="FreePlace" Header="Свободные места" Click="FreePlace_Click"/>
                 <Separator Width="10"></Separator>
-                <MenuItem Name="Manager" Header="Менеджер"/>
+                <MenuItem Name="Manager" Header="Менеджер" Click="Manager_Click"/>
             </Menu>
             <Menu x:Name="menu" Grid.Column="2" HorizontalAlignment="Right" Background="Transparent" Margin="0 0 10 0">
-                <MenuItem Name="LogOut" Header="Выйти"/>
+                <MenuItem Name="LogOut" Header="Сменить пользователя" Click="LogOut_Click"/>
             </Menu>
         </Grid>
         <Border DockPanel.Dock="Top" Margin="4,0,4,0" Height="1" BorderThickness="1" BorderBrush="{DynamicResource Brush04}"/>
@@ -107,9 +107,9 @@
                         <ColumnDefinition Width="125*"/>
                     </Grid.ColumnDefinitions>
                     <Button x:Name="btnDelete" Content="Удалить запись" Grid.Column="0" />
-                    <Button x:Name="btnEdit" Content="Редактировать"  Grid.Column="2"/>
+                    <Button x:Name="btnEdit" Content="Редактировать"  Grid.Column="2" Click="btnEdit_Click"/>
                     <Button x:Name="btnFullInfo" Content="Полная инфо"  Grid.Column="4" Click="btnFullInfo_Click"/>
-                    <Button Style="{DynamicResource btnPayDeposit}" x:Name="btnPay" Content="Внести оплату" Grid.Column="6" />
+                    <Button Style="{DynamicResource btnPayDeposit}" x:Name="btnPay" Content="Внести оплату" Grid.Column="6" Click="btnPay_Click"/>
 
                 </Grid>
 

@@ -23,5 +23,17 @@ namespace _01___WpfWindows
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            PersonalWindow pw = new PersonalWindow();
+            pw.ShowDialog();
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            PersonalWindow pw = new PersonalWindow();
+            pw.ShowDialog();
+        }
     }
 }

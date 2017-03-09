@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01___WpfWindows"
         mc:Ignorable="d"
-        Title="DepositWindow" Height="272.973" Width="300.579" ResizeMode="NoResize"  Background="{StaticResource Brush05}" >
+        Title="DepositWindow" Height="272.973" Width="300.579" ResizeMode="NoResize"  Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="{x:Type TextBlock}" TargetType="TextBlock">
             <Setter Property="Foreground" Value="White"/>

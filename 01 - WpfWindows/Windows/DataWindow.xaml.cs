@@ -23,5 +23,11 @@ namespace _01___WpfWindows
         {
             InitializeComponent();
         }
+
+        private void btnPlace_Click(object sender, RoutedEventArgs e)
+        {
+            PlaceWindow pw = new PlaceWindow();
+            pw.ShowDialog();
+        }
     }
 }

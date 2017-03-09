@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01___WpfWindows"
         mc:Ignorable="d"
-        Title="DataWindow" Height="717" Width="370" ResizeMode="NoResize"  Background="{StaticResource Brush05}">
+        Title="DataWindow" Height="717" Width="370" ResizeMode="NoResize"  Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="{x:Type TextBlock}" TargetType="TextBlock">
             <Setter Property="Foreground" Value="White"/>
@@ -144,7 +144,7 @@
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Label x:Name="lPlace" Content="Номер места" Grid.Column="1"  Grid.Row="1" />
-        <Button x:Name="btnPlace" Style="{DynamicResource btnData}" Content="Выбрать..." Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="31" Grid.RowSpan="2" />
+        <Button x:Name="btnPlace" Style="{DynamicResource btnData}" Content="Выбрать..." Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="31" Grid.RowSpan="2" Click="btnPlace_Click"/>
         <TextBlock x:Name="tbClient"   Grid.Column="1" Grid.Row="3" TextWrapping="Wrap" Text="Клиент" Grid.ColumnSpan="4" Height="24" />
 
         <Label x:Name="lName" Content="Имя" Grid.Column="1"  Grid.Row="4" />

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01___WpfWindows"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="600" Width="800" Background="{StaticResource Brush05}">
+        Title="AdminWindow" Height="600" Width="800" Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <!--button styles-->
         <SolidColorBrush x:Key="btnBackgroundBrush" Color="#FF00AADE" />
@@ -173,8 +173,8 @@
                             <ColumnDefinition Width="145"/>
                             <ColumnDefinition Width="145"/>
                         </Grid.ColumnDefinitions>
-                        <Button Name="btnAdd" Content="Добавить" Grid.Column="1" Margin="10 0 0 0" MaxHeight="35"></Button>
-                        <Button Name="btnEdit" Content="Редактировать" Grid.Column="2" Margin="10 0 0 0" MaxHeight="35"></Button>
+                        <Button Name="btnAdd" Content="Добавить" Grid.Column="1" Margin="10 0 0 0" MaxHeight="35" Click="btnAdd_Click"></Button>
+                        <Button Name="btnEdit" Content="Редактировать" Grid.Column="2" Margin="10 0 0 0" MaxHeight="35" Click="btnEdit_Click"></Button>
                         <Button Name="btnDelete" Content="Удалить" Grid.Column="3" Margin="10 0 0 0" MaxHeight="35"></Button>
                     </Grid>
                 </Grid>
