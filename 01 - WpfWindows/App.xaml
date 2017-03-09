@@ -11,7 +11,5 @@
                 <ResourceDictionary Source="Themes/IndividualStyles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-        
-        
     </Application.Resources>
 </Application>
