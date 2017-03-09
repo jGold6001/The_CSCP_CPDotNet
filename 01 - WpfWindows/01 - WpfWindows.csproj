@@ -198,10 +198,6 @@
     <Resource Include="Themes\MetroDark\HowToApplyTheme.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\04 - TestingClasses\04 - TestingClasses.csproj">
-      <Project>{5699b49c-fb16-493b-9283-332f005695a5}</Project>
-      <Name>04 - TestingClasses</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">
       <Project>{d2cccf64-3de3-4390-9557-740dae811172}</Project>
       <Name>DataLayer</Name>
