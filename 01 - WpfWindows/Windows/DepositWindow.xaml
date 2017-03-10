@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01___WpfWindows"
         mc:Ignorable="d"
-        Title="DepositWindow" Height="272.973" Width="300.579" ResizeMode="NoResize"  Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
+        Title="DepositWindow" Height="272.973" Width="318.496" ResizeMode="NoResize"  Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="145*"/>
+            <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="13*"/>
             <ColumnDefinition Width="216*"/>
         </Grid.ColumnDefinitions>
@@ -18,31 +18,39 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
         
+        <!--Client-->
         <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="0" >Клиент</TextBlock>
-        <Label Style="{DynamicResource lDeposit}" Grid.Column="2" Grid.Row="0" x:Name="lClient" Content="Имя Фамилия"></Label>
+        <Label Style="{DynamicResource lDeposit}" Grid.Column="2" Grid.Row="0" x:Name="lClient" Content="Александр Романчнко-Зеньковецький"></Label>
 
+        <!--Debt-->
         <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="1" >Задолженность</TextBlock>
         <Label Style="{DynamicResource lDeposit}" Grid.Column="2"  Grid.Row="1"  x:Name="lDebt" Content="0000"></Label>
 
+        <!--Deposit-->
         <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="2" >Депозит</TextBlock>
         <Label Style="{DynamicResource lDeposit}" Grid.Column="2" Grid.Row="2"  x:Name="lBalance" Content="0000"></Label>
 
+        <!--Full Summ-->
         <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="3"  >Полная сумма</TextBlock>
         <Label Style="{DynamicResource lDeposit}" Grid.Column="2" Grid.Row="3" x:Name="lNeedSumm" Content="0000"></Label>
 
+        <!--Pay-->
         <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="4" >Внесите сумму</TextBlock>
-        <TextBox Grid.Column="2" Grid.Row="4" Margin="2"></TextBox>
-        <Grid Grid.Column="2" Grid.Row="5" Margin="0">
+        <TextBox Grid.Column="2" Grid.Row="4"   MaxLength="7"  PreviewTextInput="OnlyNumbers"/>
+
+
+        <Grid x:Name="gridOKCancel" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="6" HorizontalAlignment="Right">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100*"/>
-                <ColumnDefinition Width="20*"/>
-                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="80"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnCancel" Style="{StaticResource btnCyan}" Content="Cancel" Grid.Column="0" Height="35" />
-            <Button x:Name="btnOk" Style="{StaticResource btnCyan}" Content="Ok" Grid.Column="2"  Height="35" />
+            <Button x:Name="btnCancel" Style="{StaticResource btnCyan}" Content="Cancel" Grid.Column="0" IsCancel="True" Click="btnCancel_Click" />
+            <Button x:Name="btnOk" Style="{StaticResource btnCyan}" Content="Ok" Grid.Column="2"   />
         </Grid>
       
     </Grid>

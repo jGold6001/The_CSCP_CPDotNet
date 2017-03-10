@@ -27,5 +27,10 @@ namespace _01___WpfWindows
             tblCar.Text = "BMW Red\nномер: AA345678\nномер кузова: 123456789";
             tblTarriff.Text = "Суточный 500грн.\nДепозит - 1000грн.\nЗадолженность: 200грн.\nДата оплаты: 10.07.2017";
         }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -43,5 +43,9 @@ namespace _01___WpfWindows
             e.Handled = regex.IsMatch(e.Text);
         }
 
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01___WpfWindows"
         mc:Ignorable="d"
-        Title="Ауторизация" Height="177" Width="316" ResizeMode="NoResize"  Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
+        Title="Ауторизация" Height="167" Width="316" ResizeMode="NoResize"  Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
@@ -14,23 +14,24 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="32"/>
             <RowDefinition Height="32"/>
-            <RowDefinition Height="17"/>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
+        <!--Login-->
         <Label x:Name="lLogin"  Content="Логин" Grid.Column="0"  Grid.Row="0" />
         <TextBox x:Name="tbLogin" Grid.Column="2"  Grid.Row="0" Grid.ColumnSpan="3" MaxLength="50"/>
 
+        <!--Password-->
         <Label x:Name="lPassword" Content="Пароль" Grid.Column="0" Grid.Row="1" />
         <TextBox x:Name="tbPassword" Grid.Column="2"  Grid.Row="1" Grid.ColumnSpan="3" MaxLength="50"/>
 
-        <Grid Name="gridButtons"  Grid.Column="0" Grid.ColumnSpan="2"  Grid.Row="3" HorizontalAlignment="Right">
+        <Grid Name="gridOKCancel"  Grid.Column="1"   Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="125"/>
-                <ColumnDefinition Width="30"/>
-                <ColumnDefinition Width="125"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="80"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnCancel" Style="{DynamicResource btnCyan}" Content="Cancel" Grid.Column="0" />
+            <Button x:Name="btnCancel" Style="{DynamicResource btnCyan}" Content="Cancel" Grid.Column="0" IsCancel="True" Click="btnCancel_Click"/>
             <Button x:Name="btnOk" Style="{DynamicResource btnCyan}" Content="Ok" Grid.Column="2"/>
         </Grid>
     </Grid>
