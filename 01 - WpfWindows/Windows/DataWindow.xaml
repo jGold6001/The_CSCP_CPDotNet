@@ -46,28 +46,23 @@
         
         <TextBlock x:Name="tbClient" Style="{DynamicResource tbHeaders}"  Grid.Column="1" Grid.Row="3" Text="Клиент" Grid.ColumnSpan="4" Height="24" />
         <Label x:Name="lName" Content="Имя" Grid.Column="1"  Grid.Row="4" />
-        <TextBox x:Name="tbName" Grid.Column="2"  Grid.Row="4" TextWrapping="Wrap" Grid.ColumnSpan="3" />
+        <TextBox x:Name="tbName" Grid.Column="2"  Grid.Row="4"  Grid.ColumnSpan="3" />
 
         <Label x:Name="lSurname" Content="Фамилия" Grid.Column="1" Grid.Row="5" />
-        <TextBox x:Name="tbSurname" Grid.Column="2"  Grid.Row="5" TextWrapping="Wrap" Grid.ColumnSpan="3" />
+        <TextBox x:Name="tbSurname" Grid.Column="2"  Grid.Row="5" Grid.ColumnSpan="3" />
 
         <Label x:Name="lPasport"  Content="Номер Паспорта" Grid.Column="1"  Grid.Row="6" />
-        <TextBox x:Name="tbPassport" Grid.Column="2"  Grid.Row="6" TextWrapping="Wrap" Grid.ColumnSpan="3" />
+        <TextBox x:Name="tbPassport" Grid.Column="2"  Grid.Row="6"  Grid.ColumnSpan="3" />
 
         <Label x:Name="lTel"  Content="Телефон" Grid.Column="1" Grid.Row="7" />
-        <TextBox x:Name="tbTel" Grid.Column="2"  Grid.Row="7" TextWrapping="Wrap" Grid.ColumnSpan="3" />
+        <TextBox x:Name="tbTel" Grid.Column="2"  Grid.Row="7"  Grid.ColumnSpan="3" />
 
         <Label x:Name="lInfo"  Content="Доп. Информация" Grid.Column="1" Grid.Row="8" />
-        <RichTextBox x:Name="richTextBox" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="9" VerticalAlignment="Stretch"  Grid.ColumnSpan="4" Background="Black" Foreground="White" FontSize="15" VerticalScrollBarVisibility="Auto">
-            <FlowDocument>
-                <Paragraph>
-                    <Run/>
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
+        <TextBox x:Name="tbInfo" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+
         <TextBlock x:Name="tbCar" Style="{DynamicResource tbHeaders}"  Grid.Column="1" Grid.Row="11"  Text="Автомобиль" Grid.ColumnSpan="4" Height="24" />
         <Label x:Name="lCarID" Content="Номер Машины" Grid.Column="1"  Grid.Row="12" />
-        <TextBox x:Name="tbCarID" Grid.Column="2"  Grid.Row="12" TextWrapping="Wrap" Grid.ColumnSpan="3" />
+        <TextBox x:Name="tbCarID" Grid.Column="2"  Grid.Row="12"  Grid.ColumnSpan="3" />
 
         <Label x:Name="lBrand"  Content="Марка" Grid.Column="1" Grid.Row="13" />
         <ComboBox x:Name="cbBrand" Grid.Column="2"  Grid.Row="13" Grid.ColumnSpan="3" />

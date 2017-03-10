@@ -24,7 +24,7 @@
         <TextBox  Style="{DynamicResource textboxFullInfo}" x:Name="tblPlace" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"/>
 
         <Label Style="{DynamicResource lFullInfo}" Grid.Column="0" Grid.Row="1" Content="Клиент" />
-        <TextBox Style="{DynamicResource textboxFullInfo}" x:Name="tblClient" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" />
+        <TextBox Style="{DynamicResource textboxFullInfo}" x:Name="tblClient" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Auto"/>
 
         <Label Style="{DynamicResource lFullInfo}" Grid.Column="0" Grid.Row="2" Content="Автомобиль" />
         <TextBox  Style="{DynamicResource textboxFullInfo}" x:Name="tblCar" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
