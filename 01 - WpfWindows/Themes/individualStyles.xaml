@@ -12,7 +12,7 @@
     <SolidColorBrush x:Key="brushTeal" Color="#FF065A74" />
 
     <!--Buttons-->
-    <Style x:Key="btnPayDeposit" TargetType="Button">
+    <Style x:Key="btnOrange" TargetType="Button">
         <Setter Property="Foreground" Value="{StaticResource brushWhite}" />
         <Setter Property="FontSize" Value="14.667" />
         <Setter Property="FontFamily" Value="Segoe UI" />
@@ -91,7 +91,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="btnData" TargetType="Button">
+    <Style x:Key="btnCyan" TargetType="Button">
         <Setter Property="Foreground" Value="{StaticResource brushWhite}" />
         <Setter Property="FontSize" Value="14.667" />
         <Setter Property="FontFamily" Value="Segoe UI" />
@@ -205,11 +205,27 @@
         <Setter Property="TextWrapping" Value="Wrap"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
     </Style>
+    <Style x:Key="tbDeposit" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    
 
     <!--Label-->
-    <Style x:Key="lValues" TargetType="Label">
+    <Style x:Key="lDeposit" TargetType="Label">
         <Setter Property="Foreground" Value="White"/>
-        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontSize" Value="11"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="lFullInfo" TargetType="Label">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="VerticalContentAlignment" Value="Top"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
     </Style>
 </ResourceDictionary>

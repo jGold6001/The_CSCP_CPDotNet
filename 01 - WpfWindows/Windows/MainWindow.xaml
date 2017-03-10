@@ -16,8 +16,8 @@
         <Grid  Name="wpMenu" DockPanel.Dock="Top" Background="{StaticResource Brush04}" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="326*"/>
-                <ColumnDefinition Width="476*"/>
-                <ColumnDefinition Width="115*"/>
+                <ColumnDefinition Width="432*"/>
+                <ColumnDefinition Width="159*"/>
             </Grid.ColumnDefinitions>
             <Menu Background="Transparent" Grid.ColumnSpan="3" Margin="10 0 0 0">
                 <MenuItem Name="AddClient" Header="Добавить Клиента" Click="AddClient_Click"/>
@@ -26,7 +26,7 @@
                 <Separator Width="10"></Separator>
                 <MenuItem Name="Manager" Header="Менеджер" Click="Manager_Click"/>
             </Menu>
-            <Menu x:Name="menu" Grid.Column="2" HorizontalAlignment="Right" Background="Transparent" Margin="0 0 10 0">
+            <Menu x:Name="menu" Grid.Column="1" HorizontalAlignment="Right" Background="Transparent" Margin="0 0 10 0" Width="150" Grid.ColumnSpan="2">
                 <MenuItem Name="LogOut" Header="Сменить пользователя" Click="LogOut_Click"/>
             </Menu>
         </Grid>
@@ -109,7 +109,7 @@
                     <Button x:Name="btnDelete" Content="Удалить запись" Grid.Column="0" />
                     <Button x:Name="btnEdit" Content="Редактировать"  Grid.Column="2" Click="btnEdit_Click"/>
                     <Button x:Name="btnFullInfo" Content="Полная инфо"  Grid.Column="4" Click="btnFullInfo_Click"/>
-                    <Button Style="{DynamicResource btnPayDeposit}" x:Name="btnPay" Content="Внести оплату" Grid.Column="6" Click="btnPay_Click"/>
+                    <Button Style="{DynamicResource btnOrange}" x:Name="btnPay" Content="Внести оплату" Grid.Column="6" Click="btnPay_Click"/>
 
                 </Grid>
 

@@ -6,107 +6,6 @@
         xmlns:local="clr-namespace:_01___WpfWindows"
         mc:Ignorable="d"
         Title="DepositWindow" Height="272.973" Width="300.579" ResizeMode="NoResize"  Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
-    <Window.Resources>
-        <Style x:Key="{x:Type TextBlock}" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="TextAlignment" Value="Center"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="HorizontalAlignment" Value="Right"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
-
-        <Style x:Key="{x:Type Label}" TargetType="Label">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="11"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
-
-        <SolidColorBrush x:Key="btnBackgroundBrush" Color="#FF00AADE" />
-        <SolidColorBrush x:Key="btnPressedBackgroundBrush" Color="#FF565656" />
-        <SolidColorBrush x:Key="btnPressedBorderBrush" Color="#FF065A74" />
-        <SolidColorBrush x:Key="btnFontColor" Color="White" />
-        <Style x:Key="btnData" TargetType="Button">
-            <Setter Property="Foreground" Value="{StaticResource btnFontColor}" />
-            <Setter Property="FontSize" Value="14.667" />
-            <Setter Property="FontFamily" Value="Segoe UI" />
-            <Setter Property="Padding" Value="10,0,10,2" />
-            <Setter Property="MinHeight" Value="30" />
-            <Setter Property="MinWidth" Value="30" />
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Grid>
-                            <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup x:Name="CommonStates">
-                                    <VisualState x:Name="Normal" />
-                                    <VisualState x:Name="MouseOver">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd" Storyboard.TargetProperty="Fill">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonHoverBackgroundBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd" Storyboard.TargetProperty="Stroke">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonHoverBorderBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentControl">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource LightForegroundBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="Pressed">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd" Storyboard.TargetProperty="Fill">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource btnPressedBackgroundBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd" Storyboard.TargetProperty="Stroke">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource btnPressedBorderBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentControl">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource btnFontColor}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="Disabled">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="DisabledVisualElement">
-                                                <DiscreteObjectKeyFrame KeyTime="0">
-                                                    <DiscreteObjectKeyFrame.Value>
-                                                        <Visibility>Visible</Visibility>
-                                                    </DiscreteObjectKeyFrame.Value>
-                                                </DiscreteObjectKeyFrame>
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                </VisualStateGroup>
-                                <VisualStateGroup x:Name="FocusStates">
-                                    <VisualState x:Name="Focused">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="FocusedVisualElement">
-                                                <DiscreteObjectKeyFrame KeyTime="0">
-                                                    <DiscreteObjectKeyFrame.Value>
-                                                        <Visibility>Visible</Visibility>
-                                                    </DiscreteObjectKeyFrame.Value>
-                                                </DiscreteObjectKeyFrame>
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="Unfocused" />
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
-                            <Rectangle x:Name="Bd" Fill="{StaticResource btnBackgroundBrush}" Stroke="{StaticResource ButtonBorderBrush}" StrokeThickness="1" />
-                            <ContentControl x:Name="ContentControl" Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
-                                <ContentPresenter x:Name="contentPresenter" />
-                            </ContentControl>
-                            <Rectangle x:Name="FocusedVisualElement" Stroke="{StaticResource btnPressedBorderBrush}" Visibility="Collapsed" StrokeThickness="2" />
-                            <Rectangle x:Name="DisabledVisualElement" Fill="{StaticResource DisabledVisualElement}" Visibility="Collapsed" />
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="145*"/>
@@ -121,19 +20,20 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="0" Grid.Row="0" >Клиент</TextBlock>
-        <Label Grid.Column="2" Grid.Row="0" x:Name="lClient" Content="Имя Фамилия"></Label>
+        
+        <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="0" >Клиент</TextBlock>
+        <Label Style="{DynamicResource lDeposit}" Grid.Column="2" Grid.Row="0" x:Name="lClient" Content="Имя Фамилия"></Label>
 
-        <TextBlock Grid.Column="0" Grid.Row="1" >Задолженность</TextBlock>
-        <Label Grid.Column="2" Grid.Row="1"  x:Name="lDebt" Content="0000"></Label>
+        <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="1" >Задолженность</TextBlock>
+        <Label Style="{DynamicResource lDeposit}" Grid.Column="2"  Grid.Row="1"  x:Name="lDebt" Content="0000"></Label>
 
-        <TextBlock Grid.Column="0" Grid.Row="2" >Баланс</TextBlock>
-        <Label Grid.Column="2" Grid.Row="2"  x:Name="lBalance" Content="0000"></Label>
+        <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="2" >Депозит</TextBlock>
+        <Label Style="{DynamicResource lDeposit}" Grid.Column="2" Grid.Row="2"  x:Name="lBalance" Content="0000"></Label>
 
-        <TextBlock Grid.Column="0" Grid.Row="3"  >Необходиммая сумма</TextBlock>
-        <Label Grid.Column="2" Grid.Row="3"  x:Name="lNeedSumm" Content="0000"></Label>
+        <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="3"  >Полная сумма</TextBlock>
+        <Label Style="{DynamicResource lDeposit}" Grid.Column="2" Grid.Row="3" x:Name="lNeedSumm" Content="0000"></Label>
 
-        <TextBlock Grid.Column="0" Grid.Row="4" >Внесите сумму</TextBlock>
+        <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="4" >Внесите сумму</TextBlock>
         <TextBox Grid.Column="2" Grid.Row="4" Margin="2"></TextBox>
         <Grid Grid.Column="2" Grid.Row="5" Margin="0">
             <Grid.ColumnDefinitions>
@@ -141,8 +41,8 @@
                 <ColumnDefinition Width="20*"/>
                 <ColumnDefinition Width="100*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnCancel" Style="{StaticResource btnData}" Content="Cancel" Grid.Column="0" Height="35" />
-            <Button x:Name="btnOk" Style="{StaticResource btnData}" Content="Ok" Grid.Column="2"  Height="35" />
+            <Button x:Name="btnCancel" Style="{StaticResource btnCyan}" Content="Cancel" Grid.Column="0" Height="35" />
+            <Button x:Name="btnOk" Style="{StaticResource btnCyan}" Content="Ok" Grid.Column="2"  Height="35" />
         </Grid>
       
     </Grid>

@@ -26,7 +26,7 @@ namespace _01___WpfWindows
         {
             InitializeComponent();
             listBtns = new List<Button>();
-            stylePlace = this.FindResource("btnPayDeposit") as Style;
+            stylePlace = this.FindResource("btnOrange") as Style;
             UploadGgidVertical(gridSection1, 14, 1);
             UploadGgidVertical(gridSection2, 10, 16);
             UploadGgidVertical(gridSection3, 10, 26);
