@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer.Model
 {
-    public class Tarriff
+    public class Tariff
     {
         [Key]
         public int Id { get; set; }
@@ -21,7 +21,7 @@ namespace DataLayer.Model
         public decimal Debt { get; set; }
         public DateTime DatePayment { get; set; }
         public ICollection<Place> Places { get; set; }
-        public Tarriff()
+        public Tariff()
         {
             Places = new List<Place>();
         }

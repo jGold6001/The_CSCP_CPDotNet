@@ -51,8 +51,6 @@ namespace _01___WpfWindows
                 case "Debt":
                     e.Column.Header = "Задолжность";
                     break;
-
-
             }
         }
 

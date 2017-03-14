@@ -4,7 +4,7 @@ namespace DataLayer.Model
     using System.Data.Entity;
     using System.Linq;
 
-    public class DataBase : DbContext
+    public class EFContext : DbContext
     {
         // Your context has been configured to use a 'DataBase' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
@@ -12,7 +12,7 @@ namespace DataLayer.Model
         // 
         // If you wish to target a different database and/or database provider, modify the 'DataBase' 
         // connection string in the application configuration file.
-        public DataBase(string connStrring)
+        public EFContext(string connStrring)
             : base(connStrring)
         {
 
@@ -24,7 +24,7 @@ namespace DataLayer.Model
         public virtual DbSet<Place> Places { get; set; }
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<Car> Cars { get; set; }
-        public virtual DbSet<Tarriff> Tarriffs { get; set; }
+        public virtual DbSet<Tariff> Tariffs { get; set; }
     }
 
 }

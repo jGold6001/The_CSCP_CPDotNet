@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataLayer.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,22 +9,22 @@ namespace ViewModels
 {
     public class BusinessLogic
     {
-        public Tarriff Tarriff { get; private set; }     
+        public Tariff Tarriff { get; private set; }     
 
         public BusinessLogic()
         {
            //вызываем если обьект Tarriff не создан;
         }
 
-        public BusinessLogic(Tarriff tarriff)
+        public BusinessLogic(Tariff tarriff)
         {
             this.Tarriff = tarriff;
         }
         
 
-        public Tarriff CreateTarriff(string rentalType, decimal startDeposit)
+        public Tariff CreateTarriff(string rentalType, decimal startDeposit)
         {
-            Tarriff = new Tarriff() { Rental=rentalType, Cost=this.Cost(rentalType), Deposit= startDeposit };
+            Tarriff = new Tariff() { Rental=rentalType, Cost=this.Cost(rentalType), Deposit= startDeposit };
             this.CalkDatePayment();
             return Tarriff;
         } 

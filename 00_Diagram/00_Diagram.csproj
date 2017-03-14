@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D2CCCF64-3DE3-4390-9557-740DAE811172}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{F4C02664-1B46-42EC-84EC-C342F8C223E8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataLayer</RootNamespace>
-    <AssemblyName>DataLayer</AssemblyName>
+    <RootNamespace>_00_Diagram</RootNamespace>
+    <AssemblyName>00_Diagram</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,19 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,27 +43,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="EntityFramework\Car.cs" />
-    <Compile Include="EntityFramework\Client.cs" />
-    <Compile Include="EntityFramework\EFContext.cs" />
-    <Compile Include="EntityFramework\Place.cs" />
-    <Compile Include="EntityFramework\Tariff.cs" />
+    <Compile Include="Daily.cs" />
+    <Compile Include="DisplayInfo.cs" />
+    <Compile Include="EFAdapter.cs" />
+    <Compile Include="EFClientRecord.cs" />
+    <Compile Include="EFEmployeeRecords.cs" />
+    <Compile Include="IAdd.cs" />
+    <Compile Include="IAuthorization.cs" />
+    <Compile Include="IBaseOperation.cs" />
+    <Compile Include="ICalculator.cs" />
+    <Compile Include="IClientRecords.cs" />
+    <Compile Include="IDBContext.cs" />
+    <Compile Include="IDisplayInfo.cs" />
+    <Compile Include="IEdit.cs" />
+    <Compile Include="IEmployeeRecords.cs" />
+    <Compile Include="IFilter.cs" />
+    <Compile Include="IPay.cs" />
+    <Compile Include="IPrice.cs" />
+    <Compile Include="IRemove.cs" />
+    <Compile Include="IRent.cs" />
+    <Compile Include="ISelectPlace.cs" />
+    <Compile Include="ITarriffEdit.cs" />
+    <Compile Include="Monthly.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RentValues.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="01-Diagram.cd" />
     <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{d2cccf64-3de3-4390-9557-740dae811172}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

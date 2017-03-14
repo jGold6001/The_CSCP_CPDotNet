@@ -14,11 +14,11 @@ namespace ViewModels.MainWnd
 {
     public class DbAdapter
     {
-        protected DataBase db;
+        protected EFContext db;
 
         public DbAdapter(string conString)
         {
-            db = new DataBase(conString);
+            db = new EFContext(conString);
         }
 
         public List<Place> GetPlaces
