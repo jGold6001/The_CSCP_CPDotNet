@@ -84,6 +84,38 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Themes\IndividualStyles\Brushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\IndividualStyles\Buttons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\IndividualStyles\DataGrids.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\IndividualStyles\Labels.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\IndividualStyles\MenuItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\IndividualStyles\TabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\IndividualStyles\TextBlocks.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\IndividualStyles\TextBoxes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\DepositWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -198,10 +230,6 @@
     <Resource Include="Themes\MetroDark\HowToApplyTheme.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\04 - TestingClasses\04 - TestingClasses.csproj">
-      <Project>{5699b49c-fb16-493b-9283-332f005695a5}</Project>
-      <Name>04 - TestingClasses</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">
       <Project>{d2cccf64-3de3-4390-9557-740dae811172}</Project>
       <Name>DataLayer</Name>

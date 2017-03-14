@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace _01___WpfWindows
 {
@@ -34,6 +35,17 @@ namespace _01___WpfWindows
         {
             PersonalWindow pw = new PersonalWindow();
             pw.ShowDialog();
+        }
+
+        private void OnlyNumbers(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9.]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -5,131 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01___WpfWindows"
         mc:Ignorable="d"
-        Title="AuthorizationWindow" Height="200" Width="400" ResizeMode="NoResize"  Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
-    <Window.Resources>
-        <Style x:Key="{x:Type TextBlock}" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="TextAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="VerticalAlignment" Value="Top"/>
-        </Style>
-
-        <Style x:Key="{x:Type Label}" TargetType="Label">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        </Style>
-
-        <SolidColorBrush x:Key="btnBackgroundBrush" Color="#FF00AADE" />
-        <SolidColorBrush x:Key="btnPressedBackgroundBrush" Color="#FF565656" />
-        <SolidColorBrush x:Key="btnPressedBorderBrush" Color="#FF065A74" />
-        <SolidColorBrush x:Key="btnFontColor" Color="White" />
-        <Style x:Key="btnData" TargetType="Button">
-            <Setter Property="Foreground" Value="{StaticResource btnFontColor}" />
-            <Setter Property="FontSize" Value="14.667" />
-            <Setter Property="FontFamily" Value="Segoe UI" />
-            <Setter Property="Padding" Value="10,0,10,2" />
-            <Setter Property="MinHeight" Value="30" />
-            <Setter Property="MinWidth" Value="30" />
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Grid>
-                            <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup x:Name="CommonStates">
-                                    <VisualState x:Name="Normal" />
-                                    <VisualState x:Name="MouseOver">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd" Storyboard.TargetProperty="Fill">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonHoverBackgroundBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd" Storyboard.TargetProperty="Stroke">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource ButtonHoverBorderBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentControl">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource LightForegroundBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="Pressed">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd" Storyboard.TargetProperty="Fill">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource btnPressedBackgroundBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd" Storyboard.TargetProperty="Stroke">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource btnPressedBorderBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentControl">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource btnFontColor}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="Disabled">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="DisabledVisualElement">
-                                                <DiscreteObjectKeyFrame KeyTime="0">
-                                                    <DiscreteObjectKeyFrame.Value>
-                                                        <Visibility>Visible</Visibility>
-                                                    </DiscreteObjectKeyFrame.Value>
-                                                </DiscreteObjectKeyFrame>
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                </VisualStateGroup>
-                                <VisualStateGroup x:Name="FocusStates">
-                                    <VisualState x:Name="Focused">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="FocusedVisualElement">
-                                                <DiscreteObjectKeyFrame KeyTime="0">
-                                                    <DiscreteObjectKeyFrame.Value>
-                                                        <Visibility>Visible</Visibility>
-                                                    </DiscreteObjectKeyFrame.Value>
-                                                </DiscreteObjectKeyFrame>
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="Unfocused" />
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
-                            <Rectangle x:Name="Bd" Fill="{StaticResource btnBackgroundBrush}" Stroke="{StaticResource ButtonBorderBrush}" StrokeThickness="1" />
-                            <ContentControl x:Name="ContentControl" Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
-                                <ContentPresenter x:Name="contentPresenter" />
-                            </ContentControl>
-                            <Rectangle x:Name="FocusedVisualElement" Stroke="{StaticResource btnPressedBorderBrush}" Visibility="Collapsed" StrokeThickness="2" />
-                            <Rectangle x:Name="DisabledVisualElement" Fill="{StaticResource DisabledVisualElement}" Visibility="Collapsed" />
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-    </Window.Resources>
-    <Grid>
+        Title="Ауторизация" Height="167" Width="316" ResizeMode="NoResize"  Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
+    <Grid Margin="10">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="120*"/>
-            <ColumnDefinition Width="124*"/>
-            <ColumnDefinition Width="14*"/>
-            <ColumnDefinition Width="124*"/>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
             <RowDefinition Height="32"/>
             <RowDefinition Height="32"/>
-            <RowDefinition Height="17*"/>
-            <RowDefinition Height="35"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <Label x:Name="lLogin" Content="Логин" Grid.Column="1"  Grid.Row="1" />
-        <TextBox x:Name="tbLogin" Grid.Column="2"  Grid.Row="1" TextWrapping="Wrap" Grid.ColumnSpan="3" />
+        <!--Login-->
+        <Label x:Name="lLogin"  Content="Логин" Grid.Column="0"  Grid.Row="0" />
+        <TextBox x:Name="tbLogin" Grid.Column="2"  Grid.Row="0" Grid.ColumnSpan="3" MaxLength="50"/>
 
-        <Label x:Name="lPassword" Content="Пароль" Grid.Column="1" Grid.Row="2" />
-        <TextBox x:Name="tbPassword" Grid.Column="2"  Grid.Row="2" TextWrapping="Wrap" Grid.ColumnSpan="3" />
-        <Button x:Name="btnCancel" Style="{StaticResource btnData}" Content="Cancel" Grid.Column="2" Grid.Row="4" BorderBrush="White"/>
-        <Button x:Name="btnOk" Style="{StaticResource btnData}" Content="Ok" Grid.Column="4"  Grid.Row="4" />
+        <!--Password-->
+        <Label x:Name="lPassword" Content="Пароль" Grid.Column="0" Grid.Row="1" />
+        <TextBox x:Name="tbPassword" Grid.Column="2"  Grid.Row="1" Grid.ColumnSpan="3" MaxLength="50"/>
+
+        <Grid Name="gridOKCancel"  Grid.Column="1"   Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="80"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnCancel" Style="{DynamicResource btnCyan}" Content="Cancel" Grid.Column="0" IsCancel="True" Click="btnCancel_Click"/>
+            <Button x:Name="btnOk" Style="{DynamicResource btnCyan}" Content="Ok" Grid.Column="2"/>
+        </Grid>
     </Grid>
 </Window>
