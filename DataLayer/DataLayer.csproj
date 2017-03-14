@@ -51,17 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constats\RentValues.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Model\Car.cs" />
-    <Compile Include="Model\Client.cs" />
-    <Compile Include="Model\DataBase.cs" />
-    <Compile Include="Model\Place.cs" />
-    <Compile Include="Model\Tarriff.cs" />
+    <Compile Include="EntityFramework\Car.cs" />
+    <Compile Include="EntityFramework\Client.cs" />
+    <Compile Include="EntityFramework\DataBase.cs" />
+    <Compile Include="EntityFramework\Place.cs" />
+    <Compile Include="EntityFramework\Tarriff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
