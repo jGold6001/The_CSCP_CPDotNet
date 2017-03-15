@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03 - WinFormTest", "03 - Wi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00_Diagram", "00_Diagram\00_Diagram.csproj", "{F4C02664-1B46-42EC-84EC-C342F8C223E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{9B33E8D0-5DF0-48A4-A1BC-632374636F23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,10 @@ Global
 		{F4C02664-1B46-42EC-84EC-C342F8C223E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4C02664-1B46-42EC-84EC-C342F8C223E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4C02664-1B46-42EC-84EC-C342F8C223E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B33E8D0-5DF0-48A4-A1BC-632374636F23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B33E8D0-5DF0-48A4-A1BC-632374636F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B33E8D0-5DF0-48A4-A1BC-632374636F23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B33E8D0-5DF0-48A4-A1BC-632374636F23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
