@@ -9,6 +9,6 @@ namespace _00_Diagram
     {
         void Debt();
         void DatePayment();
-        void Period(DateTime date);
+        IPrice Period(DateTime date);
     }
 }

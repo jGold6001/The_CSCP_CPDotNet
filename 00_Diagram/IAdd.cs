@@ -5,7 +5,7 @@ using System.Text;
 
 namespace _00_Diagram
 {
-    public interface IAdd : IBaseOperation
+    public interface IAdd : IDBAdapter
     {
     }
 }

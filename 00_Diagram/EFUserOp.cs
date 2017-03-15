@@ -5,23 +5,26 @@ using System.Text;
 
 namespace _00_Diagram
 {
-    public class EFEmployeeRecords : EFAdapter, IEmployeeRecords
+    public class EFUserOp : EFAdapter, IUserOperations
     {
-        public EFEmployeeRecords(string conString) : base(conString)
+        public EFUserOp(string conString) : base(conString)
         {
         }
 
-        public void Add(object newObj)
-        {
-            throw new NotImplementedException();
-        }
+        public IAuthorization IAuthorization { get; set; }
+      
 
-        public void Edit(object curObj, object newObj)
+        public override void Add(object newObj)
         {
             throw new NotImplementedException();
         }
 
-        public void Remove(object curObj)
+        public override void Edit(object curObj, object newObj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Remove(object curObj)
         {
             throw new NotImplementedException();
         }

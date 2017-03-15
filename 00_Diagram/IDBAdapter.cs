@@ -5,7 +5,7 @@ using System.Text;
 
 namespace _00_Diagram
 {
-    public interface IBaseOperation
+    public interface IDBAdapter
     {
         void Add(object newObj);
         void Remove(object curObj);

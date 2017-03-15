@@ -5,7 +5,8 @@ using System.Text;
 
 namespace _00_Diagram
 {
-    public interface IDBContext
+    public interface IUserOperations
     {
+        IAuthorization IAuthorization { get; set; }
     }
 }

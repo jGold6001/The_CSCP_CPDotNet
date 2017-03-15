@@ -5,7 +5,7 @@ using System.Text;
 
 namespace _00_Diagram
 {
-    public interface IEdit : IBaseOperation
+    public interface IEdit : IDBAdapter
     {
     }
 }

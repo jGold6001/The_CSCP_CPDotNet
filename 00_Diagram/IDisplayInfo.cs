@@ -7,5 +7,6 @@ namespace _00_Diagram
 {
     public interface IDisplayInfo
     {
+        IRecord IRecord { get; set; }
     }
 }

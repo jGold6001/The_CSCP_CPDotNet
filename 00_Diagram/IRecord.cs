@@ -5,8 +5,8 @@ using System.Text;
 
 namespace _00_Diagram
 {
-    public interface IEmployeeRecords : IBaseOperation
+    public interface IRecord
     {
-        IAuthorization IAuthorization { get; set; }
+        object Record { get; set; }
     }
 }

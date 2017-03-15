@@ -1,30 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="_00_Diagram.EFAdapter">
-    <Position X="8.75" Y="8.25" Width="1.5" />
+  <Class Name="_00_Diagram.EFAdapter" Collapsed="true">
+    <Position X="7.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAQAAAAAAAABAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>EFAdapter.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="_00_Diagram.EFClientRecord">
-    <Position X="6.75" Y="10.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAAAACBCAAUACAAAAAA=</HashCode>
-      <FileName>EFClientRecord.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="_00_Diagram.EFEmployeeRecords">
-    <Position X="11.25" Y="10.75" Width="1.5" />
+  <Class Name="_00_Diagram.EFClientOp" Collapsed="true">
+    <Position X="5.5" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAAAAAACAAAAAAAAAAA=</HashCode>
-      <FileName>EFEmployeeRecords.cs</FileName>
+      <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAAAACBCAAUAKAAAAAA=</HashCode>
+      <FileName>EFClientOp.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="_00_Diagram.EFUserOp" Collapsed="true">
+    <Position X="10" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAACAAAAABAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>EFUserOp.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="_00_Diagram.Daily">
-    <Position X="4" Y="3" Width="1.5" />
+    <Position X="5.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAKAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Daily.cs</FileName>
@@ -32,102 +33,134 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="_00_Diagram.Monthly">
-    <Position X="6" Y="3" Width="1.5" />
+    <Position X="8.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAKAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Monthly.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="_00_Diagram.IDBContext">
-    <Position X="15" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IDBContext.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="_00_Diagram.IDisplayInfo">
-    <Position X="0.5" Y="3.75" Width="1.5" />
+    <Position X="2.5" Y="6.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
       <FileName>IDisplayInfo.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="_00_Diagram.IPay">
-    <Position X="0.5" Y="2.25" Width="1.5" />
+    <Position X="2.75" Y="5.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
       <FileName>IPay.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="_00_Diagram.IAuthorization">
-    <Position X="11.25" Y="0.75" Width="1.5" />
+    <Position X="12" Y="4.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAACAAAQAAAAAAA=</HashCode>
       <FileName>IAuthorization.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="_00_Diagram.IFilter">
-    <Position X="0.5" Y="7.5" Width="1.5" />
+    <Position X="0.5" Y="8" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAIIAAAAgAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IFilter.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="_00_Diagram.ITarriffEdit">
-    <Position X="0.5" Y="6.25" Width="1.5" />
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ITarriffEdit.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="_00_Diagram.ISelectPlace">
-    <Position X="0.5" Y="5" Width="1.5" />
+  <Interface Name="_00_Diagram.IAvaPlace">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ISelectPlace.cs</FileName>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAICAAAAA=</HashCode>
+      <FileName>IAvaPlace.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="_00_Diagram.IBaseOperation">
-    <Position X="8.5" Y="4.5" Width="1.5" />
+  <Interface Name="_00_Diagram.IDBAdapter">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAAAAAACAAAAAAAAAAA=</HashCode>
-      <FileName>IBaseOperation.cs</FileName>
+      <FileName>IDBAdapter.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="_00_Diagram.IClientRecords">
-    <Position X="6.75" Y="6.25" Width="1.5" />
+  <Interface Name="_00_Diagram.IClientOperations">
+    <Position X="5.5" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACBAAAUACAAAAAA=</HashCode>
-      <FileName>IClientRecords.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACBAAAUAKAAAAAA=</HashCode>
+      <FileName>IClientOperations.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="_00_Diagram.IEmployeeRecords">
-    <Position X="10.75" Y="6" Width="1.5" />
+  <Interface Name="_00_Diagram.IUserOperations">
+    <Position X="9.25" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IEmployeeRecords.cs</FileName>
+      <FileName>IUserOperations.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="_00_Diagram.ICalculator">
-    <Position X="0.5" Y="10.25" Width="1.5" />
+    <Position X="0.5" Y="11" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAgAAAAAAAI=</HashCode>
       <FileName>ICalculator.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="_00_Diagram.IRent">
-    <Position X="5" Y="1" Width="1.5" />
+    <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAKAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IRent.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="_00_Diagram.IPrice">
-    <Position X="2.5" Y="1" Width="1.5" />
+    <Position X="3.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IPrice.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="_00_Diagram.IRecord">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>IRecord.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

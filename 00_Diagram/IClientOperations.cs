@@ -5,12 +5,13 @@ using System.Text;
 
 namespace _00_Diagram
 {
-    public interface IClientRecords : IBaseOperation
+    public interface IClientOperations
     {
         IDisplayInfo IDisplayInfo { get; set; }
         IPay IPay { get; set; }
         IFilter IFilter { get; set; }
         ITarriffEdit ITarriffEdit { get; set; }
-        ISelectPlace ISelectPlace { get; set; }
+        IAvaPlace ISelectPlace { get; set; }
+        IRecord IRecord { get; set; }
     }
 }
