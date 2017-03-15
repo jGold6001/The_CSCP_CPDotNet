@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,17 +41,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLogic.cs" />
+    <Compile Include="ClientOps\BusinessLogic.cs" />
+    <Compile Include="ClientOps\Calculator.cs" />
+    <Compile Include="ClientOps\Pay.cs" />
     <Compile Include="Constats\RentValues.cs" />
-    <Compile Include="DbAdapter.cs" />
+    <Compile Include="DbAdapter\EFAdapter.cs" />
+    <Compile Include="DbAdapter\EFClientOp.cs" />
+    <Compile Include="DbAdapter\EFUserOp.cs" />
+    <Compile Include="Objects\Daily.cs" />
+    <Compile Include="Objects\Monthly.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Record.cs" />
+    <Compile Include="Objects\Record.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">
       <Project>{d2cccf64-3de3-4390-9557-740dae811172}</Project>
       <Name>DataLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{9b33e8d0-5df0-48a4-a1bc-632374636f23}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserOps\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassesDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

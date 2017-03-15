@@ -26,7 +26,7 @@
       <FileName>ClientOps\ICalculator.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="_00_Diagram.IDisplayInfo">
+  <Interface Name="Interfaces.IDisplayInfo">
     <Position X="0.75" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
@@ -94,6 +94,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAACAAAQAAAAAAA=</HashCode>
       <FileName>UserOps\IAuthorization.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Interfaces.IRecord">
+    <Position X="4.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Objects\IRecord.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

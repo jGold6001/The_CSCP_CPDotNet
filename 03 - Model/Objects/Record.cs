@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer.Model
+namespace _03___Model
 {
 
     public class DisplayRecords 
@@ -38,8 +38,7 @@ namespace DataLayer.Model
     }
 
     public class Record 
-    {
-                  
+    {                 
         public int NumberPLace { get; set; }
         public string ClientLastName { get; set; }
         public string CarBrand { get; set; }

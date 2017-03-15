@@ -18,7 +18,7 @@ namespace DataLayer.Model
         public int? TarriffId { get; set; }
         public Client Client { get; set; }
         public Car Car { get; set; }
-        public Tarriff Tarriff{get;set;}
+        public Tariff Tariff{get;set;}
 
         public override string ToString()
         {
