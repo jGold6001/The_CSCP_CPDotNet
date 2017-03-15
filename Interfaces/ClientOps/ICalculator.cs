@@ -9,6 +9,5 @@ namespace Interfaces
     {
         void Debt();
         void DatePayment();
-        IPrice Period(DateTime date);
     }
 }

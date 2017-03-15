@@ -9,6 +9,6 @@ namespace Interfaces
     {
         int Id { get;}
         string Name { get;}
-        IPrice IPrice { get; set; }
+        decimal Price { get; set; }
     }
 }

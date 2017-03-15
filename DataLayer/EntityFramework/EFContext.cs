@@ -1,4 +1,4 @@
-namespace DataLayer.Model
+namespace DataLayer
 {
     using System;
     using System.Data.Entity;
@@ -25,6 +25,7 @@ namespace DataLayer.Model
         public virtual DbSet<Client> Clients { get; set; }
         public virtual DbSet<Car> Cars { get; set; }
         public virtual DbSet<Tariff> Tariffs { get; set; }
+        public virtual DbSet<RentValue> RentValues { get; set; }
     }
 
 }

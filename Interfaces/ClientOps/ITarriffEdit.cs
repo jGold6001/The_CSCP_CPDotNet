@@ -7,6 +7,6 @@ namespace Interfaces
 {
     public interface ITarriffEdit
     {
-        void SetPrice(IRent id, IPrice price);
+        void SetPrice(int rentId, decimal summ);
     }
 }

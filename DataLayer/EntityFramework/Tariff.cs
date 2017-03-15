@@ -6,20 +6,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataLayer.Model
+namespace DataLayer
 {
     public class Tariff
     {
         [Key]
         public int Id { get; set; }
-        [Required]
-        [MaxLength(25)]
-        public string Rental { get; set; }
+        public int? RentalValueId { get; set; }
         [Column(TypeName = "Money")]
-        public decimal Cost { get; set; }
         public decimal Deposit { get; set; }
+        [Column(TypeName = "Money")]
         public decimal Debt { get; set; }
         public DateTime DatePayment { get; set; }
+
+        public RentValue RentValue { get; set; }
         public ICollection<Place> Places { get; set; }
         public Tariff()
         {
@@ -30,7 +30,7 @@ namespace DataLayer.Model
         {
             return String.Format
                 (
-                    " Rental: {0}\n Cost: {1}\n Deposit: {2}\n DatePayment: {3}\n Debt: {4}\n", Rental, Cost, Deposit, DatePayment, Debt
+                    " Rental: {0}\n Cost: {1}\n Deposit: {2}\n DatePayment: {3}\n Debt: {4}\n", RentValue.Id, RentValue.Price, Deposit, DatePayment, Debt
                 );
         }
 

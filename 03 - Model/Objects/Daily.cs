@@ -17,7 +17,7 @@ namespace _03___Model
         {
             get { return "Суточный"; }
         }
-        public IPrice IPrice { get; set; }
- 
+        public decimal Price { get; set; }
+
     }
 }

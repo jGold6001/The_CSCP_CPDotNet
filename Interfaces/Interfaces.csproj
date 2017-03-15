@@ -49,7 +49,6 @@
     <Compile Include="DBAdapter\IClientOperations.cs" />
     <Compile Include="DBAdapter\IDBAdapter.cs" />
     <Compile Include="DBAdapter\IUserOperations.cs" />
-    <Compile Include="Objects\IPrice.cs" />
     <Compile Include="Objects\IRecord.cs" />
     <Compile Include="Objects\IRent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -21,8 +21,11 @@
   </Interface>
   <Interface Name="Interfaces.ICalculator">
     <Position X="2.5" Y="5.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAgAAAAAAAI=</HashCode>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>ClientOps\ICalculator.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -43,7 +46,7 @@
   <Interface Name="Interfaces.IPay">
     <Position X="0.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAACQAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
       <FileName>ClientOps\IPay.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -75,17 +78,10 @@
       <FileName>DBAdapter\IUserOperations.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Interfaces.IPrice">
-    <Position X="6" Y="1" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Objects\IPrice.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="Interfaces.IRent">
-    <Position X="7.75" Y="1" Width="1.5" />
+    <Position X="6.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAKAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Objects\IRent.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -97,7 +93,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Interfaces.IRecord">
-    <Position X="4.25" Y="1" Width="1.5" />
+    <Position X="4.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
       <FileName>Objects\IRecord.cs</FileName>

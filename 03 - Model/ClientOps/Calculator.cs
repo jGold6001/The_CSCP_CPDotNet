@@ -1,27 +1,83 @@
-﻿using Interfaces;
+﻿using DataLayer;
+using Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _03___Model.ClientOps
+namespace _03___Model
 {
-    class Calculator : ICalculator
+    public class Calculator : ICalculator
     {
+        private int rentVal;
+        private decimal deposit;
+        private decimal debt;
+        private DateTime datePayment;
+        private decimal rentPrice;
+
+        public Calculator(Tariff tariff)
+        {
+            rentVal = tariff.RentValue.Id;
+            deposit = tariff.Deposit;
+            datePayment = tariff.DatePayment;
+            rentPrice = tariff.RentValue.Price;
+        }
         public void DatePayment()
         {
-            throw new NotImplementedException();
+            if (rentVal == 1)
+                datePayment = DateTime.Now.AddDays(this.Remainder);
+            else
+                datePayment = DateTime.Now.AddMonths(this.Remainder);
+        }
+
+        public void DatePayment(DateTime date)
+        {
+            if (rentVal == 1)
+                datePayment = date.AddDays(this.Remainder);
+            else
+                datePayment = date.AddMonths(this.Remainder);
         }
 
         public void Debt()
         {
-            throw new NotImplementedException();
+            if (DateTime.Now > datePayment)
+            {
+                debt = this.Period(rentVal, DateTime.Now);
+                deposit = 0;
+            }
         }
 
-        public IPrice Period(DateTime date)
+        public void Debt(DateTime date)
         {
-            throw new NotImplementedException();
+            if (DateTime.Now > datePayment)
+            {
+                this.Period(rentVal, date);
+                deposit = 0;
+            }
+        }
+
+        private decimal Period(int rentId, DateTime date)
+        {
+           if(rentId == 1)
+            {
+                int days = (date - datePayment).Days;
+                return rentPrice * (days + 1);
+            }
+           else
+            {
+                int year = 1;
+                if (date.Year > datePayment.Year)
+                    year = (date.Year - datePayment.Year) * 12;
+
+                int month = (date.Month - datePayment.Month) * year;
+                return rentPrice * month;
+            }
+        }
+
+        private int Remainder
+        {
+            get { return Convert.ToInt32(deposit / rentPrice); }
         }
     }
 }
