@@ -10,40 +10,41 @@ namespace _03___Model
 {
     class Pay : IPay
     {
-        public ICalculator calk { get; set; }
-        private Tariff tariff;
+        private Calculator calk;
+        private decimal deposit;
+        private decimal debt;
+        private DateTime datePayment;
 
         public Pay(Tariff tariff)
-        {
-            this.tariff = tariff;
+        {      
+            deposit = tariff.Deposit;
+            debt = tariff.Debt;
+            datePayment = tariff.DatePayment;
             calk = new Calculator(tariff);
         }
 
         public void AddDeposit(decimal summ)
         {
-            if (tariff.Debt == 0)
-                tariff.Deposit += summ;
+            if (debt == 0)
+                deposit += summ;
             else
                 this.DebtOff(summ);
 
             calk.DatePayment();
         }
 
-        public void DebtOff(decimal summ)
-        {
-             if (tariff.Debt > 0)
+        private void DebtOff(decimal summ)
+        {         
+            if (debt >= summ)
             {
-                if (tariff.Debt >= summ)
-                {
-                    tariff.Debt -= summ;
-                    tariff.DatePayment = new DateTime();
-                }                
-                else
-                {
-                    tariff.Deposit = (summ - tariff.Debt);
-                    tariff.Debt = 0;
-                }                  
-            }             
+                debt -= summ;
+                datePayment = new DateTime();
+            }                
+            else
+            {
+                deposit = (summ - debt);
+                debt = 0;
+            }                                        
         }
     }
 }

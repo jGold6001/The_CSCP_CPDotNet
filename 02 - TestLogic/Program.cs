@@ -20,9 +20,7 @@ namespace _02___TD_Logic
             string auditory = "name=DataBase";
 
             /*тесты*/
-
-            //DbDrop(home);
-            //DbLoad(home);
+            
 
             
            
@@ -78,7 +76,7 @@ namespace _02___TD_Logic
 
         static void Test_AddDeposit_Month()
         {
-            Tarriff tarriff;
+            Tariff tarriff;
             BusinessLogic bl = new BusinessLogic();
             bl.SetCostRental(10, 100);           
             Console.WriteLine(" date now: " + DateTime.Now + "\n");

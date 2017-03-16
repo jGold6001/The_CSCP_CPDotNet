@@ -41,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientOps\IAvaPlace.cs" />
-    <Compile Include="ClientOps\ICalculator.cs" />
     <Compile Include="ClientOps\IDisplayInfo.cs" />
     <Compile Include="ClientOps\IFilter.cs" />
     <Compile Include="ClientOps\IPay.cs" />

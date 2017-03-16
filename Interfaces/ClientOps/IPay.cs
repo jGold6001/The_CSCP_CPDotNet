@@ -7,8 +7,6 @@ namespace Interfaces
 {
     public interface IPay
     {
-        ICalculator calk { get; set; }
         void AddDeposit(decimal summ);
-        void DebtOff(decimal summ);
     }
 }

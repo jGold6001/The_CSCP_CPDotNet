@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _03___Model
 {
-    public class Calculator : ICalculator
+    public class Calculator
     {
         private int rentVal;
         private decimal deposit;
@@ -20,6 +20,7 @@ namespace _03___Model
         {
             rentVal = tariff.RentValue.Id;
             deposit = tariff.Deposit;
+            debt = tariff.Debt;
             datePayment = tariff.DatePayment;
             rentPrice = tariff.RentValue.Price;
         }

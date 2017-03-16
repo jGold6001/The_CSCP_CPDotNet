@@ -13,24 +13,14 @@
     <Position X="6.337" Y="3.105" Height="0.465" Width="1.7" />
   </Comment>
   <Interface Name="Interfaces.IAvaPlace">
-    <Position X="2.5" Y="9.25" Width="1.5" />
+    <Position X="0.75" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAICAAAAA=</HashCode>
       <FileName>ClientOps\IAvaPlace.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Interfaces.ICalculator">
-    <Position X="2.5" Y="5.25" Width="1.5" />
-    <Compartments>
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
-      <FileName>ClientOps\ICalculator.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="Interfaces.IDisplayInfo">
-    <Position X="0.75" Y="9.25" Width="1.5" />
+    <Position X="2.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
       <FileName>ClientOps\IDisplayInfo.cs</FileName>
@@ -46,12 +36,12 @@
   <Interface Name="Interfaces.IPay">
     <Position X="0.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAACQAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ClientOps\IPay.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Interfaces.ITarriffEdit">
-    <Position X="2.5" Y="7" Width="1.5" />
+    <Position X="2.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ClientOps\ITarriffEdit.cs</FileName>
