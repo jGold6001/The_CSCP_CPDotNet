@@ -15,7 +15,7 @@ namespace DataLayer
         public int Number { get; set; }      
         public int? ClientId { get; set; }       
         public int? CarId { get; set; }       
-        public int? TarriffId { get; set; }
+        public int? TariffId { get; set; }
         public Client Client { get; set; }
         public Car Car { get; set; }
         public Tariff Tariff{get;set;}
@@ -24,7 +24,7 @@ namespace DataLayer
         {
             if(Client != null && Car !=null && Tariff != null)
             {
-                return String.Format("Place #{0}\nClient: {1} {5}\ncar: {2} {6}\ndate register: {3}\ntarriff: {4}\n\n", Number, Client.LastName, Car.Brand, Client.DateRegistred.ToShortDateString(), Tariff.Cost, Client.FirstName, Car.Color);
+                return String.Format("Place #{0}\nClient: {1} {5}\ncar: {2} {6}\ndate register: {3}\ntarriff: {4}\n\n", Number, Client.LastName, Car.Brand, Client.DateRegistred.ToShortDateString(), Tariff.RentValue.Price, Client.FirstName, Car.Color);
             }
             return String.Format("Place #{0} - Empty", Number);
         }

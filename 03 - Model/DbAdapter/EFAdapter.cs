@@ -1,4 +1,4 @@
-﻿using DataLayer.Model;
+﻿using DataLayer;
 using Interfaces;
 using System;
 using System.Collections.Generic;

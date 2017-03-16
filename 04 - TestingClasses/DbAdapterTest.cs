@@ -1,4 +1,5 @@
-﻿using DataLayer.Model;
+﻿using _03___Model;
+using DataLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using ViewModels.MainWnd;
 
 namespace _04___TestingClasses
 {
-    public class DbAdapterTest : DbAdapter
+    public class DbAdapterTest : EFAdapter
     {
 
         public DbAdapterTest(string conString) : base(conString)
@@ -17,7 +18,7 @@ namespace _04___TestingClasses
         }
 
 
-        public DataBase GetDb
+        public EFContext GetDb
         {
             get { return db; }
         }
@@ -33,7 +34,6 @@ namespace _04___TestingClasses
             {
                 throw;
             }
-
         }
 
         public void ClearDB()
@@ -43,14 +43,15 @@ namespace _04___TestingClasses
                 db.Places.RemoveRange(db.Places);
                 db.Clients.RemoveRange(db.Clients);
                 db.Cars.RemoveRange(db.Cars);
-                db.Tarriffs.RemoveRange(db.Tarriffs);
+                db.Tariffs.RemoveRange(db.Tariffs);
+                db.RentValues.RemoveRange(db.RentValues);
+                db.Users.RemoveRange(db.Users);
                 db.SaveChanges();
             }
             catch
             {
                 throw;
             }
-
         }
 
         public void DeleteDB()
@@ -64,21 +65,36 @@ namespace _04___TestingClasses
             test.DisplayData();
         }
 
+        public override void Add(object newObj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Edit(object curObj, object newObj)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Remove(object curObj)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<TarriffExt> ListTarriff
         {
             get
             {
-                return (from t in GetDb.Tarriffs
-                        join p in GetDb.Places on t.Id equals p.TarriffId
-                        where p.TarriffId == t.Id
+                return (from t in GetDb.Tariffs
+                        join p in GetDb.Places on t.Id equals p.TariffId
+                        where p.TariffId == t.Id
                         select new TarriffExt()
                         {
                             NumPlace = p.Number,
-                            Cost = t.Cost,
                             Deposit = t.Deposit,
-                            Rental = t.Rental,
+                            Debt = t.Debt,
+                            Rental = t.RentValue.Name,
+                            Cost = t.RentValue.Price,
                             DatePayment = t.DatePayment
-
                         }).ToList();
             }
         }

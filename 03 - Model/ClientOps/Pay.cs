@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace _03___Model
 {
-    class Pay : IPay
+    public class Pay : IPay
     {
         private Calculator calk;
-        private decimal deposit;
-        private decimal debt;
-        private DateTime datePayment;
+        protected decimal deposit;
+        protected decimal debt;
+        protected DateTime datePayment;
 
         public Pay(Tariff tariff)
         {      

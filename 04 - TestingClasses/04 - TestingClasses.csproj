@@ -50,14 +50,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLTest.cs" />
     <Compile Include="DbAdapterTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TarriffExt.cs" />
-    <Compile Include="TestCommand.cs" />
     <Compile Include="TestDB.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\03 - Model\03 - Model.csproj">
+      <Project>{4f0cdf54-8798-4fd5-9685-35bae9e69fbe}</Project>
+      <Name>03 - Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj">
       <Project>{d2cccf64-3de3-4390-9557-740dae811172}</Project>
       <Name>DataLayer</Name>

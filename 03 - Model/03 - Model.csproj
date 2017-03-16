@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientOps\BusinessLogic.cs" />
     <Compile Include="ClientOps\Calculator.cs" />
     <Compile Include="ClientOps\Pay.cs" />
     <Compile Include="Constats\RentValues.cs" />

@@ -26,6 +26,7 @@ namespace DataLayer
         public virtual DbSet<Car> Cars { get; set; }
         public virtual DbSet<Tariff> Tariffs { get; set; }
         public virtual DbSet<RentValue> RentValues { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 
 }

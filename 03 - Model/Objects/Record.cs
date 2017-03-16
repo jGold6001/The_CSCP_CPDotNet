@@ -1,4 +1,4 @@
-﻿using DataLayer.Model;
+﻿using DataLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +12,9 @@ namespace _03___Model
 
     public class DisplayRecords 
     {
-        DataBase db;
+        EFContext db;
 
-        public DisplayRecords(DataBase db)
+        public DisplayRecords(EFContext db)
         {
             this.db = db;
         }
@@ -29,9 +29,9 @@ namespace _03___Model
                     ClientLastName = p.Client.LastName,
                     CarBrand = p.Car.Brand,
                     DateRegistred = p.Client.DateRegistred,
-                    DatePayment = p.Tarriff.DatePayment,
-                    Deposit = p.Tarriff.Deposit,
-                    Debt = p.Tarriff.Debt
+                    DatePayment = p.Tariff.DatePayment,
+                    Deposit = p.Tariff.Deposit,
+                    Debt = p.Tariff.Debt
                 }).ToList();
             }
         }

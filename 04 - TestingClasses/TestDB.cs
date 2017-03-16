@@ -1,5 +1,4 @@
-﻿using DataLayer.Constats;
-using DataLayer.Model;
+﻿using DataLayer;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,21 +10,27 @@ using ViewModels;
 namespace _04___TestingClasses
 {
     public class TestDB
-    {  
-        DataBase db;
-        public TestDB(DataBase db)
+    {
+        EFContext db;
+        public TestDB(EFContext db)
         {
             this.db = db;
             this.db.Places.Load();
             this.db.Clients.Load();
             this.db.Cars.Load();
-            this.db.Tarriffs.Load();
+            this.db.RentValues.Load();
+            this.db.Tariffs.Load();           
+            this.db.Users.Load();
         }
 
         public void LoadData()
         {
             try
             {
+                //db.Clients.AddRange(this.Clients());
+                //db.Cars.AddRange(this.Cars());
+                db.RentValues.AddRange(this.RentValues());
+                //db.Tariffs.AddRange(this.Tariffs());
                 db.Places.AddRange(this.Places());
                 db.SaveChanges();
             }
@@ -48,11 +53,11 @@ namespace _04___TestingClasses
         {
             return new List<Place>()
             {
-                new Place() { Number = 1, Client = Clients()[0], Car = Cars()[0], Tarriff= Tarriffs()[0]},
-                new Place() { Number = 2, Client = Clients()[1], Car = Cars()[1], Tarriff= Tarriffs()[1]},
-                new Place() { Number = 3, Client = Clients()[2], Car = Cars()[2], Tarriff= Tarriffs()[2]},
-                new Place() { Number = 4, Client = Clients()[3], Car = Cars()[3], Tarriff= Tarriffs()[3]},
-                new Place() { Number = 5, Client = Clients()[4], Car = Cars()[4], Tarriff= Tarriffs()[4]}
+                new Place() { Number = 1, Client = Clients()[0], Car = Cars()[0], Tariff= Tariffs()[0]},
+                new Place() { Number = 2, Client = Clients()[1], Car = Cars()[1], Tariff= Tariffs()[1]},
+                new Place() { Number = 3, Client = Clients()[2], Car = Cars()[2], Tariff= Tariffs()[2]},
+                new Place() { Number = 4, Client = Clients()[3], Car = Cars()[3], Tariff= Tariffs()[3]},
+                new Place() { Number = 5, Client = Clients()[4], Car = Cars()[4], Tariff= Tariffs()[4]}
             };
         }
 
@@ -83,16 +88,25 @@ namespace _04___TestingClasses
 
        
 
-        public List<Tarriff>Tarriffs()
+        public List<Tariff>Tariffs()
         {
-            return new List<Tarriff>()
+            return new List<Tariff>()
             {
-                new Tarriff() { Rental=RentValues.D, Cost=15, Debt = 30, Deposit =31 ,DatePayment= new DateTime(2017, 02, 01) },
-                new Tarriff() { Rental=RentValues.D, Cost=300, Debt = 330, Deposit =331, DatePayment= new DateTime(2017, 02, 02) },
-                new Tarriff() { Rental=RentValues.D, Cost=600, Debt = 615, Deposit =616, DatePayment= new DateTime(2017, 02, 03) },
-                new Tarriff() { Rental=RentValues.M, Cost=15, Debt = 45, Deposit  = 46, DatePayment= new DateTime(2017, 02, 04) },
-                new Tarriff() { Rental=RentValues.D, Cost=300, Debt = 320, Deposit = 321, DatePayment= new DateTime(2017, 02, 05) }
+                new Tariff() { RentValueId=1, Debt = 30, Deposit =31 ,DatePayment= new DateTime(2017, 02, 01) },
+                new Tariff() { RentValueId=2, Debt = 330, Deposit =331, DatePayment= new DateTime(2017, 02, 02) },
+                new Tariff() { RentValueId=1, Debt = 615, Deposit =616, DatePayment= new DateTime(2017, 02, 03) },
+                new Tariff() { RentValueId=2, Debt = 45, Deposit  = 46, DatePayment= new DateTime(2017, 02, 04) },
+                new Tariff() { RentValueId=1, Debt = 320, Deposit = 321, DatePayment= new DateTime(2017, 02, 05) }
 
+            };
+        }
+
+        public List<RentValue> RentValues()
+        {
+            return new List<RentValue>()
+            {
+                new RentValue { Name="Daily", Price=10 },
+                new RentValue {Name="Monthly", Price=100 }
             };
         }
 

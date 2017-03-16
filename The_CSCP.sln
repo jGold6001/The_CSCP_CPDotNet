@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00_Diagram", "00_Diagram\00
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{9B33E8D0-5DF0-48A4-A1BC-632374636F23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04 - TestingClasses", "04 - TestingClasses\04 - TestingClasses.csproj", "{5699B49C-FB16-493B-9283-332F005695A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,10 @@ Global
 		{9B33E8D0-5DF0-48A4-A1BC-632374636F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B33E8D0-5DF0-48A4-A1BC-632374636F23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B33E8D0-5DF0-48A4-A1BC-632374636F23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5699B49C-FB16-493B-9283-332F005695A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5699B49C-FB16-493B-9283-332F005695A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5699B49C-FB16-493B-9283-332F005695A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5699B49C-FB16-493B-9283-332F005695A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,5 +77,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4C0C6C61-AB7C-40D1-8CAE-FC25456327D5} = {26D7AD09-D21E-40A8-BC73-6835E9ED8AA1}
 		{ED4A8325-EFC7-43AD-A239-D5E90F067FB4} = {26D7AD09-D21E-40A8-BC73-6835E9ED8AA1}
+		{5699B49C-FB16-493B-9283-332F005695A5} = {26D7AD09-D21E-40A8-BC73-6835E9ED8AA1}
 	EndGlobalSection
 EndGlobal
