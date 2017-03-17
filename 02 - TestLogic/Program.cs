@@ -1,14 +1,14 @@
-﻿using _04___TestingClasses;
+﻿using _03___Model;
+using _04___TestingClasses;
 using DataLayer;
 using DataLayer.Constats;
-using DataLayer.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ViewModels;
-using ViewModels.MainWnd;
+
 
 namespace _02___TD_Logic
 {
@@ -16,46 +16,43 @@ namespace _02___TD_Logic
     {
         static void Main(string[] args)
         {
-            string home = "name=DataBaseHome";
-            string auditory = "name=DataBase";
-
+          
             /*тесты*/
-            DbLoad(home);
-            DbDisplay(home);
-
-            
+            Test_AddDeposit_Day();
            
             
+
+
+
 
             Console.WriteLine("Press key...");
             Console.ReadKey();
         }
 
 
-        static void DbLoad(string strConn)
+        static void DbLoad()
         {
-            DbAdapterTest dbtest = new DbAdapterTest(strConn);
+            DbAdapterTest dbtest = new DbAdapterTest();
             dbtest.LoadTestData();
-            dbtest.ConsoleTestDisplay();
             Console.WriteLine("...Db load...");
         }
 
-        static void DbDisplay(string strConn)
+        static void DbDisplay()
         {
-            DbAdapterTest dbtest = new DbAdapterTest(strConn);
+            DbAdapterTest dbtest = new DbAdapterTest();
             dbtest.ConsoleTestDisplay();
         }
 
-        static void DbDrop(string strConn)
+        static void DbDrop()
         {
-            DbAdapterTest dbtest = new DbAdapterTest(strConn);
+            DbAdapterTest dbtest = new DbAdapterTest();
             dbtest.DeleteDB();
             Console.WriteLine("...Db Delete...");
         }
 
-        static void TarriffQuery(string strConn)
+        static void TarriffQuery()
         {
-            DbAdapterTest dbtest = new DbAdapterTest(strConn);
+            DbAdapterTest dbtest = new DbAdapterTest();
             var query = (from t in dbtest.GetDb.Tariffs
                         join p in dbtest.GetDb.Places on t.Id equals p.TariffId
                         where p.TariffId == t.Id
@@ -89,20 +86,24 @@ namespace _02___TD_Logic
         //    Console.WriteLine(tarriff);
         //}
 
-        //static void Test_AddDeposit_Day()
-        //{
-        //    Tarriff tarriff;
-        //    BusinessLogic bl = new BusinessLogic();
-        //    bl.SetCostRental(10, 100);
-        //    Console.WriteLine(" date now: " + DateTime.Now + "\n");         
-        //    tarriff = bl.CreateTarriff(RentValues.D, 20);
-        //    Console.WriteLine(tarriff);
-        //    decimal summ = 30;
-        //    Console.WriteLine("Пополненяю депозит: " + summ + "\n");
-        //    bl.AddDeposit(summ);
-        //    Console.WriteLine(tarriff);
+        static void Test_AddDeposit_Day()
+        {
+            //загружае запись из базы
+            EFContext db = new EFContext();
+            TestDB testData = new TestDB(db); //клас содержащий LOad
+            db = testData.db;
+            Place place = db.Places.Local[0];
+            Console.WriteLine(place);
 
-        //}
+            //помещаем тариф клиента в Pay
+            Pay pay = new Pay(place.Tariff);
+            pay.AddDeposit(10);
+            
+
+
+
+
+        }
 
         //static void Test_DebtOff()
         //{

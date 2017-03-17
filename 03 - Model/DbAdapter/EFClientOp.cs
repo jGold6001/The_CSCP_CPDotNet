@@ -10,8 +10,9 @@ namespace _03___Model
 {
     public class EFClientOp : EFAdapter, IClientOperations
     {
-        public EFClientOp(string conString) : base(conString)
+        public EFClientOp() 
         {
+            dbListener += Payment;
         }
         public IDisplayInfo IDisplayInfo { get; set; }
         public IFilter IFilter { get; set; }
@@ -94,6 +95,23 @@ namespace _03___Model
                 }
             }
             db.SaveChanges();
+        }
+
+        public void Payment(object sender)
+        {
+            //Tariff tariff = sender as Tariff;
+            //foreach (var item in db.Tariffs)
+            //{
+            //    if (item.Id == tariff.Id)
+            //    {
+            //        item.Deposit = tariff.Deposit;
+            //        item.Debt = tariff.Debt;
+            //        item.DatePayment = tariff.DatePayment;
+            //        break;
+            //    }
+            //}
+            //db.SaveChanges();
+            Console.WriteLine("Event work");
         }
     }
 }

@@ -36,7 +36,7 @@
   <Interface Name="Interfaces.IPay">
     <Position X="0.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ClientOps\IPay.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -48,7 +48,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Interfaces.IClientOperations">
-    <Position X="5.5" Y="5.5" Width="1.5" />
+    <Position X="5.5" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACBAAAUAKAAAAAA=</HashCode>
       <FileName>DBAdapter\IClientOperations.cs</FileName>
@@ -57,12 +57,12 @@
   <Interface Name="Interfaces.IDBAdapter">
     <Position X="6.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAgAAAAAAAAAAAAAAABAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>DBAdapter\IDBAdapter.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Interfaces.IUserOperations">
-    <Position X="7.75" Y="5.75" Width="1.5" />
+    <Position X="7.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DBAdapter\IUserOperations.cs</FileName>
@@ -89,5 +89,12 @@
       <FileName>Objects\IRecord.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Delegate Name="Interfaces.DbListener">
+    <Position X="4.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DbListener.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

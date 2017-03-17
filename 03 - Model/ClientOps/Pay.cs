@@ -11,40 +11,46 @@ namespace _03___Model
     public class Pay : IPay
     {
         private Calculator calk;
-        protected decimal deposit;
-        protected decimal debt;
-        protected DateTime datePayment;
+        private Tariff tariff;
+        EFClientOp efClient { get; set; }
+        public event DbListener dbListener;
+
 
         public Pay(Tariff tariff)
-        {      
-            deposit = tariff.Deposit;
-            debt = tariff.Debt;
-            datePayment = tariff.DatePayment;
+        {
+            this.tariff = tariff;
             calk = new Calculator(tariff);
+            dbListener += this.Answer;     
         }
 
         public void AddDeposit(decimal summ)
         {
-            if (debt == 0)
-                deposit += summ;
+            if (tariff.Debt == 0)
+                tariff.Deposit += summ;
             else
                 this.DebtOff(summ);
 
             calk.DatePayment();
+      
         }
 
         private void DebtOff(decimal summ)
         {         
-            if (debt >= summ)
+            if (tariff.Debt >= summ)
             {
-                debt -= summ;
-                datePayment = new DateTime();
+                tariff.Debt -= summ;
+                tariff.DatePayment = new DateTime();
             }                
             else
             {
-                deposit = (summ - debt);
-                debt = 0;
+                tariff.Deposit = (summ - tariff.Debt);
+                tariff.Debt = 0;
             }                                        
+        }
+
+        private void Answer(object obj)
+        {
+            Console.WriteLine("yes work!!!");
         }
     }
 }

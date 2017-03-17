@@ -12,6 +12,6 @@ namespace Interfaces
         IFilter IFilter { get; set; }
         ITarriffEdit ITarriffEdit { get; set; }
         IAvaPlace ISelectPlace { get; set; }
-        IRecord IRecord { get; set; }
+        IRecord IRecord { get; set; }   
     }
 }

@@ -5,9 +5,5 @@ using System.Text;
 
 namespace Interfaces
 {
-    public interface IPay
-    {
-        event DbListener dbListener;
-        void AddDeposit(decimal summ);
-    }
+    public delegate void DbListener(object sender);
 }

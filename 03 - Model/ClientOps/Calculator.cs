@@ -32,12 +32,12 @@ namespace _03___Model
                 datePayment = DateTime.Now.AddMonths(this.Remainder);
         }
 
-        public void DatePayment(DateTime date)
+        public DateTime DatePayment(DateTime date)
         {
             if (rentVal == 1)
-                datePayment = date.AddDays(this.Remainder);
+                return date.AddDays(this.Remainder);
             else
-                datePayment = date.AddMonths(this.Remainder);
+                return date.AddMonths(this.Remainder);
         }
 
         public void Debt()

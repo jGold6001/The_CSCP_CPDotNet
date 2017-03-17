@@ -12,8 +12,8 @@ namespace DataLayer
         // 
         // If you wish to target a different database and/or database provider, modify the 'DataBase' 
         // connection string in the application configuration file.
-        public EFContext(string connStrring)
-            : base(connStrring)
+        public EFContext()
+            : base("name=DataBaseHome")
         {
 
         }

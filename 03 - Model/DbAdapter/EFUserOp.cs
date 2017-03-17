@@ -8,7 +8,7 @@ namespace _03___Model
 {
     public class EFUserOp : EFAdapter, IUserOperations
     {
-        public EFUserOp(string conString) : base(conString)
+        public EFUserOp()
         {
         }
 

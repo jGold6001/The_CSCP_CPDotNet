@@ -24,7 +24,7 @@ namespace DataLayer
         {
             if(Client != null && Car !=null && Tariff != null)
             {
-                return String.Format("Place #{0}\nClient: {1} {5}\ncar: {2} {6}\ndate register: {3}\ntarriff: {4}\n\n", Number, Client.LastName, Car.Brand, Client.DateRegistred.ToShortDateString(), Tariff.RentValue.Price, Client.FirstName, Car.Color);
+                return String.Format("Place #{0}\nClient: {1} {5}\ncar: {2} {6}\ndate register: {3}\ntarriff: {4}\nDeposit: {7}\nDebt: {8}\nDayPay: {9}\n\n", Number, Client.LastName, Car.Brand, Client.DateRegistred.ToShortDateString(), Tariff.RentValue.Price, Client.FirstName, Car.Color, Tariff.Deposit, Tariff.Debt, Tariff.DatePayment.ToShortDateString());
             }
             return String.Format("Place #{0} - Empty", Number);
         }

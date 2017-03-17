@@ -5,19 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ViewModels.MainWnd;
+
 
 namespace _04___TestingClasses
 {
     public class DbAdapterTest : EFAdapter
     {
-
-        public DbAdapterTest(string conString) : base(conString)
-        {
-
-        }
-
-
+        
         public EFContext GetDb
         {
             get { return db; }
@@ -63,6 +57,7 @@ namespace _04___TestingClasses
         {
             TestDB test = new TestDB(db);
             test.DisplayData();
+
         }
 
         public override void Add(object newObj)

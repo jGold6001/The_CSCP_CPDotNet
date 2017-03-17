@@ -10,9 +10,11 @@ namespace _03___Model
     public abstract class EFAdapter : IDBAdapter
     {
         protected EFContext db;
-        public EFAdapter(string conString)
+
+        public event DbListener dbListener;
+        public EFAdapter()
         {
-            db = new EFContext(conString);
+            db = new EFContext();
         }
 
         public abstract void Add(object newObj);
