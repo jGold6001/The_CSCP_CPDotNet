@@ -36,7 +36,7 @@
   <Interface Name="Interfaces.IPay">
     <Position X="0.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ClientOps\IPay.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -57,7 +57,7 @@
   <Interface Name="Interfaces.IDBAdapter">
     <Position X="6.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAgAAAAAAAAAAAAAAABAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>DBAdapter\IDBAdapter.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -89,12 +89,5 @@
       <FileName>Objects\IRecord.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Delegate Name="Interfaces.DbListener">
-    <Position X="4.25" Y="8.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>DbListener.cs</FileName>
-    </TypeIdentifier>
-  </Delegate>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

@@ -12,8 +12,9 @@ namespace _03___Model
     {
         public EFClientOp() 
         {
-            dbListener += Payment;
+           
         }
+
         public IDisplayInfo IDisplayInfo { get; set; }
         public IFilter IFilter { get; set; }
         public IPay IPay { get; set; }
@@ -97,21 +98,22 @@ namespace _03___Model
             db.SaveChanges();
         }
 
-        public void Payment(object sender)
+        public void Payment(Tariff tariff, decimal summ)
         {
-            //Tariff tariff = sender as Tariff;
-            //foreach (var item in db.Tariffs)
-            //{
-            //    if (item.Id == tariff.Id)
-            //    {
-            //        item.Deposit = tariff.Deposit;
-            //        item.Debt = tariff.Debt;
-            //        item.DatePayment = tariff.DatePayment;
-            //        break;
-            //    }
-            //}
-            //db.SaveChanges();
-            Console.WriteLine("Event work");
+            IPay = new Pay(tariff);
+            Tariff updateTariff = IPay.AddDeposit(summ) as Tariff;
+
+            foreach (var item in db.Tariffs)
+            {
+                if (item.Id == updateTariff.Id)
+                {
+                    item.Deposit = updateTariff.Deposit;
+                    item.Debt = updateTariff.Debt;
+                    item.DatePayment = updateTariff.DatePayment;
+                    break;
+                }
+            }
+            db.SaveChanges();
         }
     }
 }

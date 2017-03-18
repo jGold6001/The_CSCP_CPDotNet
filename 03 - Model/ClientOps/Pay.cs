@@ -12,45 +12,36 @@ namespace _03___Model
     {
         private Calculator calk;
         private Tariff tariff;
-        EFClientOp efClient { get; set; }
-        public event DbListener dbListener;
-
 
         public Pay(Tariff tariff)
         {
-            this.tariff = tariff;
-            calk = new Calculator(tariff);
-            dbListener += this.Answer;     
+            this.tariff = tariff;           
         }
 
-        public void AddDeposit(decimal summ)
+        public object AddDeposit(decimal sum)
         {
             if (tariff.Debt == 0)
-                tariff.Deposit += summ;
+                tariff.Deposit += sum;
             else
-                this.DebtOff(summ);
+                this.DebtOff(sum);
 
-            calk.DatePayment();
-      
+            calk = new Calculator(tariff, sum);
+            tariff.DatePayment = calk.DatePayment(tariff.DatePayment);
+            return tariff;
         }
 
-        private void DebtOff(decimal summ)
+        private void DebtOff(decimal sum)
         {         
-            if (tariff.Debt >= summ)
+            if (tariff.Debt >= sum)
             {
-                tariff.Debt -= summ;
+                tariff.Debt -= sum;
                 tariff.DatePayment = new DateTime();
             }                
             else
             {
-                tariff.Deposit = (summ - tariff.Debt);
+                tariff.Deposit = (sum - tariff.Debt);
                 tariff.Debt = 0;
             }                                        
-        }
-
-        private void Answer(object obj)
-        {
-            Console.WriteLine("yes work!!!");
         }
     }
 }

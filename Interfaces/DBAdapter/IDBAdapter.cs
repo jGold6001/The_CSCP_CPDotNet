@@ -7,7 +7,6 @@ namespace Interfaces
 {
     public interface IDBAdapter
     {
-        event DbListener dbListener;
         void Add(object newObj);
         void Remove(object curObj);
         void Edit(object curObj, object newObj);

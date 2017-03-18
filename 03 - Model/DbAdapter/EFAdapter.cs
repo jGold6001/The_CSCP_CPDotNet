@@ -11,7 +11,6 @@ namespace _03___Model
     {
         protected EFContext db;
 
-        public event DbListener dbListener;
         public EFAdapter()
         {
             db = new EFContext();

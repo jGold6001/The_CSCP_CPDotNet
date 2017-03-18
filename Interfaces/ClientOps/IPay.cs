@@ -7,7 +7,6 @@ namespace Interfaces
 {
     public interface IPay
     {
-        event DbListener dbListener;
-        void AddDeposit(decimal summ);
+        object AddDeposit(decimal sum);
     }
 }

@@ -16,13 +16,16 @@ namespace _03___Model
         private DateTime datePayment;
         private decimal rentPrice;
 
-        public Calculator(Tariff tariff)
+        private decimal sum;
+
+        public Calculator(Tariff tariff, decimal sum)
         {
             rentVal = tariff.RentValue.Id;
             deposit = tariff.Deposit;
             debt = tariff.Debt;
             datePayment = tariff.DatePayment;
             rentPrice = tariff.RentValue.Price;
+            this.sum = sum;
         }
         public void DatePayment()
         {
@@ -78,7 +81,7 @@ namespace _03___Model
 
         private int Remainder
         {
-            get { return Convert.ToInt32(deposit / rentPrice); }
+            get { return Convert.ToInt32(sum / rentPrice); }
         }
     }
 }
