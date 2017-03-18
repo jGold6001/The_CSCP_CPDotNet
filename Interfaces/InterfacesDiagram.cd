@@ -40,17 +40,17 @@
       <FileName>ClientOps\IPay.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Interfaces.ITarriffEdit">
+  <Interface Name="Interfaces.IRentValueEdit">
     <Position X="2.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ClientOps\ITarriffEdit.cs</FileName>
+      <FileName>ClientOps\IRentValueEdit.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Interfaces.IClientOperations">
     <Position X="5.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACBAAAUAKAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACBIAAQAKAAAAAA=</HashCode>
       <FileName>DBAdapter\IClientOperations.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -87,6 +87,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
       <FileName>Objects\IRecord.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Interfaces.ICreateNewClient">
+    <Position X="2.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>ICreateNewClient.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

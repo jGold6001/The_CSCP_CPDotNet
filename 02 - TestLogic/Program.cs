@@ -18,8 +18,7 @@ namespace _02___TD_Logic
         {
 
             /*тесты*/
-            Test_DebtOff_Equal();
-           
+            Test_AddDeposit_Month();
             
 
 
@@ -67,22 +66,23 @@ namespace _02___TD_Logic
             client.Payment(place.Tariff, summ);
         }
 
-        static  void Test_DebtOff_Equal()
-        {
 
+        static void Test_AddDeposit_Month()
+        {
             //-------------------input
             EFContext db = new EFContext();
             TestDB testData = new TestDB(db);
             db = testData.db;
 
-            Place place = db.Places.Local[2]; //select record             
-            decimal summ = 20;//enter summ
+            Place place = db.Places.Local[3]; //select record             
+            decimal summ = 300;//enter summ
             Console.WriteLine(place + summ.ToString());
 
 
             //--------------------output
             EFClientOp client = new EFClientOp();
             client.Payment(place.Tariff, summ);
+            Console.WriteLine(place);
         }
 
 

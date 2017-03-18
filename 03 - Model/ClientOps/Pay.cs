@@ -12,36 +12,40 @@ namespace _03___Model
     {
         private Calculator calk;
         private Tariff tariff;
+        private decimal sumBuff;   
 
         public Pay(Tariff tariff)
         {
             this.tariff = tariff;           
         }
 
+        public decimal NeedSum
+        {
+            get { return tariff.RentValue.Price + tariff.Debt; }
+        }
+
         public object AddDeposit(decimal sum)
         {
+            this.sumBuff = sum;
             if (tariff.Debt == 0)
                 tariff.Deposit += sum;
             else
-                this.DebtOff(sum);
+                this.DebtOff();
 
-            calk = new Calculator(tariff, sum);
+            calk = new Calculator(tariff, sumBuff);
             tariff.DatePayment = calk.DatePayment(tariff.DatePayment);
             return tariff;
         }
 
-        private void DebtOff(decimal sum)
-        {         
-            if (tariff.Debt >= sum)
+        private void DebtOff()
+        {
+            if (sumBuff >= NeedSum)
             {
-                tariff.Debt -= sum;
-                tariff.DatePayment = new DateTime();
-            }                
-            else
-            {
-                tariff.Deposit = (sum - tariff.Debt);
+                sumBuff -= tariff.Debt;
+                tariff.Deposit = sumBuff;
                 tariff.Debt = 0;
-            }                                        
+                tariff.DatePayment = DateTime.Now;
+            }            
         }
     }
 }

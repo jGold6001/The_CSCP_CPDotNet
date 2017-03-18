@@ -84,8 +84,6 @@ namespace _04___TestingClasses
             };
         }
 
-       
-
         public List<Tariff>Tariffs()
         {
             
@@ -95,7 +93,7 @@ namespace _04___TestingClasses
                 new Tariff() { RentValueId=2, Debt = 0, Deposit =200, DatePayment=DateTime.Now.AddMonths(2) },
                 new Tariff() { RentValueId=1, Debt = 20, Deposit =0,DatePayment=DateTime.Now.AddDays(-2) },
                 new Tariff() { RentValueId=2, Debt = 100, Deposit = 0,  DatePayment=DateTime.Now.AddMonths(-1)},
-                new Tariff() { RentValueId=1, Debt = 0, Deposit = 300, DatePayment=DateTime.Now.AddDays(3) }
+                new Tariff() { RentValueId=2, Debt = 0, Deposit = 300, DatePayment=DateTime.Now.AddMonths(3) }
             };
         }
 

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Interfaces
 {
-    public interface ITarriffEdit
+    public interface IRentValueEdit
     {
         void SetPrice(int rentId, decimal summ);
     }

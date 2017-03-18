@@ -20,7 +20,8 @@ namespace _03___Model
         public IPay IPay { get; set; }
         public IRecord IRecord { get; set; }     
         public IAvaPlace ISelectPlace { get; set; }
-        public ITarriffEdit ITarriffEdit { get; set; }
+        public IRentValueEdit IRentValueEdit { get; set; }
+
 
         public List<Place> GetPlaces
         {
@@ -34,6 +35,7 @@ namespace _03___Model
             }
         }
 
+       
         public override void Add(object newObj)
         {
             //номер парковки не может повторятся в базе
@@ -98,10 +100,10 @@ namespace _03___Model
             db.SaveChanges();
         }
 
-        public void Payment(Tariff tariff, decimal summ)
+        public void Payment(Tariff tariff, decimal sum)
         {
             IPay = new Pay(tariff);
-            Tariff updateTariff = IPay.AddDeposit(summ) as Tariff;
+            Tariff updateTariff = IPay.AddDeposit(sum) as Tariff;
 
             foreach (var item in db.Tariffs)
             {

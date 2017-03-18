@@ -44,10 +44,11 @@
     <Compile Include="ClientOps\IDisplayInfo.cs" />
     <Compile Include="ClientOps\IFilter.cs" />
     <Compile Include="ClientOps\IPay.cs" />
-    <Compile Include="ClientOps\ITarriffEdit.cs" />
+    <Compile Include="ClientOps\IRentValueEdit.cs" />
     <Compile Include="DBAdapter\IClientOperations.cs" />
     <Compile Include="DBAdapter\IDBAdapter.cs" />
     <Compile Include="DBAdapter\IUserOperations.cs" />
+    <Compile Include="ICreateNewClient.cs" />
     <Compile Include="Objects\IRecord.cs" />
     <Compile Include="Objects\IRent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
