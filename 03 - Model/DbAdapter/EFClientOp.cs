@@ -100,22 +100,24 @@ namespace _03___Model
             db.SaveChanges();
         }
 
-        public void Payment(Tariff tariff, decimal sum)
-        {
-            IPay = new Pay(tariff);
-            Tariff updateTariff = IPay.AddDeposit(sum) as Tariff;
+        //public void Payment(Tariff tariff, decimal sum)
+        //{
+        //    IPay = new Pay(tariff);
+        //    Tariff updateTariff = IPay.AddDeposit(sum) as Tariff;
 
-            foreach (var item in db.Tariffs)
-            {
-                if (item.Id == updateTariff.Id)
-                {
-                    item.Deposit = updateTariff.Deposit;
-                    item.Debt = updateTariff.Debt;
-                    item.DatePayment = updateTariff.DatePayment;
-                    break;
-                }
-            }
-            db.SaveChanges();
-        }
+        //    foreach (var item in db.Tariffs)
+        //    {
+        //        if (item.Id == updateTariff.Id)
+        //        {
+        //            item.Deposit = updateTariff.Deposit;
+        //            item.Debt = updateTariff.Debt;
+        //            item.DatePayment = updateTariff.DatePayment;
+        //            break;
+        //        }
+        //    }
+        //    db.SaveChanges();
+        //}
+
+
     }
 }

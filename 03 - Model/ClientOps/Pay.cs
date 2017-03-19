@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace _03___Model
 {
-    public class Pay : IPay
+    public class Pay : EFClientOp, IPay
     {
         private Calculator calk;
         private Tariff tariff;
@@ -47,5 +47,23 @@ namespace _03___Model
                 tariff.DatePayment = DateTime.Now;
             }            
         }
+
+        public void Payment(decimal sum)
+        {
+            this.AddDeposit(sum);
+            foreach (var item in db.Tariffs)
+            {
+                if (item.Id == tariff.Id)
+                {
+                    item.Deposit = tariff.Deposit;
+                    item.Debt = tariff.Debt;
+                    item.DatePayment = tariff.DatePayment;
+                    break;
+                }
+            }
+            db.SaveChanges();
+        }
+
+
     }
 }

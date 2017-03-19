@@ -18,7 +18,8 @@ namespace _02___TD_Logic
         {
 
             /*тесты*/
-            Test_AddDeposit_Month();
+            //DbLoad();
+            Test_AddDeposit_Day();
             
 
 
@@ -36,19 +37,7 @@ namespace _02___TD_Logic
             Console.WriteLine("...Db load...");
         }
 
-        static void DbDisplay()
-        {
-            DbAdapterTest dbtest = new DbAdapterTest();
-            dbtest.ConsoleTestDisplay();
-        }
-
-        static void DbDrop()
-        {
-            DbAdapterTest dbtest = new DbAdapterTest();
-            dbtest.DeleteDB();
-            Console.WriteLine("...Db Delete...");
-        }
-
+      
         static void Test_AddDeposit_Day()
         {
             //-------------------input
@@ -62,8 +51,9 @@ namespace _02___TD_Logic
 
 
             //--------------------output
-            EFClientOp client = new EFClientOp();
-            client.Payment(place.Tariff, summ);
+            Pay pay = new Pay(place.Tariff);
+            pay.Payment(summ);
+            Console.WriteLine(place);
         }
 
 
@@ -80,8 +70,8 @@ namespace _02___TD_Logic
 
 
             //--------------------output
-            EFClientOp client = new EFClientOp();
-            client.Payment(place.Tariff, summ);
+            Pay pay = new Pay(place.Tariff);
+            pay.Payment(summ);
             Console.WriteLine(place);
         }
 

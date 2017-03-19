@@ -89,12 +89,5 @@
       <FileName>Objects\IRecord.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="Interfaces.ICreateNewClient">
-    <Position X="2.5" Y="8.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
-      <FileName>ICreateNewClient.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
