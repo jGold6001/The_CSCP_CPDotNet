@@ -4,10 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01___WpfWindows"
-        
+        xmlns:viewModel="clr-namespace:_02___ViewModel;assembly=02-ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="925" MinHeight="550" MinWidth="925" Background="{StaticResource Brush05}">
-  
+
+    <Window.DataContext>
+        <viewModel:MainWndVM></viewModel:MainWndVM>
+    </Window.DataContext>
     <!-- Main DockPanel-->
     <DockPanel>
         <!-- wp menu-->
@@ -46,7 +49,7 @@
             <!-- Left size-->
             
             <!--DataGrid-->
-            <DataGrid x:Name="dgRecords"   Style="{DynamicResource spDataGrid}" AutoGeneratingColumn="dgRecords_AutoGeneratingColumn" />
+            <DataGrid x:Name="dgRecords"  ItemsSource="{Binding GetData}" Style="{DynamicResource spDataGrid}" AutoGeneratingColumn="dgRecords_AutoGeneratingColumn" />
             <GridSplitter x:Name="gsHorizontal" HorizontalAlignment="Stretch" Height="5" VerticalAlignment="Top"  Grid.Row="1" Background="{StaticResource Brush04}"/>
             
             <!--InfoBlock-->

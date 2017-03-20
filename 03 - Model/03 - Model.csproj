@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="ClientOps\Calculator.cs" />
     <Compile Include="ClientOps\Pay.cs" />
-    <Compile Include="Constats\RentValues.cs" />
     <Compile Include="DbAdapter\EFAdapter.cs" />
     <Compile Include="DbAdapter\EFClientOp.cs" />
     <Compile Include="DbAdapter\EFUserOp.cs" />

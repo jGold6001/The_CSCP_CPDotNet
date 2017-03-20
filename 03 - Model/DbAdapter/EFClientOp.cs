@@ -35,7 +35,16 @@ namespace _03___Model
             }
         }
 
-       
+        public List<Record> DisplayList
+        {
+            get
+            {
+                DisplayRecords dp = new DisplayRecords(db);
+                return dp.GetList.ToList();
+            }
+        }
+
+
         public override void Add(object newObj)
         {
             //номер парковки не может повторятся в базе
