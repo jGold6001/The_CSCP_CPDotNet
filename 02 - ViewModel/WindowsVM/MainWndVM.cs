@@ -13,13 +13,13 @@ namespace _02___ViewModel
         EFClientOp efClient = new EFClientOp(); 
 
         //DataGrid
-        public List<Record> GetData
+        public ObservableCollection<Record> GetData
         {
-            get{
-                return efClient.DisplayList;
+            get
+            {
+                return new ObservableCollection<Record>(efClient.DisplayList);
             }          
         }
-
 
         //add
         private TemplateCommand addCommand;
