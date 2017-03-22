@@ -68,20 +68,5 @@ namespace _02___ViewModel
 
         }
 
-
-        //filter
-        private TemplateCommand filterCommand;
-        public TemplateCommand FilterCommand
-        {
-            get
-            {
-                return filterCommand ??
-                    (filterCommand = new TemplateCommand(obj =>
-                    {
-                        System.Windows.Forms.MessageBox.Show("FilterCommand");
-                    }));
-            }
-
-        }
     }
 }

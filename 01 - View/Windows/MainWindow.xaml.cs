@@ -65,6 +65,7 @@ namespace _01___WpfWindows
         {
             PlaceWindow pw = new PlaceWindow();
             pw.ShowDialog();
+           
         }
 
         private void btnFullInfo_Click(object sender, RoutedEventArgs e)
@@ -97,27 +98,6 @@ namespace _01___WpfWindows
             aw.ShowDialog();
         }
 
-        public IEnumerable<DataGridRow> GetDataGridRows(DataGrid grid)
-        {
-            var itemsSource = grid.ItemsSource as IEnumerable;
-            if (null == itemsSource) yield return null;
-            foreach (var item in itemsSource)
-            {
-                var row = grid.ItemContainerGenerator.ContainerFromItem(item) as DataGridRow;
-                if (null != row) yield return row;
-            }
-        }
-
-        private void dgRecords_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var row_list = GetDataGridRows(dgRecords);
-            foreach (DataGridRow single_row in row_list)
-            {
-                if (single_row.IsSelected == true)
-                {
-                    MessageBox.Show("the row no." + single_row.GetIndex().ToString() + " is selected!");
-                }
-            }
-        }
+       
     }
 }

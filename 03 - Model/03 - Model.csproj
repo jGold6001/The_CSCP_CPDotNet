@@ -46,6 +46,7 @@
     <Compile Include="DbAdapter\EFAdapter.cs" />
     <Compile Include="DbAdapter\EFClientOp.cs" />
     <Compile Include="DbAdapter\EFUserOp.cs" />
+    <Compile Include="EFPropertyChanged.cs" />
     <Compile Include="Objects\Daily.cs" />
     <Compile Include="Objects\Monthly.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

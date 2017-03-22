@@ -39,8 +39,16 @@ namespace _03___Model
         {
             get
             {
-                DisplayRecords dp = new DisplayRecords(db);
-                return dp.GetList.ToList();
+                return db.Places.Select(p => new Record()
+                {
+                    NumberPLace = p.Number,
+                    ClientLastName = p.Client.LastName,
+                    CarBrand = p.Car.Brand,
+                    DateRegistred = p.Client.DateRegistred,
+                    DatePayment = p.Tariff.DatePayment,
+                    Deposit = p.Tariff.Deposit,
+                    Debt = p.Tariff.Debt
+                }).ToList();
             }
         }
 

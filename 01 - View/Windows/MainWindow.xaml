@@ -49,7 +49,7 @@
             <!-- Left size-->
             
             <!--DataGrid-->
-            <DataGrid x:Name="dgRecords"  ItemsSource="{Binding GetData}" Style="{DynamicResource spDataGrid}" AutoGeneratingColumn="" SelectionChanged="dgRecords_SelectionChanged" />
+            <DataGrid x:Name="dgRecords"  ItemsSource="{Binding GetData}" Style="{DynamicResource spDataGrid}" />
             <GridSplitter x:Name="gsHorizontal" HorizontalAlignment="Stretch" Height="5" VerticalAlignment="Top"  Grid.Row="1" Background="{StaticResource Brush04}"/>
             
             <!--InfoBlock-->

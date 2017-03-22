@@ -37,16 +37,106 @@ namespace _03___Model
         }
     }
 
-    public class Record 
-    {                 
-        public int NumberPLace { get; set; }
-        public string ClientLastName { get; set; }
-        public string CarBrand { get; set; }
-        public DateTime DateRegistred { get; set; }
-        public DateTime DatePayment { get; set; }
-        public decimal Deposit { get; set; }
-        public decimal Debt { get; set; }
+    public class Record : EFPropertyChanged
+    {       
+        private int numPlace;
+        private string clientLastName;
+        private string carBrand;
+        private DateTime dateReg;
+        private DateTime datePay;
+        private decimal deposit;
+        private decimal debt;
+                  
+        public int NumberPLace
+        {
+            get
+            {
+                return numPlace;
+            }
+            set
+            {
+                numPlace = value;
+                OnPropertyChanged("NumberPLace");
+            }
+        }
 
+        public string ClientLastName
+        {
+            get
+            {
+                return clientLastName;
+            }
+            set
+            {
+                clientLastName = value;
+                OnPropertyChanged("ClientLastName");
+            }
+        }
+
+        public string CarBrand
+        {
+            get
+            {
+                return carBrand;
+            }
+            set
+            {
+                carBrand = value;
+                OnPropertyChanged("CarBrand");
+            }
+        }
+
+        public DateTime DateRegistred
+        {
+            get
+            {
+                return dateReg;
+            }
+            set
+            {
+                dateReg = value;
+                OnPropertyChanged("DateRegistred");
+            }
+        }
+
+        public DateTime DatePayment
+        {
+            get
+            {
+                return datePay;
+            }
+            set
+            {
+                datePay = value;
+                OnPropertyChanged("DatePayment");
+            }
+        }
+
+        public decimal Deposit
+        {
+            get
+            {
+                return deposit;
+            }
+            set
+            {
+                deposit = value;
+                OnPropertyChanged("Deposit");
+            }
+        }
+
+        public decimal Debt
+        {
+            get
+            {
+                return debt;
+            }
+            set
+            {
+                debt = value;
+                OnPropertyChanged("Debt");
+            }
+        }
     }
 
 
