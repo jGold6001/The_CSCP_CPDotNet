@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01___WpfWindows"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:cmd="http://www.galasoft.ch/mvvmlight"
         xmlns:viewModel="clr-namespace:_02___ViewModel;assembly=02-ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="925" MinHeight="550" MinWidth="925" Background="{StaticResource Brush05}">
@@ -44,16 +46,31 @@
                 <ColumnDefinition MinWidth="200"/>
             </Grid.ColumnDefinitions>
 
-            
-            
+
+
             <!-- Left size-->
-            
+
             <!--DataGrid-->
-            <DataGrid x:Name="dgRecords"  ItemsSource="{Binding GetData}" Style="{DynamicResource spDataGrid}" />
-            <GridSplitter x:Name="gsHorizontal" HorizontalAlignment="Stretch" Height="5" VerticalAlignment="Top"  Grid.Row="1" Background="{StaticResource Brush04}"/>
+            <DataGrid x:Name="dgRecords"  ItemsSource="{Binding RecordSource}" Style="{DynamicResource spDataGrid}" CanUserAddRows="True"  AutoGenerateColumns="False" CanUserDeleteRows="True" CanUserReorderColumns="True" CanUserSortColumns="True" SelectedItem="{Binding SelectRecord}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Номер места" Binding="{Binding Path=NumberPLace,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Клиент" Binding="{Binding Path=ClientLastName, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Автомобиль" Binding="{Binding Path=CarBrand,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Дата Оплаты" Binding="{Binding Path=DatePayment, StringFormat=\{0:dd.MM.yyyy\}, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Тариф" Binding="{Binding Path=Rent,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Задолжность" Binding="{Binding Path=Debt, UpdateSourceTrigger=PropertyChanged}"/>
+                </DataGrid.Columns>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding SelectCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </DataGrid>
             
+            <GridSplitter x:Name="gsHorizontal" HorizontalAlignment="Stretch" Height="5" VerticalAlignment="Top"  Grid.Row="1" Background="{StaticResource Brush04}"/>
+
             <!--InfoBlock-->
-            <Grid Name="gridInfo"  HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Margin="0,5,0,0" Visibility="Hidden">
+            <Grid Name="gridInfo"  HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Margin="0,5,0,0" Visibility="{Binding GridVisibility}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0,9*"/>
                     <RowDefinition Height="30*"/>
@@ -78,13 +95,13 @@
                         <RowDefinition Height="30*"/>
                     </Grid.RowDefinitions>
                     <Label x:Name="labPlace" Content="Место" Grid.Column="0" Grid.Row="0" Foreground="White" VerticalAlignment="Center" Margin="8 0 0 0" FontSize="15" FontWeight="Bold" Height="30"/>
-                    <TextBlock x:Name="tbPlace" TextWrapping="Wrap" Text="2" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Foreground="White" Margin="5,7,0,7" Height="16"/>
+                    <TextBlock x:Name="tbPlace" TextWrapping="Wrap" Text="{Binding NumPlace}" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" Foreground="White" Margin="5,7,0,7" Height="16"/>
                     <Label x:Name="labClient" Content="Клиент" Grid.Column="0" Grid.Row="1" Foreground="White" VerticalAlignment="Center" Margin="8 0 0 0" FontSize="15" FontWeight="Bold" Height="30"/>
-                    <TextBlock x:Name="tbClient" TextWrapping="Wrap" Text="Пупкин Василий" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Foreground="White" Margin="5,7,0,7" Height="16" />
+                    <TextBlock x:Name="tbClient" TextWrapping="Wrap" Text="{Binding Client}" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" Foreground="White" Margin="5,7,0,7" Height="16" />
                     <Label x:Name="labCar" Content="Автомобиль" Grid.Column="0" Grid.Row="2" Foreground="White" VerticalAlignment="Center" Margin="8 0 0 0" FontSize="15" FontWeight="Bold" Height="30"/>
-                    <TextBlock x:Name="tbCar" TextWrapping="Wrap" Text="ВАЗ Красная" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Foreground="White" Margin="5,7,0,7" Height="16"/>
+                    <TextBlock x:Name="tbCar" TextWrapping="Wrap" Text="{Binding Car}" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" Foreground="White" Margin="5,7,0,7" Height="16"/>
                     <Label x:Name="labTariff" Content="Тариф" Grid.Column="0" Grid.Row="3" Foreground="White" VerticalAlignment="Center" Margin="8 0 0 0" FontSize="15" FontWeight="Bold" Height="30"/>
-                    <TextBlock x:Name="tbTarriff" TextWrapping="Wrap" Text="Суточный Депозит: 100грн. Долг: 200грн." VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Stretch" Foreground="White" Margin="5,7,0,7" Height="16"/>
+                    <TextBlock x:Name="tbTarriff" TextWrapping="Wrap" Text="{Binding Tariff}" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Stretch" Foreground="White" Margin="5,7,0,7" Height="16"/>
                 </Grid>
                 <Grid Name="gridBtn" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" >
                     <Grid.RowDefinitions>
@@ -106,12 +123,12 @@
                 </Grid>
             </Grid>
 
-            
-            
-            
+
+
+
             <!-- Right size-->
             <GridSplitter x:Name="gsVertical" Grid.Column="1" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Width="5" Grid.RowSpan="2" Background="{StaticResource Brush04}"/>
-            <Grid Name="wpFilter" Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Background="{StaticResource Brush05}" Grid.RowSpan="2" Margin="5,0,0,0">
+            <Grid Name="wpFilter" Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Background="{StaticResource Brush05}" Grid.RowSpan="2" Margin="10,0,-5,10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20*"/>
                     <ColumnDefinition Width="145*"/>
@@ -119,24 +136,24 @@
                     <ColumnDefinition Width="19*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="36*"/>
-                    <RowDefinition Height="30*"/>
+                    <RowDefinition Height="35*"/>
                     <RowDefinition Height="33*"/>
-                    <RowDefinition Height="177*"/>
-                    <RowDefinition Height="224*"/>
+                    <RowDefinition Height="29*"/>
+                    <RowDefinition Height="173*"/>
+                    <RowDefinition Height="220*"/>
                 </Grid.RowDefinitions>
-                
+
                 <!--Finder-->
-                <TextBox x:Name="tbFind" Style="{DynamicResource textboxFind}" Grid.Column="1" Grid.Row="1"/>
-                <Button x:Name="btnOk" Content="Ok" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center"/>
-                
+                <TextBox x:Name="tbFind" Style="{DynamicResource textboxFind}" Grid.Column="1" Grid.Row="1"  Margin="0,1,0,2"/>
+                <Button x:Name="btnOk" Content="Ok" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" Height="30" Margin="0,1,0,2"/>
+
                 <!--Filter-->
-                <StackPanel Grid.Column="1"  Grid.Row="3" VerticalAlignment="Top" Width="185" Grid.ColumnSpan="2">
+                <StackPanel Grid.Column="1"  Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="29">
                     <Label Content="Фильтр записей" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top"  FontSize="14"/>
                 </StackPanel>
-                <CheckBox x:Name="chbClientsDebt" Content="Клиенты Должники" Grid.Column="1" HorizontalAlignment="Left" Margin="0,33,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="185" Foreground="White"/>
-                <CheckBox x:Name="chbRentDaily" Content="Суточная Аренда" Grid.Column="1" HorizontalAlignment="Left" Margin="0,78,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="185" Foreground="White"/>
-                <CheckBox x:Name="chbRentMonthly" Content="Месячная Аренда" Grid.Column="1" HorizontalAlignment="Left" Margin="0,108,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="185" Foreground="White"/>
+                <CheckBox x:Name="chbClientsDebt" Content="Клиенты Должники" Grid.Column="1" HorizontalAlignment="Left" Margin="0,33,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="185" Foreground="White" Height="30"/>
+                <CheckBox x:Name="chbRentDaily" Content="Суточная Аренда" Grid.Column="1" HorizontalAlignment="Left" Margin="0,78,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="185" Foreground="White" Height="30"/>
+                <CheckBox x:Name="chbRentMonthly" Content="Месячная Аренда" Grid.Column="1" HorizontalAlignment="Left" Margin="0,108,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="185" Foreground="White" Height="30"/>
             </Grid>
         </Grid>
     </DockPanel>

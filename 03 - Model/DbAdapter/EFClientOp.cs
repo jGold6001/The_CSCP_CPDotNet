@@ -15,6 +15,7 @@ namespace _03___Model
            
         }
 
+
         public IDisplayInfo IDisplayInfo { get; set; }
         public IFilter IFilter { get; set; }
         public IPay IPay { get; set; }
@@ -31,11 +32,12 @@ namespace _03___Model
                 db.Cars.Load();
                 db.Tariffs.Load();
                 db.Clients.Load();
+                db.RentValues.Load();
                 return db.Places.ToList();
             }
         }
 
-        public List<Record> DisplayList
+        public List<Record> RecordList
         {
             get
             {
@@ -44,14 +46,12 @@ namespace _03___Model
                     NumberPLace = p.Number,
                     ClientLastName = p.Client.LastName,
                     CarBrand = p.Car.Brand,
-                    DateRegistred = p.Client.DateRegistred,
                     DatePayment = p.Tariff.DatePayment,
-                    Deposit = p.Tariff.Deposit,
+                    Rent = p.Tariff.RentValue.Price,
                     Debt = p.Tariff.Debt
                 }).ToList();
             }
         }
-
 
         public override void Add(object newObj)
         {

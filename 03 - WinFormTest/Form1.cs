@@ -1,5 +1,4 @@
 ﻿using _04___TestingClasses;
-using DataLayer.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,8 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ViewModels.MainWnd;
-using ViewModels;
+
 
 namespace _03___WinFormTest
 {
@@ -19,11 +17,11 @@ namespace _03___WinFormTest
     {
         string home= "name=DataBaseHome";
         string auditory = "name=DataBase";
-        DbAdapter dba;
+
         DbAdapterTest dbat;
         BindingSource bs = new BindingSource();
         AddEditDataFrm aedf;
-        BusinessLogic bl;
+
 
         BindingSource bsTayrriff = new BindingSource();
         BindingSource bsCar = new BindingSource();

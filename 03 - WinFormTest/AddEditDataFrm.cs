@@ -1,5 +1,4 @@
-﻿using DataLayer.Constats;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,8 +15,6 @@ namespace _03___WinFormTest
         public AddEditDataFrm()
         {
             InitializeComponent();
-            cbRental.Items.Add(RentValues.D);
-            cbRental.Items.Add(RentValues.M);
 
         }
 

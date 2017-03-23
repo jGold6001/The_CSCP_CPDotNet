@@ -10,43 +10,15 @@ using System.Threading.Tasks;
 namespace _03___Model
 {
 
-    public class DisplayRecords 
-    {
-        EFContext db;
-
-        public DisplayRecords(EFContext db)
-        {
-            this.db = db;
-        }
-
-        public List<Record> GetList
-        {
-            get
-            {
-                return db.Places.Select(p => new Record()
-                {
-                    NumberPLace = p.Number,
-                    ClientLastName = p.Client.LastName,
-                    CarBrand = p.Car.Brand,
-                    DateRegistred = p.Client.DateRegistred,
-                    DatePayment = p.Tariff.DatePayment,
-                    Deposit = p.Tariff.Deposit,
-                    Debt = p.Tariff.Debt
-                }).ToList();
-            }
-        }
-    }
-
-    public class Record : EFPropertyChanged
+    public class Record : INotifyPropertyChanged
     {       
         private int numPlace;
         private string clientLastName;
         private string carBrand;
-        private DateTime dateReg;
         private DateTime datePay;
-        private decimal deposit;
+        private decimal rent;
         private decimal debt;
-                  
+
         public int NumberPLace
         {
             get
@@ -86,19 +58,6 @@ namespace _03___Model
             }
         }
 
-        public DateTime DateRegistred
-        {
-            get
-            {
-                return dateReg;
-            }
-            set
-            {
-                dateReg = value;
-                OnPropertyChanged("DateRegistred");
-            }
-        }
-
         public DateTime DatePayment
         {
             get
@@ -112,16 +71,16 @@ namespace _03___Model
             }
         }
 
-        public decimal Deposit
+        public decimal Rent
         {
             get
             {
-                return deposit;
+                return rent;
             }
             set
             {
-                deposit = value;
-                OnPropertyChanged("Deposit");
+                rent = value;
+                OnPropertyChanged("Rent");
             }
         }
 
@@ -137,7 +96,15 @@ namespace _03___Model
                 OnPropertyChanged("Debt");
             }
         }
-    }
+        public void OnPropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+    }
 
 }

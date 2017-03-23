@@ -12,10 +12,8 @@ namespace DataLayer
     {
         [Key]
         public int Id { get; set; }
-        public int? RentValueId { get; set; }
-        [Column(TypeName = "Money")]
-        public decimal Deposit { get; set; }
-        [Column(TypeName = "Money")]
+        public int? RentValueId { get; set; }      
+        public decimal Deposit { get; set; }  
         public decimal Debt { get; set; }
         public DateTime DatePayment { get; set; }
         public ICollection<Place> Places { get; set; }

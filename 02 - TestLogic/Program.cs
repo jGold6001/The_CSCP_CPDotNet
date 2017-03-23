@@ -1,7 +1,6 @@
 ﻿using _03___Model;
 using _04___TestingClasses;
 using DataLayer;
-using DataLayer.Constats;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -18,8 +17,8 @@ namespace _02___TD_Logic
         {
 
             /*тесты*/
-            //DbLoad();
-            Test_AddDeposit_Day();
+            DbLoad();
+            
             
 
 

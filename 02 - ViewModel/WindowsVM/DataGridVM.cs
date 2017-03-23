@@ -1,46 +1,28 @@
 ﻿using _03___Model;
+using GalaSoft.MvvmLight.CommandWpf;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace _02___ViewModel
 {
-    public class DataGridVM : EFPropertyChanged
+    public class DataGridVM : INotifyPropertyChanged
     {
-        private EFClientOp efClient;
-        private ObservableCollection<Record> listRecords;
-
-        public DataGridVM()
+       
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged(string name)
         {
-            efClient = new EFClientOp();            
-        }
-
-        public ObservableCollection<Record> ListRecords
-        {
-            get
+            if (PropertyChanged != null)
             {
-                listRecords = db.Places.Select(p => new Record()
-                {
-                    NumberPLace = p.Number,
-                    ClientLastName = p.Client.LastName,
-                    CarBrand = p.Car.Brand,
-                    DateRegistred = p.Client.DateRegistred,
-                    DatePayment = p.Tariff.DatePayment,
-                    Deposit = p.Tariff.Deposit,
-                    Debt = p.Tariff.Debt
-                });
-                return listRecords;
-            }
-
-            set
-            {
-                listRecords = value;
-                OnPropertyChanged("ListRecords");
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
-        
+
     }
 }
