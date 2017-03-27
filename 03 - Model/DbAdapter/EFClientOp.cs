@@ -109,7 +109,10 @@ namespace _03___Model
             foreach (Place place in db.Places)
             {
                 if (record.NumberPLace == place.Number)
-                {
+                {                    
+                    db.Cars.Remove(place.Car);
+                    db.Clients.Remove(place.Client);
+                    db.Tariffs.Remove(place.Tariff);
                     db.Places.Remove(place);
                     break;
                 }

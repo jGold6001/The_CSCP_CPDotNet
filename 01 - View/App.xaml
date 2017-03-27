@@ -2,9 +2,12 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:_01___View"
+             xmlns:viewModel="clr-namespace:_02___ViewModel;assembly=02-ViewModel"
              StartupUri="Windows/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <viewModel:LocatorVM x:Key="Locator" xmlns:viewModel="clr-namespace:_02___ViewModel;assembly=02-ViewModel"/>
+            <local:DataWindow x:Key="{x:Type viewModel:DataWndVM}" x:Shared="False"/>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Themes/MetroDark/MetroDark.MSControls.Core.Implicit.xaml" />
                 <ResourceDictionary Source="Themes/MetroDark/MetroDark.MSControls.Toolkit.Implicit.xaml" />

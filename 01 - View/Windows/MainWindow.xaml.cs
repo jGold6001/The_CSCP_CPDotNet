@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace _01___WpfWindows
+namespace _01___View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,49 +25,5 @@ namespace _01___WpfWindows
         {          
             InitializeComponent();
         }
-
-        private void AddClient_Click(object sender, RoutedEventArgs e)
-        {
-            DataWindow dw = new DataWindow();
-            dw.ShowDialog();
-        }
-
-        private void FreePlace_Click(object sender, RoutedEventArgs e)
-        {
-            PlaceWindow pw = new PlaceWindow();
-            pw.ShowDialog();
-           
-        }
-
-        private void btnFullInfo_Click(object sender, RoutedEventArgs e)
-        {
-            FullInfoWindow fiw = new FullInfoWindow();
-            fiw.ShowDialog();
-        }
-
-        private void btnEdit_Click(object sender, RoutedEventArgs e)
-        {
-            DataWindow dw = new DataWindow();
-            dw.ShowDialog();
-        }
-
-        private void Manager_Click(object sender, RoutedEventArgs e)
-        {
-            AdminWindow aw = new AdminWindow();
-            aw.ShowDialog();
-        }
-
-        private void btnPay_Click(object sender, RoutedEventArgs e)
-        {
-            DepositWindow dw = new DepositWindow();
-            dw.ShowDialog();
-        }
-
-        private void LogOut_Click(object sender, RoutedEventArgs e)
-        {
-            AuthorizationWindow aw = new AuthorizationWindow();
-            aw.ShowDialog();
-        }
-
     }
 }

@@ -1,9 +1,9 @@
-﻿<Window x:Class="_01___WpfWindows.AuthorizationWindow"
+﻿<Window x:Class="_01___View.AuthorizationWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:_01___WpfWindows"
+        xmlns:local="clr-namespace:_01___View"
         mc:Ignorable="d"
         Title="Ауторизация" Height="167" Width="316" ResizeMode="NoResize"  Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
     <Grid Margin="10">

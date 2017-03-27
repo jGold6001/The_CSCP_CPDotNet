@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 
-namespace _01___WpfWindows
+namespace _01___View
 {
     /// <summary>
     /// Interaction logic for AdminWindow.xaml
