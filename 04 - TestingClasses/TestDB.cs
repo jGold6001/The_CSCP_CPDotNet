@@ -76,10 +76,10 @@ namespace _04___TestingClasses
         {
             return new List<Car>()
             {
-                new Car() {VehicleID="АК1234АВ", Brand="ВАЗ", VIN="ZFA22330005556771", Color="Белый" },
+                new Car() {VehicleID="АК1234АВ", Brand="UAZ (УАЗ)", VIN="ZFA22330005556771", Color="Белый" },
                 new Car() {VehicleID="АА1234РВ", Brand="Ford", VIN="IFA22350015556772", Color="Красный" },
-                new Car() {VehicleID="АС1234ЛД", Brand="Audi", VIN="ZOA22370025556773", Color="Желтый" },
-                new Car() {VehicleID="ВН1234ЛО", Brand="Mitchubisi", VIN="LFA22380035556774", Color="Синий" },
+                new Car() {VehicleID="АС1234ЛД", Brand="Audi", VIN="ZOA22370025556773", Color="Жёлтый" },
+                new Car() {VehicleID="ВН1234ЛО", Brand="Mitsubishi", VIN="LFA22380035556774", Color="Синий" },
                 new Car() {VehicleID="СА1234ЩШ", Brand="BMW", VIN="KFA22390065556775", Color="Черный" }
             };
         }
@@ -101,8 +101,8 @@ namespace _04___TestingClasses
         {
             return new List<RentValue>()
             {
-                new RentValue { Name="Daily", Price=10 },
-                new RentValue {Name="Monthly", Price=100 }
+                new RentValue { Name="Суточный", Price=10 },
+                new RentValue {Name="Месячный", Price=100 }
             };
         }
 

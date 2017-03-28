@@ -1,4 +1,5 @@
 ﻿using _03___Model;
+using DataLayer;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Views;
@@ -199,26 +200,93 @@ namespace _02___ViewModel
             {
                 return editCommand ?? (editCommand = new RelayCommand<SelectionChangedEventArgs>(obj =>
                 {
-                    //string surname, 
-                    this.Dialogs.Add(new DataWndVM(DialogName.EditData)
+                    DataWndVM dataWnd = new DataWndVM(DialogName.EditData)
                     {
-                        BtnContent = SelectRecord.NumberPLace.ToString(),
-                        FirstName = buffClient.FirstName,
-                        LastName = buffClient.LastName,
-                        PassportID = buffClient.PassportID,
-                        TelNum = buffClient.PhoneNumber,
-                        CarID = buffClient.VehicleID,
-                        //brand
-                        VIN = buffClient.VIN,
-                        //color
-                        //rent
-                        DepositSumm = buffClient.Deposit
+                        //read datas
+                        FirstNameVM = buffClient.FirstName,
+                        LastNameVM = buffClient.LastName,
+                        PassportIDVM = buffClient.PassportID,
+                        TelNumVM = buffClient.PhoneNumber,
+                        AdditInfoVM = buffClient.AdditionalInfo,
+                        CarIDVM = buffClient.VehicleID,
+                        BrandItem = buffClient.Brand,
+                        VINVM = buffClient.VIN,
+                        ColorItem = buffClient.Color,
+                        RentItem = buffClient.Rent
+                    };
+
+                    //save data
+                    dataWnd.OnOk = ((sender) =>
+                    {
+                        sender.Close();
+                        
+                        Client client = new Client();
+                        client.FirstName = dataWnd.FirstNameVM;
+                        client.LastName = dataWnd.LastNameVM;
+                        client.PassportID = dataWnd.PassportIDVM;
+                        client.PhoneNumber = Convert.ToInt32(dataWnd.TelNumVM);
+                        client.AdditionalInfo = dataWnd.AdditInfoVM;
+
+                        Car car = new Car();
+                        car.VehicleID = dataWnd.CarIDVM;
+                        car.Brand = dataWnd.BrandItem;
+                        car.VIN = dataWnd.VINVM;
+                        car.Color = dataWnd.ColorItem;
+
+                        Tariff tariff = new Tariff();
+                        tariff.RentValue = this.GetRent(dataWnd.RentItem);
+
+                        Place newPlace = new Place();
+                        newPlace.Number = SelectRecord.NumberPLace;
+                        newPlace.Client = client;
+                        newPlace.Car = car;
+                        newPlace.Tariff = tariff;
+
+                        efClient.Edit(newPlace);
+                        this.UpdateRecord(newPlace);
+                        GridVisibility = Visibility.Hidden;
+
                     });
+
+                    this.Dialogs.Add(dataWnd);
                 }));
             }
         }
 
+        private RentValue GetRent(string rentItem)
+        {        
+            foreach (var item in efClient.RentTypes)
+            {
+                if (item.Name == rentItem)
+                    return item;                  
+            }
+            return null;         
+        }
+
+        private void UpdateRecord(Place newPlace)
+        {
+            Record newRecord = new Record()
+            {
+                NumberPLace = newPlace.Number,
+                ClientLastName = newPlace.Client.LastName,
+                CarBrand = newPlace.Car.Brand,
+                DatePayment = newPlace.Tariff.DatePayment,
+                Debt = newPlace.Tariff.Debt,
+                Rent = newPlace.Tariff.RentValue.Price
+            };
+
+            foreach (var item in RecordSource)
+            {
+                if(item.NumberPLace == newPlace.Number)
+                {
+                    RecordSource.Remove(item);
+                    RecordSource.Add(newRecord);
+                    break;
+                }
+            }           
+        }
+
         #endregion;
-        
+
     }
 }

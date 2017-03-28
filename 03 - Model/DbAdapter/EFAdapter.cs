@@ -18,7 +18,7 @@ namespace _03___Model
 
         public abstract void Add(object newObj);
 
-        public abstract void Edit(object curObj, object newObj);
+        public abstract void Edit(object newObj);
 
         public abstract void Remove(object curObj);
        

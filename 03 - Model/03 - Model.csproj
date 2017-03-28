@@ -31,6 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientOps\Calculator.cs" />
+    <Compile Include="ClientOps\JSONReader.cs" />
     <Compile Include="ClientOps\Pay.cs" />
     <Compile Include="DbAdapter\EFAdapter.cs" />
     <Compile Include="DbAdapter\EFClientOp.cs" />
@@ -66,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassesDiagram.cd" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

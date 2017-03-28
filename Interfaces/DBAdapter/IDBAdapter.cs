@@ -9,6 +9,6 @@ namespace Interfaces
     {
         void Add(object newObj);
         void Remove(object curObj);
-        void Edit(object curObj, object newObj);
+        void Edit(object newObj);
     }
 }

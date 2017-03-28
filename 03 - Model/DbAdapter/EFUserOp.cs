@@ -20,7 +20,7 @@ namespace _03___Model
             throw new NotImplementedException();
         }
 
-        public override void Edit(object curObj, object newObj)
+        public override void Edit(object newObj)
         {
             throw new NotImplementedException();
         }

@@ -44,37 +44,37 @@
         
         <!--Place-->
         <Label x:Name="lPlace"  Content="Номер места" Grid.Column="1"  Grid.Row="1" />
-        <Button x:Name="btnPlace" Style="{DynamicResource btnCyan}" Content="{Binding BtnContent}" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="31" Grid.RowSpan="2" Click="btnPlace_Click"/>
+        <Button x:Name="btnPlace" Style="{DynamicResource btnCyan}" Content="Выбрать..." Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="31" Grid.RowSpan="2" IsEnabled="{Binding Disable}"/>
 
         
         <!--Client-->
         <TextBlock x:Name="tbClient" Style="{DynamicResource tbHeaders}"  Grid.Column="1" Grid.Row="3" Text="Клиент" Grid.ColumnSpan="4" />
         <Label x:Name="lName" Content="Имя" Grid.Column="1"  Grid.Row="4" />
-        <TextBox x:Name="tbName" Grid.Column="2"  Grid.Row="4"  Grid.ColumnSpan="3" MaxLength="50" Text="{Binding FirstName}"/>
+        <TextBox x:Name="tbName" Grid.Column="2"  Grid.Row="4"  Grid.ColumnSpan="3" MaxLength="50" Text="{Binding FirstNameVM}"/>
 
         <Label x:Name="lSurname" Content="Фамилия" Grid.Column="1" Grid.Row="5" />
-        <TextBox x:Name="tbSurname" Grid.Column="2"  Grid.Row="5" Grid.ColumnSpan="3" MaxLength="50" Text="{Binding LastName}"/>
+        <TextBox x:Name="tbSurname" Grid.Column="2"  Grid.Row="5" Grid.ColumnSpan="3" MaxLength="50" Text="{Binding LastNameVM}"/>
 
         <Label x:Name="lPasport"  Content="Номер Паспорта" Grid.Column="1"  Grid.Row="6" />
-        <TextBox x:Name="tbPassport" Grid.Column="2"  Grid.Row="6"  Grid.ColumnSpan="3" MaxLength="8" Text="{Binding PassportID}"/>
+        <TextBox x:Name="tbPassport" Grid.Column="2"  Grid.Row="6"  Grid.ColumnSpan="3" MaxLength="8" Text="{Binding PassportIDVM}"/>
 
         <Label x:Name="lTel"  Content="Телефон" Grid.Column="1" Grid.Row="7" />
-        <TextBox x:Name="tbTel" Grid.Column="2"  Grid.Row="7"  Grid.ColumnSpan="3" MaxLength="10" PreviewTextInput="OnlyNumbers" Text="{Binding TelNum}"/>
+        <TextBox x:Name="tbTel" Grid.Column="2"  Grid.Row="7"  Grid.ColumnSpan="3" MaxLength="10" PreviewTextInput="OnlyNumbers" Text="{Binding TelNumVM}"/>
 
         <Label x:Name="lInfo"  Content="Доп. Информация" Grid.Column="1" Grid.Row="8" />
-        <TextBox x:Name="tbInfo" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" MaxLength="300" Text="{Binding AdditInfo}"/>
+        <TextBox x:Name="tbInfo" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="4" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" MaxLength="300" Text="{Binding AdditInfoVM}"/>
 
 
         <!--Car-->
         <TextBlock x:Name="tbCar" Style="{DynamicResource tbHeaders}"  Grid.Column="1" Grid.Row="11"  Text="Автомобиль" Grid.ColumnSpan="4"  />
         <Label x:Name="lCarID" Content="Номер Машины" Grid.Column="1"  Grid.Row="12" />
-        <TextBox x:Name="tbCarID" Grid.Column="2"  Grid.Row="12"  Grid.ColumnSpan="3" MaxLength="8" Text="{Binding CarID}"/>
+        <TextBox x:Name="tbCarID" Grid.Column="2"  Grid.Row="12"  Grid.ColumnSpan="3" MaxLength="8" Text="{Binding CarIDVM}"/>
 
         <Label x:Name="lBrand"  Content="Марка" Grid.Column="1" Grid.Row="13" />
         <ComboBox x:Name="cbBrand" Grid.Column="2"  Grid.Row="13" Grid.ColumnSpan="3" ItemsSource="{Binding Brands}" SelectedItem="{Binding BrandItem}"/>
 
         <Label x:Name="lVin"  Content="Номер Кузова" Grid.Column="1"  Grid.Row="14" />
-        <TextBox x:Name="tbVin" Grid.Column="2"  Grid.Row="14" Grid.ColumnSpan="3" MaxLength="17" Text="{Binding VIN}"/>
+        <TextBox x:Name="tbVin" Grid.Column="2"  Grid.Row="14" Grid.ColumnSpan="3" MaxLength="17" Text="{Binding VINVM}"/>
 
         <Label x:Name="lColor"  Content="Цвет" Grid.Column="1" Grid.Row="15" />
         <ComboBox x:Name="cbColor" Grid.Column="2"  Grid.Row="15" Grid.ColumnSpan="3" ItemsSource="{Binding Colors}"
@@ -86,7 +86,7 @@
         <ComboBox x:Name="cbRental" Grid.Column="2"  Grid.Row="18" Grid.ColumnSpan="3" ItemsSource="{Binding RentTypes}" SelectedItem="{Binding RentItem}"/>
 
         <Label x:Name="lDeposit"  Content="Сумма Депозита" Grid.Column="1" Grid.Row="19" />
-        <TextBox x:Name="tbDeposit" Grid.Column="2"  Grid.Row="19"  Grid.ColumnSpan="3" PreviewTextInput="OnlyNumbers" MaxLength="7" Text="{Binding DepositSumm}"/>
+        <TextBox x:Name="tbDeposit" Grid.Column="2"  Grid.Row="19"  Grid.ColumnSpan="3" PreviewTextInput="OnlyNumbers" MaxLength="7" IsEnabled="{Binding Disable}" Text="{Binding DepositSummVM}"/>
   
         
         <Grid Name="gridOKCancel"  Grid.Column="1" Grid.ColumnSpan="4"  Grid.Row="21" HorizontalAlignment="Right">

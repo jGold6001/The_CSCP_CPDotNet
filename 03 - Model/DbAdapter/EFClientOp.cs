@@ -37,6 +37,14 @@ namespace _03___Model
             }
         }
 
+        public List<RentValue> RentTypes
+        {
+            get
+            {
+                return db.RentValues.ToList();
+            }
+        }
+
         public List<Record> RecordList
         {
             get
@@ -74,14 +82,19 @@ namespace _03___Model
             }
         }
 
-        public override void Edit(object curObj, object newObj)
+        public override void Edit(object newObj)
         {
-            Place oldPlace = curObj as Place;
             Place newPlace = newObj as Place;
             foreach (Place placeCurrent in db.Places.Local)
             {
-                if (placeCurrent.Number == oldPlace.Number)
+                if (placeCurrent.Number == newPlace.Number)
                 {
+                    //write not changed data
+                    newPlace.Client.DateRegistred = placeCurrent.Client.DateRegistred;
+                    newPlace.Tariff.DatePayment = placeCurrent.Tariff.DatePayment;
+                    newPlace.Tariff.Deposit = placeCurrent.Tariff.Deposit;
+                    newPlace.Tariff.Debt = placeCurrent.Tariff.Debt;
+
                     //delete old data
                     db.Clients.Remove(placeCurrent.Client);
                     db.Cars.Remove(placeCurrent.Car);

@@ -10,101 +10,14 @@ using System.Threading.Tasks;
 namespace _03___Model
 {
 
-    public class Record : INotifyPropertyChanged
-    {       
-        private int numPlace;
-        private string clientLastName;
-        private string carBrand;
-        private DateTime datePay;
-        private decimal rent;
-        private decimal debt;
-
-        public int NumberPLace
-        {
-            get
-            {
-                return numPlace;
-            }
-            set
-            {
-                numPlace = value;
-                OnPropertyChanged("NumberPLace");
-            }
-        }
-
-        public string ClientLastName
-        {
-            get
-            {
-                return clientLastName;
-            }
-            set
-            {
-                clientLastName = value;
-                OnPropertyChanged("ClientLastName");
-            }
-        }
-
-        public string CarBrand
-        {
-            get
-            {
-                return carBrand;
-            }
-            set
-            {
-                carBrand = value;
-                OnPropertyChanged("CarBrand");
-            }
-        }
-
-        public DateTime DatePayment
-        {
-            get
-            {
-                return datePay;
-            }
-            set
-            {
-                datePay = value;
-                OnPropertyChanged("DatePayment");
-            }
-        }
-
-        public decimal Rent
-        {
-            get
-            {
-                return rent;
-            }
-            set
-            {
-                rent = value;
-                OnPropertyChanged("Rent");
-            }
-        }
-
-        public decimal Debt
-        {
-            get
-            {
-                return debt;
-            }
-            set
-            {
-                debt = value;
-                OnPropertyChanged("Debt");
-            }
-        }
-        public void OnPropertyChanged(string name)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(name));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+    public class Record 
+    {            
+        public int NumberPLace { get; set; }
+        public string ClientLastName { get; set; }
+        public string CarBrand { get; set; }
+        public DateTime DatePayment { get; set; }
+        public decimal Rent { get; set; }
+        public decimal Debt { get; set; }
     }
 
 }

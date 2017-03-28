@@ -1,9 +1,12 @@
 ﻿using _03___Model;
 using _04___TestingClasses;
 using DataLayer;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +21,6 @@ namespace _02___TD_Logic
 
             /*тесты*/
             DbLoad();
-            
             
 
 
@@ -74,6 +76,16 @@ namespace _02___TD_Logic
             Console.WriteLine(place);
         }
 
+        static void JSonData()
+        {
+            //string path = @"H:\ITstep\Subjects\CP_dotNet\The_CSCP\DataLayer\Jsons\Brands.json";
+            List<string> list = JSONReader.Colors();
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+        }
 
+       
     }
 }

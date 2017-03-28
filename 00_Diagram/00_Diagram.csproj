@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Daily.cs" />
     <Compile Include="DisplayInfo.cs" />
     <Compile Include="EFAdapter.cs" />
     <Compile Include="EFClientOp.cs" />

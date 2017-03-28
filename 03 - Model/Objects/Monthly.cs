@@ -17,7 +17,7 @@ namespace _03___Model
         {
             get { return "Месячный"; }
         }
-        public decimal Price { get; set; }
+        public decimal Price { get;}
 
     }
 }
