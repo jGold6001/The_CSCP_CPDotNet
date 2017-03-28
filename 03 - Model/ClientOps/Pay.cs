@@ -19,10 +19,15 @@ namespace _03___Model
             this.tariff = tariff;           
         }
 
-        public decimal NeedSum
+        public decimal MinSum
         {
-            get { return tariff.RentValue.Price + tariff.Debt; }
+            get
+            {
+                  return tariff.RentValue.Price + tariff.Debt;
+            }
         }
+
+
 
         public object AddDeposit(decimal sum)
         {
@@ -39,7 +44,7 @@ namespace _03___Model
 
         private void DebtOff()
         {
-            if (sumBuff >= NeedSum)
+            if (sumBuff >= MinSum)
             {
                 sumBuff -= tariff.Debt;
                 tariff.Deposit = sumBuff;

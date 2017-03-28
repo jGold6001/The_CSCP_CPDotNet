@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01___View"
         mc:Ignorable="d"
-        Title="FullInfoWindow" Height="500" Width="478.764" Background="{StaticResource Brush05}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Полная Информация" Height="500" Width="478.764" Background="{StaticResource Brush05}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -21,16 +21,16 @@
         </Grid.RowDefinitions>
 
         <Label Style="{DynamicResource lFullInfo}" Grid.Column="0" Grid.Row="0" Content="Место" />
-        <TextBox  Style="{DynamicResource textboxFullInfo}" x:Name="tblPlace" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"/>
+        <TextBox  Style="{DynamicResource textboxFullInfo}" x:Name="tblPlace" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding NumPlace}"/>
 
         <Label Style="{DynamicResource lFullInfo}" Grid.Column="0" Grid.Row="1" Content="Клиент" />
-        <TextBox Style="{DynamicResource textboxFullInfo}" x:Name="tblClient" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Auto"/>
+        <TextBox Style="{DynamicResource textboxFullInfo}" x:Name="tblClient" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Auto" Text="{Binding Client}"/>
 
         <Label Style="{DynamicResource lFullInfo}" Grid.Column="0" Grid.Row="2" Content="Автомобиль" />
-        <TextBox  Style="{DynamicResource textboxFullInfo}" x:Name="tblCar" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <TextBox  Style="{DynamicResource textboxFullInfo}" x:Name="tblCar" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding Car}"/>
 
         <Label Style="{DynamicResource lFullInfo}" Grid.Column="0" Grid.Row="3" Content="Тариф" />
-        <TextBox  Style="{DynamicResource textboxFullInfo}" x:Name="tblTarriff" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"/>
+        <TextBox  Style="{DynamicResource textboxFullInfo}" x:Name="tblTarriff" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Text="{Binding Tariff}"/>
 
         <Grid x:Name="gridOKCancel" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="6" HorizontalAlignment="Right">
             <Grid.ColumnDefinitions>
@@ -38,8 +38,7 @@
                 <ColumnDefinition Width="20"/>
                 <ColumnDefinition Width="80"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnCancel" Style="{StaticResource btnCyan}" Content="Cancel" Grid.Column="0"  IsCancel="True" Click="btnCancel_Click"/>
-            <Button x:Name="btnOk" Style="{StaticResource btnCyan}" Content="Ok" Grid.Column="2"   />
+            <Button x:Name="btnOk" Style="{StaticResource btnCyan}" Content="Ok" Grid.Column="2" Command="{Binding OkCommand}"  />
         </Grid>
     </Grid>
 </Window>

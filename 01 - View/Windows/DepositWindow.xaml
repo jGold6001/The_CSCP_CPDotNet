@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01___View"
         mc:Ignorable="d"
-        Title="DepositWindow" Height="272.973" Width="318.496" ResizeMode="NoResize"  Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
+        Title="Внести Депозит" Height="272.973" Width="363.992" ResizeMode="NoResize"  Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition Width="13*"/>
-            <ColumnDefinition Width="216*"/>
+            <ColumnDefinition Width="127"/>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="199*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -21,37 +21,37 @@
             <RowDefinition Height="20"/>
             <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
-        
+
         <!--Client-->
-        <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="0" >Клиент</TextBlock>
-        <Label Style="{DynamicResource lDeposit}" Grid.Column="2" Grid.Row="0" x:Name="lClient" Content="Александр Романчнко-Зеньковецький"></Label>
+        <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="0" Height="18" Margin="0,8" Width="45" >Клиент</TextBlock>
+        <Label Style="{DynamicResource lDeposit}" Grid.Column="2" Grid.Row="0" x:Name="lClient" Content="{Binding Client}"  ></Label>
 
         <!--Debt-->
-        <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="1" >Задолженность</TextBlock>
-        <Label Style="{DynamicResource lDeposit}" Grid.Column="2"  Grid.Row="1"  x:Name="lDebt" Content="0000"></Label>
+        <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="1"  Margin="0,8" Width="99" >Задолженность</TextBlock>
+        <Label Style="{DynamicResource lDeposit}" Grid.Column="2"  Grid.Row="1"  x:Name="lDebt" Content="{Binding Debt}" ></Label>
 
         <!--Deposit-->
-        <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="2" >Депозит</TextBlock>
-        <Label Style="{DynamicResource lDeposit}" Grid.Column="2" Grid.Row="2"  x:Name="lBalance" Content="0000"></Label>
+        <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="2"  Margin="0,8" Width="53" >Депозит</TextBlock>
+        <Label Style="{DynamicResource lDeposit}" Grid.Column="2" Grid.Row="2"  x:Name="lBalance" Content="{Binding Deposit}" ></Label>
 
         <!--Full Summ-->
-        <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="3"  >Полная сумма</TextBlock>
-        <Label Style="{DynamicResource lDeposit}" Grid.Column="2" Grid.Row="3" x:Name="lNeedSumm" Content="0000"></Label>
+        <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="3" Height="18" Margin="0,8" >Мин. сумма оплаты</TextBlock>
+        <Label Style="{DynamicResource lDeposit}" Grid.Column="2" Grid.Row="3" x:Name="lNeedSumm" Content="{Binding MinSumm}" ></Label>
 
         <!--Pay-->
-        <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="4" >Внесите сумму</TextBlock>
-        <TextBox Grid.Column="2" Grid.Row="4"   MaxLength="7"  PreviewTextInput="OnlyNumbers"/>
+        <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="4" Height="19" Margin="0,7" Width="95" >Внесите сумму</TextBlock>
+        <TextBox Grid.Column="2" Grid.Row="4"   MaxLength="7"  PreviewTextInput="OnlyNumbers" Text="{Binding PaySumm}"/>
 
 
-        <Grid x:Name="gridOKCancel" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="6" HorizontalAlignment="Right">
+        <Grid x:Name="gridOKCancel" Grid.Column="2" Grid.Row="6" HorizontalAlignment="Right" Width="180">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="80"/>
                 <ColumnDefinition Width="20"/>
                 <ColumnDefinition Width="80"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnCancel" Style="{StaticResource btnCyan}" Content="Cancel" Grid.Column="0" IsCancel="True" Click="btnCancel_Click" />
-            <Button x:Name="btnOk" Style="{StaticResource btnCyan}" Content="Ok" Grid.Column="2"   />
+            <Button x:Name="btnCancel" Style="{StaticResource btnCyan}" Content="Cancel" Grid.Column="0" Command="{Binding CancelCommand}" />
+            <Button x:Name="btnOk" Style="{StaticResource btnCyan}" Content="Ok" Grid.Column="2" Command="{Binding OkCommand}"/>
         </Grid>
-      
+
     </Grid>
 </Window>

@@ -74,7 +74,10 @@
     <Compile Include="DialogLogic\IUserDialogViewModel.cs" />
     <Compile Include="ViewModels\DataWndVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\DepositWndVM.cs" />
+    <Compile Include="ViewModels\FullInfoWndVM.cs" />
     <Compile Include="ViewModels\MainWndVM.cs" />
+    <Compile Include="DialogLogic\ModalWndVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\03 - Model\03 - Model.csproj">

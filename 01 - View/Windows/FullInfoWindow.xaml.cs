@@ -22,15 +22,6 @@ namespace _01___View
         public FullInfoWindow()
         {
             InitializeComponent();
-            tblPlace.Text = "56";
-            tblClient.Text = "Ложкин Жора\nПаспорт: 1234546\nТел: 911\nДата регистрации: 01.09.2017\nInfo:Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать";
-            tblCar.Text = "BMW Red\nномер: AA345678\nномер кузова: 123456789";
-            tblTarriff.Text = "Суточный 500грн.\nДепозит - 1000грн.\nЗадолженность: 200грн.\nДата оплаты: 10.07.2017";
-        }
-
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

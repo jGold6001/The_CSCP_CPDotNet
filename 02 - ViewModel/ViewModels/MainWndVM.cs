@@ -70,17 +70,22 @@ namespace _02___ViewModel
 
                                 buffClient = new ClientBuff()
                                 {
+                                    NumPlace = item.Number.ToString(),
                                     FirstName = item.Client.FirstName,
                                     LastName = item.Client.LastName,
                                     PassportID = item.Client.PassportID,
                                     PhoneNumber = item.Client.PhoneNumber.ToString(),
+                                    DateRegistration = item.Client.DateRegistred.ToShortDateString(),
                                     AdditionalInfo = item.Client.AdditionalInfo,
                                     VehicleID = item.Car.VehicleID,
                                     Brand = item.Car.Brand,
                                     VIN = item.Car.VIN,
                                     Color = item.Car.Color,
                                     Rent = item.Tariff.RentValue.Name,
-                                    Deposit = item.Tariff.Deposit.ToString()
+                                    RentPrice = item.Tariff.RentValue.Price.ToString(),
+                                    Deposit = item.Tariff.Deposit.ToString(),
+                                    Debt = item.Tariff.Debt.ToString(),
+                                    DatePayment = item.Tariff.DatePayment.ToShortDateString()
                                 };
                                
                                 break;
@@ -285,6 +290,64 @@ namespace _02___ViewModel
                 }
             }           
         }
+
+        private RelayCommand<SelectionChangedEventArgs> fiCommand;
+        public RelayCommand<SelectionChangedEventArgs> FICommand
+        {
+            get
+            {
+                return fiCommand ?? (fiCommand = new RelayCommand<SelectionChangedEventArgs>(obj =>
+                {
+                    this.Dialogs.Add(new FullInfoWndVM()
+                    {
+                        NumPlace = buffClient.NumPlace,
+                        Client = String.Format("{0} {1}\nПаспорт: {2}\nТел: {3}\nДата регистрации: {4}\nДоп.Инфо: {5}", buffClient.LastName, buffClient.FirstName, buffClient.PassportID, this.IfNull(buffClient.PhoneNumber), buffClient.DateRegistration, this.IfNull(buffClient.AdditionalInfo)),
+                        Car = String.Format("{0} {1}\nНомер: {2}\nНомер кузова: {3}", buffClient.Brand, buffClient.Color, buffClient.VehicleID, buffClient.VIN),
+                        Tariff = String.Format("{0} {1}грн.\nДепозит - {2}грн.\nЗадолженность: {3}грн.\nДата оплаты: {4}", buffClient.Rent, buffClient.RentPrice, buffClient.Deposit, buffClient.Debt, buffClient.DatePayment)
+                    });
+                }));
+            }
+       }
+
+        private string IfNull(string value)
+        {
+            if (value == "0" || value == null)
+                return "(отсутствует)";
+            else
+                return value;
+        }
+
+        private RelayCommand<SelectionChangedEventArgs> payCommand;
+        public RelayCommand<SelectionChangedEventArgs> PayCommand
+        {
+            get
+            {
+                return payCommand ?? (payCommand = new RelayCommand<SelectionChangedEventArgs>(obj =>
+                {
+                    Tariff tariff = new Tariff()
+                    {
+                        RentValue = this.GetRent(buffClient.Rent),
+                        Deposit = Convert.ToDecimal(buffClient.Deposit),
+                        Debt = Convert.ToDecimal(buffClient.Debt),
+                        DatePayment = Convert.ToDateTime(buffClient.DatePayment)
+                    };
+                    Pay pay = new Pay(tariff);
+
+                    DepositWndVM depositWnd = new DepositWndVM()
+                    {
+                        Client = String.Format("{0} {1}", buffClient.LastName, buffClient.FirstName),
+                        Deposit = buffClient.Deposit,
+                        Debt = buffClient.Debt,
+                        MinSumm = pay.MinSum.ToString()                
+                    };
+                    
+
+
+                    this.Dialogs.Add(depositWnd);
+                }));
+            }
+        }
+
 
         #endregion;
 

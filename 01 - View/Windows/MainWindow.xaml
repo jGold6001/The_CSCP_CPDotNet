@@ -114,13 +114,10 @@
                     </Grid.ColumnDefinitions>
                     <Button x:Name="btnDelete" Content="Удалить запись" Grid.Column="0" Command="{Binding DeleteCommand}" />
                     <Button x:Name="btnEdit" Content="Редактировать"  Grid.Column="2" Command="{Binding EditCommand}"/>
-                    <Button x:Name="btnFullInfo" Content="Полная инфо"  Grid.Column="4" />
-                    <Button Style="{DynamicResource btnOrange}" x:Name="btnPay" Content="Внести оплату" Grid.Column="6" />
+                    <Button x:Name="btnFullInfo" Content="Полная инфо"  Grid.Column="4" Command="{Binding FICommand}"/>
+                    <Button Style="{DynamicResource btnOrange}" x:Name="btnPay" Content="Внести оплату" Grid.Column="6"  Command="{Binding PayCommand}"/>
                 </Grid>
             </Grid>
-
-
-
 
             <!-- Right size-->
             <GridSplitter x:Name="gsVertical" Grid.Column="1" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Width="5" Grid.RowSpan="2" Background="{StaticResource Brush04}"/>

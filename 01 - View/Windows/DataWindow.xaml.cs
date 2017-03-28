@@ -25,21 +25,10 @@ namespace _01___View
             InitializeComponent();
         }
 
-        private void btnPlace_Click(object sender, RoutedEventArgs e)
-        {
-            PlaceWindow pw = new PlaceWindow();
-            pw.ShowDialog();
-        }
-
         private void OnlyNumbers(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9.]+");
             e.Handled = regex.IsMatch(e.Text);
-        }
-
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }
