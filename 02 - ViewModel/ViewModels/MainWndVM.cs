@@ -64,30 +64,7 @@ namespace _02___ViewModel
                         {
                             if (item.Number == SelectRecord.NumberPLace)
                             {
-                                this.Client = String.Format("{0} {1}", item.Client.FirstName, item.Client.LastName);
-                                this.Car = String.Format("{0} {1}", item.Car.Brand, item.Car.Color);
-                                this.Tariff = String.Format("{0}грн.    Дата Оплаты: {1}    Задолженность: {2}грн.", item.Tariff.RentValue.Price, item.Tariff.DatePayment.ToShortDateString(), item.Tariff.Debt);
-
-                                buffClient = new ClientBuff()
-                                {
-                                    NumPlace = item.Number.ToString(),
-                                    FirstName = item.Client.FirstName,
-                                    LastName = item.Client.LastName,
-                                    PassportID = item.Client.PassportID,
-                                    PhoneNumber = item.Client.PhoneNumber.ToString(),
-                                    DateRegistration = item.Client.DateRegistred.ToShortDateString(),
-                                    AdditionalInfo = item.Client.AdditionalInfo,
-                                    VehicleID = item.Car.VehicleID,
-                                    Brand = item.Car.Brand,
-                                    VIN = item.Car.VIN,
-                                    Color = item.Car.Color,
-                                    Rent = item.Tariff.RentValue.Name,
-                                    RentPrice = item.Tariff.RentValue.Price.ToString(),
-                                    Deposit = item.Tariff.Deposit.ToString(),
-                                    Debt = item.Tariff.Debt.ToString(),
-                                    DatePayment = item.Tariff.DatePayment.ToShortDateString()
-                                };
-                               
+                                this.UpdateInfo(item);
                                 break;
                             }
                         }
@@ -95,6 +72,33 @@ namespace _02___ViewModel
                     }    
                 }));
             }
+        }
+
+        private void UpdateInfo(Place item)
+        {
+            this.Client = String.Format("{0} {1}", item.Client.FirstName, item.Client.LastName);
+            this.Car = String.Format("{0} {1}", item.Car.Brand, item.Car.Color);
+            this.Tariff = String.Format("{0}грн.    Дата Оплаты: {1}    Задолженность: {2}грн.", item.Tariff.RentValue.Price, item.Tariff.DatePayment.ToShortDateString(), item.Tariff.Debt);
+
+            buffClient = new ClientBuff()
+            {
+                NumPlace = item.Number.ToString(),
+                FirstName = item.Client.FirstName,
+                LastName = item.Client.LastName,
+                PassportID = item.Client.PassportID,
+                PhoneNumber = item.Client.PhoneNumber.ToString(),
+                DateRegistration = item.Client.DateRegistred.ToShortDateString(),
+                AdditionalInfo = item.Client.AdditionalInfo,
+                VehicleID = item.Car.VehicleID,
+                Brand = item.Car.Brand,
+                VIN = item.Car.VIN,
+                Color = item.Car.Color,
+                Rent = item.Tariff.RentValue.Name,
+                RentPrice = item.Tariff.RentValue.Price.ToString(),
+                Deposit = item.Tariff.Deposit.ToString(),
+                Debt = item.Tariff.Debt.ToString(),
+                DatePayment = item.Tariff.DatePayment.ToShortDateString()
+            };
         }
 
         private Record selectRecord;
@@ -242,15 +246,14 @@ namespace _02___ViewModel
                         tariff.RentValue = this.GetRent(dataWnd.RentItem);
 
                         Place newPlace = new Place();
-                        newPlace.Number = SelectRecord.NumberPLace;
+                        newPlace.Number = Convert.ToInt32(buffClient.NumPlace);
                         newPlace.Client = client;
                         newPlace.Car = car;
                         newPlace.Tariff = tariff;
 
                         efClient.Edit(newPlace);
                         this.UpdateRecord(newPlace);
-                        GridVisibility = Visibility.Hidden;
-
+                        this.UpdateInfo(newPlace);
                     });
 
                     this.Dialogs.Add(dataWnd);
@@ -340,13 +343,30 @@ namespace _02___ViewModel
                         Debt = buffClient.Debt,
                         MinSumm = pay.MinSum.ToString()                
                     };
-                    
 
+                    depositWnd.OnOk = ((sender) =>
+                    {
+                        sender.Close();
+                        decimal sum = Convert.ToDecimal(depositWnd.PaySumm);
+                        pay.Payment(sum);
+                        int num_index = Convert.ToInt32(buffClient.NumPlace);
+                        foreach (var item in efClient.GetPlaces)
+                        {
+                            if(item.Number == num_index)
+                            {
+                                item.Tariff = pay.tariff;                             
+                                this.UpdateRecord(item);
+                                this.UpdateInfo(item);
+                                break;
+                            }
+                        }
+                    });
 
                     this.Dialogs.Add(depositWnd);
                 }));
             }
         }
+
 
 
         #endregion;

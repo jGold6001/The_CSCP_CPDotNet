@@ -27,20 +27,20 @@ namespace _03___Model
             rentPrice = tariff.RentValue.Price;
             this.sum = sum;
         }
-        public void DatePayment()
-        {
-            if (rentVal == 1)
-                datePayment = DateTime.Now.AddDays(this.Remainder);
-            else
-                datePayment = DateTime.Now.AddMonths(this.Remainder);
-        }
+        //public void DatePayment()
+        //{
+        //    if (rentVal == 1)
+        //        datePayment = DateTime.Now.AddDays(this.Remainder);
+        //    else
+        //        datePayment = DateTime.Now.AddMonths(this.Remainder);
+        //}
 
-        public DateTime DatePayment(DateTime date)
+        public DateTime DatePayment()
         {
             if (rentVal == 1)
-                return date.AddDays(this.Remainder);
+                return datePayment.AddDays(this.Remainder);
             else
-                return date.AddMonths(this.Remainder);
+                return datePayment.AddMonths(this.Remainder);
         }
 
         public void Debt()

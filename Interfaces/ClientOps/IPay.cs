@@ -7,6 +7,6 @@ namespace Interfaces
 {
     public interface IPay
     {
-        object AddDeposit(decimal sum);
+        void Payment(decimal sum);
     }
 }

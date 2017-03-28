@@ -11,7 +11,7 @@ namespace _03___Model
     public class Pay : EFClientOp, IPay
     {
         private Calculator calk;
-        private Tariff tariff;
+        public Tariff tariff { get; private set; }
         private decimal sumBuff;   
 
         public Pay(Tariff tariff)
@@ -25,32 +25,6 @@ namespace _03___Model
             {
                   return tariff.RentValue.Price + tariff.Debt;
             }
-        }
-
-
-
-        public object AddDeposit(decimal sum)
-        {
-            this.sumBuff = sum;
-            if (tariff.Debt == 0)
-                tariff.Deposit += sum;
-            else
-                this.DebtOff();
-
-            calk = new Calculator(tariff, sumBuff);
-            tariff.DatePayment = calk.DatePayment(tariff.DatePayment);
-            return tariff;
-        }
-
-        private void DebtOff()
-        {
-            if (sumBuff >= MinSum)
-            {
-                sumBuff -= tariff.Debt;
-                tariff.Deposit = sumBuff;
-                tariff.Debt = 0;
-                tariff.DatePayment = DateTime.Now;
-            }            
         }
 
         public void Payment(decimal sum)
@@ -69,6 +43,27 @@ namespace _03___Model
             db.SaveChanges();
         }
 
+        private void AddDeposit(decimal sum)
+        {
+            this.sumBuff = sum;
+            if (tariff.Debt == 0)
+                tariff.Deposit += sum;
+            else
+                this.DebtOff();
 
+            calk = new Calculator(tariff, sumBuff);
+            tariff.DatePayment = calk.DatePayment();
+        }
+
+        private void DebtOff()
+        {
+            if (sumBuff >= MinSum)
+            {
+                sumBuff -= tariff.Debt;
+                tariff.Deposit = sumBuff;
+                tariff.Debt = 0;
+                tariff.DatePayment = DateTime.Now;
+            }            
+        }
     }
 }
