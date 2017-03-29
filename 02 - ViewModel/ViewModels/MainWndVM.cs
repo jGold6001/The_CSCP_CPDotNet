@@ -34,8 +34,59 @@ namespace _02___ViewModel
             GridVisibility = Visibility.Hidden;
         }
 
+        #region MenuPanel
+        private RelayCommand addCommand;
+        public RelayCommand AddCommand
+        {
+            get
+            {
+                return addCommand ?? (addCommand = new RelayCommand(() =>
+                {
+                    DataWndVM dataWnd = new DataWndVM(DialogName.AddData);
 
-        #region DataGrid;
+                    //save data
+                    dataWnd.OnOk = ((sender) =>
+                    {
+                        sender.Close();
+                        
+                        Client client = new Client();
+                        client.FirstName = dataWnd.FirstNameVM;
+                        client.LastName = dataWnd.LastNameVM;
+                        client.PassportID = dataWnd.PassportIDVM;
+                        client.PhoneNumber = Convert.ToInt32(dataWnd.TelNumVM);
+                        client.AdditionalInfo = dataWnd.AdditInfoVM;
+                        client.DateRegistred = DateTime.Now;
+
+                        Car car = new Car();
+                        car.VehicleID = dataWnd.CarIDVM;
+                        car.Brand = dataWnd.BrandItem;
+                        car.VIN = dataWnd.VINVM;
+                        car.Color = dataWnd.ColorItem;
+
+                        Tariff tariff = new Tariff();
+                        tariff.RentValue = this.GetRent(dataWnd.RentItem);
+                        tariff.Deposit = Convert.ToDecimal(dataWnd.DepositSummVM);
+                        tariff.Debt = 0;
+                        tariff.DatePayment = Calculator.DatePayment(tariff);
+
+                        Place newPlace = new Place();
+                        newPlace.Number = Convert.ToInt32(dataWnd.NumPlace);
+                        newPlace.Client = client;
+                        newPlace.Car = car;
+                        newPlace.Tariff = tariff;
+
+                        efClient.Add(newPlace);
+                        this.UpdateRecord(newPlace);
+                        this.UpdateInfo(newPlace);
+                    });
+
+                    this.Dialogs.Add(dataWnd);
+                }));
+            }
+        }
+        #endregion
+
+        #region DataGrid
         public ObservableCollection<Record> RecordSource
         {
             get
@@ -366,8 +417,6 @@ namespace _02___ViewModel
                 }));
             }
         }
-
-
 
         #endregion;
 

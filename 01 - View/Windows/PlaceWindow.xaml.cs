@@ -25,25 +25,25 @@ namespace _01___View
         public PlaceWindow()
         {
             InitializeComponent();
-            listBtns = new List<Button>();
-            stylePlace = this.FindResource("btnPlace") as Style;
-            UploadGgidVertical(gridSection1, 14, 1);
-            UploadGgidVertical(gridSection2, 10, 16);
-            UploadGgidVertical(gridSection3, 10, 26);
-            UploadGgidVertical(gridSection4, 10, 36);
-            UploadGgidVertical(gridSection5, 10, 46);
-            UploadGgidVertical(gridSection6, 10, 56);
-            UploadGgidHorizontal(gridSection7, 14, 66);       
+            //listBtns = new List<Button>();
+            //stylePlace = this.FindResource("btnPlace") as Style;
+            //UploadGgidVertical(gridSection1, 14, 1);
+            //UploadGgidVertical(gridSection2, 10, 16);
+            //UploadGgidVertical(gridSection3, 10, 26);
+            //UploadGgidVertical(gridSection4, 10, 36);
+            //UploadGgidVertical(gridSection5, 10, 46);
+            //UploadGgidVertical(gridSection6, 10, 56);
+            //UploadGgidHorizontal(gridSection7, 14, 66);
         }
 
         private void UploadGgidVertical(Grid grid, int amountRows, int startPosition)
         {
-            for (int i = 0; i <amountRows; i++)
+            for (int i = 0; i < amountRows; i++)
             {
                 RowDefinition rd = new RowDefinition() { Height = new GridLength(35, GridUnitType.Star) };
-                Button btn = new Button() { Content = Convert.ToString(i + startPosition)};
+                Button btn = new Button() { Content = Convert.ToString(i + startPosition) };
                 btn.Style = stylePlace;
-                grid.RowDefinitions.Add(rd);           
+                grid.RowDefinitions.Add(rd);
                 grid.Children.Add(btn);
                 Grid.SetRow(btn, i);
                 listBtns.Add(btn);
@@ -62,11 +62,6 @@ namespace _01___View
                 Grid.SetColumn(btn, i);
                 listBtns.Add(btn);
             }
-        }
-
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

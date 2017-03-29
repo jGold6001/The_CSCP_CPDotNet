@@ -78,6 +78,7 @@
     <Compile Include="ViewModels\FullInfoWndVM.cs" />
     <Compile Include="ViewModels\MainWndVM.cs" />
     <Compile Include="DialogLogic\ModalWndVM.cs" />
+    <Compile Include="ViewModels\PlaceWndVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\03 - Model\03 - Model.csproj">

@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01___View"
+        xmlns:dlgs="clr-namespace:_02___ViewModel;assembly=02-ViewModel"
+        dlgs:DialogBehavior.DialogViewModels="{Binding Dialogs}"
         mc:Ignorable="d"
         Title="{Binding Caption}" Height="717" Width="370" ResizeMode="NoResize"  Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
    
@@ -44,7 +46,7 @@
         
         <!--Place-->
         <Label x:Name="lPlace"  Content="Номер места" Grid.Column="1"  Grid.Row="1" />
-        <Button x:Name="btnPlace" Style="{DynamicResource btnCyan}" Content="Выбрать..." Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="31" Grid.RowSpan="2" IsEnabled="{Binding Disable}"/>
+        <Button x:Name="btnPlace" Style="{DynamicResource btnCyan}" Content="{Binding NumPlace}" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="31" Grid.RowSpan="2" IsEnabled="{Binding Disable}" Command="{Binding PlaceCommand}"/>
 
         
         <!--Client-->

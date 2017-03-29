@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01___View"
+        xmlns:viewModel="clr-namespace:_02___ViewModel;assembly=02-ViewModel"
         mc:Ignorable="d"
         Title="PlaceWindow" Height="550" Width="714.834" ResizeMode="NoResize" Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
     <Grid Margin="20">
@@ -25,7 +26,8 @@
             <ColumnDefinition Width="60"/>
             <ColumnDefinition Width="80"/>
         </Grid.ColumnDefinitions>
-        <Grid Name="gridSection1" Grid.Column="0"  Grid.Row="0" Grid.RowSpan="3" Background="Black"/>
+        <Grid Name="gridSection1" Grid.Column="0"  Grid.Row="0" Grid.RowSpan="3" Background="Black" viewModel:PlaceWndVM.Grid="{Binding ElementName=gridSection1}">
+        </Grid>
 
         <Grid Name="gridSection2" Grid.Column="2"  Grid.Row="0" Background="Black" />
         <Grid Name="gridSection3" Grid.Column="3"  Grid.Row="0" Background="Black" />
@@ -37,16 +39,15 @@
 
         <Grid Name="gridSection7" Grid.Column="2"  Grid.Row="2" Grid.ColumnSpan="7" Background="Black"/>
 
-
         <Grid Grid.ColumnSpan="4" Grid.Column="0" Grid.Row="4" Background="Transparent">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" VerticalAlignment="Center" Foreground="White" Text="Свободные:"/>
-            <TextBlock Grid.Column="1" VerticalAlignment="Center" Foreground="White" Text="Занятые:"/>
-            <TextBlock Grid.Column="2" VerticalAlignment="Center" Foreground="White" Text="Выбрано:"/>
+            <TextBlock Grid.Column="0" VerticalAlignment="Center" Foreground="White" Text="{Binding FreePlaces}"/>
+            <TextBlock Grid.Column="1" VerticalAlignment="Center" Foreground="White" Text="{Binding BusyPlaces}"/>
+            <TextBlock Name="tbSelect" Grid.Column="2" VerticalAlignment="Center" Foreground="White" Text="{Binding NumPlace}"/>
         </Grid>
 
         <Grid Name="gridOKCancel" Grid.ColumnSpan="3" Grid.Column="6"  Grid.Row="4" HorizontalAlignment="Right" Width="180">
@@ -55,8 +56,8 @@
                 <ColumnDefinition Width="20"/>
                 <ColumnDefinition Width="80"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnCancel" Style="{DynamicResource btnCyan}" Content="Cancel" Grid.Column="0"  IsCancel="True" Click="btnCancel_Click"/>
-            <Button x:Name="btnOk" Style="{DynamicResource btnCyan}" Content="Ok" Grid.Column="2"/>
+            <Button x:Name="btnCancel" Style="{DynamicResource btnCyan}" Content="Cancel" Grid.Column="0"  Command="{Binding CancelCommand}"/>
+            <Button x:Name="btnOk" Style="{DynamicResource btnCyan}" Content="Ok" Grid.Column="2" Command="{Binding OkCommand}"/>
         </Grid>
     </Grid>
 </Window>

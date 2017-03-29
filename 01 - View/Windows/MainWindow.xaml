@@ -7,8 +7,8 @@
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d"
         xmlns:dlgs="clr-namespace:_02___ViewModel;assembly=02-ViewModel"
-        DataContext="{Binding Source={StaticResource Locator}, Path=Main}"
         dlgs:DialogBehavior.DialogViewModels="{Binding Dialogs}"
+        DataContext="{Binding Source={StaticResource Locator}, Path=Main}"       
         Title="MainWindow" Height="550" Width="925" MinHeight="550" MinWidth="925" Background="{StaticResource Brush05}">
     <!-- Main DockPanel-->
     <DockPanel>
@@ -20,7 +20,7 @@
                 <ColumnDefinition Width="159*"/>
             </Grid.ColumnDefinitions>
             <Menu Background="Transparent" Grid.ColumnSpan="3" Margin="10 0 0 0">
-                <MenuItem Name="AddClient" Header="Добавить Клиента" />
+                <MenuItem Name="AddClient" Header="Добавить Клиента" Command="{Binding AddCommand}"/>
                 <Separator Width="10"></Separator>
                 <MenuItem Name="FreePlace" Header="Свободные места" />
                 <Separator Width="10"></Separator>
