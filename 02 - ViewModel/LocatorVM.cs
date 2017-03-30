@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Ioc;
+﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace _02___ViewModel
         public LocatorVM()
         {
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+       
             SimpleIoc.Default.Register<MainWndVM>();
         }
 

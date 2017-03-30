@@ -57,7 +57,7 @@
                 <ColumnDefinition Width="80"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="btnCancel" Style="{DynamicResource btnCyan}" Content="Cancel" Grid.Column="0"  Command="{Binding CancelCommand}"/>
-            <Button x:Name="btnOk" Style="{DynamicResource btnCyan}" Content="Ok" Grid.Column="2" Command="{Binding OkCommand}"/>
+            <Button x:Name="btnOk" Style="{DynamicResource btnCyan}" Content="Ok" Grid.Column="2" Command="{Binding SelectCommand}"/>
         </Grid>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _02___ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,12 +20,10 @@ namespace _01___View
     /// </summary>
     public partial class PlaceWindow : Window
     {
-        List<Button> listBtns;
-        Style stylePlace;
-
         public PlaceWindow()
-        {
-            InitializeComponent();
+        {          
+            InitializeComponent();  
+                
             //listBtns = new List<Button>();
             //stylePlace = this.FindResource("btnPlace") as Style;
             //UploadGgidVertical(gridSection1, 14, 1);
@@ -34,34 +33,6 @@ namespace _01___View
             //UploadGgidVertical(gridSection5, 10, 46);
             //UploadGgidVertical(gridSection6, 10, 56);
             //UploadGgidHorizontal(gridSection7, 14, 66);
-        }
-
-        private void UploadGgidVertical(Grid grid, int amountRows, int startPosition)
-        {
-            for (int i = 0; i < amountRows; i++)
-            {
-                RowDefinition rd = new RowDefinition() { Height = new GridLength(35, GridUnitType.Star) };
-                Button btn = new Button() { Content = Convert.ToString(i + startPosition) };
-                btn.Style = stylePlace;
-                grid.RowDefinitions.Add(rd);
-                grid.Children.Add(btn);
-                Grid.SetRow(btn, i);
-                listBtns.Add(btn);
-            }
-        }
-
-        private void UploadGgidHorizontal(Grid grid, int amountRows, int startPosition)
-        {
-            for (int i = 0; i < amountRows; i++)
-            {
-                ColumnDefinition cd = new ColumnDefinition() { Width = new GridLength(35, GridUnitType.Star) };
-                Button btn = new Button() { Content = Convert.ToString(i + startPosition) };
-                btn.Style = stylePlace;
-                grid.ColumnDefinitions.Add(cd);
-                grid.Children.Add(btn);
-                Grid.SetColumn(btn, i);
-                listBtns.Add(btn);
-            }
         }
     }
 }

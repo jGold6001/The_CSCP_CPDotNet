@@ -65,7 +65,7 @@ namespace _04___TestingClasses
             throw new NotImplementedException();
         }
 
-        public override void Edit(object curObj, object newObj)
+        public override void Edit(object newObj)
         {
             throw new NotImplementedException();
         }

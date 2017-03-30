@@ -1,5 +1,7 @@
-﻿using _03___Model;
+﻿using _01___View;
+using _03___Model;
 using _04___TestingClasses;
+
 using DataLayer;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -21,10 +23,8 @@ namespace _02___TD_Logic
         {
 
             /*тесты*/
-            
 
-
-
+           
 
 
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _02___ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

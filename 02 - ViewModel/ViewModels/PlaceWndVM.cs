@@ -15,8 +15,6 @@ namespace _02___ViewModel
         List<Button> listBtns;
         Style stylePlace;
 
-       
-
         public PlaceWndVM()
         {
             this.BusyPlaces = "Занято: ";
@@ -26,9 +24,14 @@ namespace _02___ViewModel
             listBtns = new List<Button>();
             stylePlace = Application.Current.FindResource("btnPlace") as Style;
 
-
-
-            UploadGgidVertical(, 14, 1);
+            
+           
+           
+            Grid g = grid;
+            //Button btn = new Button() { Width = 100, Height = 50, Content = "hello" };
+            //grid.Children.Add(btn);
+            
+            //UploadGgidVertical(grid, 14, 1);
             //UploadGgidVertical(gridSection2, 10, 16);
             //UploadGgidVertical(gridSection3, 10, 26);
             //UploadGgidVertical(gridSection4, 10, 36);
@@ -37,9 +40,7 @@ namespace _02___ViewModel
             //UploadGgidHorizontal(gridSection7, 14, 66);
         }
 
-
-
-        private static Grid grid = null;
+        private static Grid grid;
 
         public static readonly DependencyProperty GridProperty = DependencyProperty.RegisterAttached("Grid",
                                                                      typeof(Grid), typeof(PlaceWndVM),
@@ -145,8 +146,9 @@ namespace _02___ViewModel
             {
                 return selectCommand ?? (selectCommand = new RelayCommand( () =>
                 {
-                   
-                    
+                    //Grid grid = Application.Current.Windows[2].FindName("gridSection1") as Grid;
+                    UploadGgidVertical(grid, 10, 16);
+
                 }));
             }
         }

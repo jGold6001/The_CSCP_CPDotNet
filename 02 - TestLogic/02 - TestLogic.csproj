@@ -70,6 +70,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\01 - View\01 - View.csproj">
+      <Project>{e50c7027-459d-4574-8c06-a46a07d46b8c}</Project>
+      <Name>01 - View</Name>
+    </ProjectReference>
     <ProjectReference Include="..\03 - Model\03 - Model.csproj">
       <Project>{4F0CDF54-8798-4FD5-9685-35BAE9E69FBE}</Project>
       <Name>03 - Model</Name>
