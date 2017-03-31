@@ -46,7 +46,7 @@
         
         <!--Place-->
         <Label x:Name="lPlace"  Content="Номер места" Grid.Column="1"  Grid.Row="1" />
-        <Button x:Name="btnPlace" Style="{DynamicResource btnCyan}" Content="{Binding NumPlace}" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="31" Grid.RowSpan="2" IsEnabled="{Binding Disable}" Command="{Binding PlaceCommand}"/>
+        <Button x:Name="btnPlace" Style="{DynamicResource btnCyan}" Content="{Binding NumPlace}" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="31" Grid.RowSpan="2" IsEnabled="{Binding Disable}" Command="{Binding PlaceCommand}" Click="btnPlace_Click"/>
 
         
         <!--Client-->

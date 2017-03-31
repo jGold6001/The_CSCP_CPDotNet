@@ -69,6 +69,7 @@
     <Compile Include="DialogLogic\DialogBehavior.cs" />
     <Compile Include="DialogLogic\DialogName.cs" />
     <Compile Include="DialogLogic\IDialogBoxPresenter.cs" />
+    <Compile Include="DialogLogic\TemplateCommand.cs" />
     <Compile Include="LocatorVM.cs" />
     <Compile Include="DialogLogic\IDialogViewModel.cs" />
     <Compile Include="DialogLogic\IUserDialogViewModel.cs" />

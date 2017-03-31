@@ -12,7 +12,7 @@
             <local:DataWindow x:Key="{x:Type viewModel:DataWndVM}" x:Shared="False"/>
             <local:FullInfoWindow x:Key="{x:Type viewModel:FullInfoWndVM}" x:Shared="False"/>
             <local:DepositWindow x:Key="{x:Type viewModel:DepositWndVM}" x:Shared="False"/>
-            <local:PlaceWindow x:Key="{x:Type viewModel:PlaceWndVM}" x:Shared="False"/>
+            <!--<local:PlaceWindow x:Key="{x:Type viewModel:PlaceWndVM}" x:Shared="False"/>-->
 
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Themes/MetroDark/MetroDark.MSControls.Core.Implicit.xaml" />

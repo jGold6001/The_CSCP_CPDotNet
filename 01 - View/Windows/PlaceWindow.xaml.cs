@@ -21,18 +21,16 @@ namespace _01___View
     public partial class PlaceWindow : Window
     {
         public PlaceWindow()
-        {          
-            InitializeComponent();  
-                
-            //listBtns = new List<Button>();
-            //stylePlace = this.FindResource("btnPlace") as Style;
-            //UploadGgidVertical(gridSection1, 14, 1);
-            //UploadGgidVertical(gridSection2, 10, 16);
-            //UploadGgidVertical(gridSection3, 10, 26);
-            //UploadGgidVertical(gridSection4, 10, 36);
-            //UploadGgidVertical(gridSection5, 10, 46);
-            //UploadGgidVertical(gridSection6, 10, 56);
-            //UploadGgidHorizontal(gridSection7, 14, 66);
+        {
+            InitializeComponent();
+            this.DataContext = new PlaceWndVM(gridSection1, gridSection2, gridSection3, gridSection4, gridSection5, gridSection6, gridSection7);
+            
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = sender as Button;
+            
         }
     }
 }

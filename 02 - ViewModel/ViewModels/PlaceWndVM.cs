@@ -17,50 +17,22 @@ namespace _02___ViewModel
 
         public PlaceWndVM()
         {
-            this.BusyPlaces = "Занято: ";
-            this.FreePlaces = "Свободно: ";
-            this.NumPlace = "Выбрано:";
+                
+        }
 
+        public PlaceWndVM(Grid grid1, Grid grid2, Grid grid3, Grid grid4, Grid grid5, Grid grid6, Grid grid7)
+        {
             listBtns = new List<Button>();
             stylePlace = Application.Current.FindResource("btnPlace") as Style;
 
-            
-           
-           
-            Grid g = grid;
-            //Button btn = new Button() { Width = 100, Height = 50, Content = "hello" };
-            //grid.Children.Add(btn);
-            
-            //UploadGgidVertical(grid, 14, 1);
-            //UploadGgidVertical(gridSection2, 10, 16);
-            //UploadGgidVertical(gridSection3, 10, 26);
-            //UploadGgidVertical(gridSection4, 10, 36);
-            //UploadGgidVertical(gridSection5, 10, 46);
-            //UploadGgidVertical(gridSection6, 10, 56);
-            //UploadGgidHorizontal(gridSection7, 14, 66);
+            //UploadGgidVertical(grid1, 14, 1);
+            //UploadGgidVertical(grid2, 10, 16);
+            //UploadGgidVertical(grid3, 10, 26);
+            //UploadGgidVertical(grid4, 10, 36);
+            //UploadGgidVertical(grid5, 10, 46);
+            //UploadGgidVertical(grid6, 10, 56);
+            //UploadGgidHorizontal(grid7, 14, 66);
         }
-
-        private static Grid grid;
-
-        public static readonly DependencyProperty GridProperty = DependencyProperty.RegisterAttached("Grid",
-                                                                     typeof(Grid), typeof(PlaceWndVM),
-                                                                     new FrameworkPropertyMetadata(OnGridChanged));
-        public static void SetGrid(DependencyObject element, Grid value)
-        {
-            element.SetValue(GridProperty, value);
-        }
-
-        public static Grid GetGrid(DependencyObject element)
-        {
-            return (Grid)element.GetValue(GridProperty);
-        }
-
-        public static void OnGridChanged
-            (DependencyObject obj, DependencyPropertyChangedEventArgs args)
-        {
-            grid = obj as Grid;
-        }
-
         #region Methods
 
         private void UploadGgidVertical(Grid grid, int amountRows, int startPosition)
@@ -70,6 +42,7 @@ namespace _02___ViewModel
                 RowDefinition rd = new RowDefinition() { Height = new GridLength(35, GridUnitType.Star) };
                 Button btn = new Button() { Content = Convert.ToString(i + startPosition) };
                 btn.Style = stylePlace;
+                btn.Command = SelectCommand;
                 grid.RowDefinitions.Add(rd);
                 grid.Children.Add(btn);
                 Grid.SetRow(btn, i);
@@ -84,13 +57,13 @@ namespace _02___ViewModel
                 ColumnDefinition cd = new ColumnDefinition() { Width = new GridLength(35, GridUnitType.Star) };
                 Button btn = new Button() { Content = Convert.ToString(i + startPosition) };
                 btn.Style = stylePlace;
+                btn.Command = SelectCommand;
                 grid.ColumnDefinitions.Add(cd);
                 grid.Children.Add(btn);
                 Grid.SetColumn(btn, i);
                 listBtns.Add(btn);
             }
         }
-
         #endregion
 
         #region Properties
@@ -107,6 +80,8 @@ namespace _02___ViewModel
                 RaisePropertyChanged(() => NumPlace);
             }
         }
+
+        public static string SelectNum { get; set; }
 
         private string freePlaces;
         public string FreePlaces
@@ -136,6 +111,8 @@ namespace _02___ViewModel
             }
         }
 
+
+
         #endregion
 
         #region Commands
@@ -144,11 +121,10 @@ namespace _02___ViewModel
         {
             get
             {
-                return selectCommand ?? (selectCommand = new RelayCommand( () =>
+                return selectCommand ?? (selectCommand = new RelayCommand( e =>
                 {
-                    //Grid grid = Application.Current.Windows[2].FindName("gridSection1") as Grid;
-                    UploadGgidVertical(grid, 10, 16);
-
+                   
+                    System.Windows.Forms.MessageBox.Show(e.ToString());
                 }));
             }
         }

@@ -26,7 +26,8 @@
             <ColumnDefinition Width="60"/>
             <ColumnDefinition Width="80"/>
         </Grid.ColumnDefinitions>
-        <Grid Name="gridSection1" Grid.Column="0"  Grid.Row="0" Grid.RowSpan="3" Background="Black" viewModel:PlaceWndVM.Grid="{Binding ElementName=gridSection1}">
+        <Grid Name="gridSection1" Grid.Column="0"  Grid.Row="0" Grid.RowSpan="3" Background="Black" >
+            <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="6,31,0,0" VerticalAlignment="Top" Width="75" Command="{Binding SelectCommand}"/>
         </Grid>
 
         <Grid Name="gridSection2" Grid.Column="2"  Grid.Row="0" Background="Black" />
@@ -41,13 +42,19 @@
 
         <Grid Grid.ColumnSpan="4" Grid.Column="0" Grid.Row="4" Background="Transparent">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="72*"/>
+                <ColumnDefinition Width="37*"/>
+                <ColumnDefinition Width="53*"/>
+                <ColumnDefinition Width="41*"/>
+                <ColumnDefinition Width="64*"/>
+                <ColumnDefinition Width="37*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" VerticalAlignment="Center" Foreground="White" Text="{Binding FreePlaces}"/>
-            <TextBlock Grid.Column="1" VerticalAlignment="Center" Foreground="White" Text="{Binding BusyPlaces}"/>
-            <TextBlock Name="tbSelect" Grid.Column="2" VerticalAlignment="Center" Foreground="White" Text="{Binding NumPlace}"/>
+            <TextBlock Grid.Column="0" VerticalAlignment="Center" Foreground="White" Text="Свободных: " Height="16" Margin="0,8,0,9"/>
+            <TextBlock Grid.Column="1" VerticalAlignment="Center" Foreground="White" Text="{Binding FreePlaces}" Height="16" Margin="0,8,0,9" Grid.ColumnSpan="3"/>
+            <TextBlock Grid.Column="2" VerticalAlignment="Center" Foreground="White" Text="Занятых: " Height="16" Margin="0,8,0,9" Grid.ColumnSpan="2"/>
+            <TextBlock Grid.Column="3" VerticalAlignment="Center" Foreground="White" Text="{Binding BusyPlaces}" Height="16" Margin="0,8,0,9"/>
+            <TextBlock Grid.Column="4" VerticalAlignment="Center" Foreground="White" Text="Выбрано: " Height="16" Margin="0,8,0,9" Grid.ColumnSpan="2"/>
+            <TextBlock Grid.Column="5" VerticalAlignment="Center" Foreground="White" Text="{Binding NumPlace}" Height="16" Margin="0,8,0,9"/>
         </Grid>
 
         <Grid Name="gridOKCancel" Grid.ColumnSpan="3" Grid.Column="6"  Grid.Row="4" HorizontalAlignment="Right" Width="180">

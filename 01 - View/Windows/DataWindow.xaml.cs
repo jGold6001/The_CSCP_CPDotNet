@@ -31,5 +31,11 @@ namespace _01___View
             Regex regex = new Regex("[^0-9.]+");
             e.Handled = regex.IsMatch(e.Text);
         }
+
+        private void btnPlace_Click(object sender, RoutedEventArgs e)
+        {
+            PlaceWindow pw = new PlaceWindow();
+            pw.Show();
+        }
     }
 }
