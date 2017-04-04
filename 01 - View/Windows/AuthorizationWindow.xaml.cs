@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _03___Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,63 @@ namespace _01___View
     /// </summary>
     public partial class AuthorizationWindow : Window
     {
+        private UserBuffer userBuff;
+        private EFUserOp efUser = new EFUserOp();
+        private MainWndAccess access;
         public AuthorizationWindow()
         {
             InitializeComponent();
+            btnCancel.Click += Cancel;
+            btnOk.Click += Ok;
+            userBuff = (UserBuffer)App.Current.Resources["userBuff"];
         }
 
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        #region Methods
+        private bool Flag()
+        {
+            foreach (var item in efUser.GetUsers)
+            {
+                if((userBuff.Login == item.Login) && (pbPassword.Password == item.Password))
+                {
+                    userBuff.Position = item.Position.Id;
+                    return true;
+                }
+                    
+            }
+            return false;
+        }
+
+        private MainWndAccess SetAccess()
+        {
+            return (userBuff.Position == 1 ? MainWndAccess.Admin : MainWndAccess.User);
+        }
+
+        #endregion
+
+
+        #region Events
+        private void Cancel(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+        private void Ok(object sender, RoutedEventArgs e)
+        {
+            if (Flag())
+            {
+                MainWindow mw = new MainWindow(this.SetAccess());
+                mw.Show();
+                this.Close();
+            }
+            else
+                MessageBox.Show("Неверный логин или пароль");
+        }
+        #endregion
+    }
+
+    public enum MainWndAccess
+    {
+        Admin,
+        User
     }
 }

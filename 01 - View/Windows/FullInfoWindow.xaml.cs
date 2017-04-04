@@ -19,9 +19,18 @@ namespace _01___View
     /// </summary>
     public partial class FullInfoWindow : Window
     {
+        public InfoSource InfoSource { get; set; }
         public FullInfoWindow()
         {
             InitializeComponent();
+            btnOk.Click += Cancel;
+            InfoSource = (InfoSource)App.Current.Resources["infoSource"];
+        }
+
+
+        private void Cancel(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

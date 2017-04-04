@@ -4,10 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01___View"
-        xmlns:viewModel="clr-namespace:_02___ViewModel;assembly=02-ViewModel"
         mc:Ignorable="d"
         Title="PlaceWindow" Height="550" Width="714.834" ResizeMode="NoResize" Background="{StaticResource Brush05}" WindowStartupLocation="CenterScreen">
-    <Grid Margin="20">
+    <Grid Margin="20" DataContext="{StaticResource infoSource}">
         <Grid.RowDefinitions>
             <RowDefinition Height="305"/>
             <RowDefinition Height="49*"/>
@@ -26,9 +25,8 @@
             <ColumnDefinition Width="60"/>
             <ColumnDefinition Width="80"/>
         </Grid.ColumnDefinitions>
-        <Grid Name="gridSection1" Grid.Column="0"  Grid.Row="0" Grid.RowSpan="3" Background="Black" >
-            <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="6,31,0,0" VerticalAlignment="Top" Width="75" Command="{Binding SelectCommand}"/>
-        </Grid>
+        <Grid Name="gridSection1" Grid.Column="0"  Grid.Row="0" Grid.RowSpan="3" Background="Black" />
+
 
         <Grid Name="gridSection2" Grid.Column="2"  Grid.Row="0" Background="Black" />
         <Grid Name="gridSection3" Grid.Column="3"  Grid.Row="0" Background="Black" />
@@ -53,7 +51,7 @@
             <TextBlock Grid.Column="1" VerticalAlignment="Center" Foreground="White" Text="{Binding FreePlaces}" Height="16" Margin="0,8,0,9" Grid.ColumnSpan="3"/>
             <TextBlock Grid.Column="2" VerticalAlignment="Center" Foreground="White" Text="Занятых: " Height="16" Margin="0,8,0,9" Grid.ColumnSpan="2"/>
             <TextBlock Grid.Column="3" VerticalAlignment="Center" Foreground="White" Text="{Binding BusyPlaces}" Height="16" Margin="0,8,0,9"/>
-            <TextBlock Grid.Column="4" VerticalAlignment="Center" Foreground="White" Text="Выбрано: " Height="16" Margin="0,8,0,9" Grid.ColumnSpan="2"/>
+            <TextBlock Grid.Column="4" VerticalAlignment="Center" Foreground="White" Text="Выбрано: " Height="16" Margin="0,8,0,9" Grid.ColumnSpan="2" Name="lSelect"/>
             <TextBlock Grid.Column="5" VerticalAlignment="Center" Foreground="White" Text="{Binding NumPlace}" Height="16" Margin="0,8,0,9"/>
         </Grid>
 

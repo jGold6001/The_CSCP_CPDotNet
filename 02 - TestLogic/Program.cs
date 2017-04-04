@@ -23,10 +23,7 @@ namespace _02___TD_Logic
         {
 
             /*тесты*/
-
-           
-
-
+            DbLoad();
 
             Console.WriteLine("Press key...");
             Console.ReadKey();

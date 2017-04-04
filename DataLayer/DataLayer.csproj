@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityFramework\Position.cs" />
     <Compile Include="EntityFramework\RentValue.cs" />
     <Compile Include="EntityFramework\User.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

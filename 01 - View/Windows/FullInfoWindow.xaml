@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:_01___View"
         mc:Ignorable="d"
         Title="Полная Информация" Height="500" Width="478.764" Background="{StaticResource Brush05}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid Margin="10">
+    <Grid Margin="10" DataContext="{StaticResource infoSource}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="10"/>
@@ -38,7 +38,7 @@
                 <ColumnDefinition Width="20"/>
                 <ColumnDefinition Width="80"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnOk" Style="{StaticResource btnCyan}" Content="Ok" Grid.Column="2" Command="{Binding OkCommand}"  />
+            <Button x:Name="btnOk" Style="{StaticResource btnCyan}" Content="Ok" Grid.Column="2" />
         </Grid>
     </Grid>
 </Window>

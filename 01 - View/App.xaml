@@ -2,17 +2,14 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:_01___View"
-             xmlns:viewModel="clr-namespace:_02___ViewModel;assembly=02-ViewModel"
-             StartupUri="Windows/MainWindow.xaml">
+             StartupUri="Windows/AuthorizationWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            
-            <!--ViewModels-->
-            <viewModel:LocatorVM x:Key="Locator" xmlns:viewModel="clr-namespace:_02___ViewModel;assembly=02-ViewModel"/>
-            <local:DataWindow x:Key="{x:Type viewModel:DataWndVM}" x:Shared="False"/>
-            <local:FullInfoWindow x:Key="{x:Type viewModel:FullInfoWndVM}" x:Shared="False"/>
-            <local:DepositWindow x:Key="{x:Type viewModel:DepositWndVM}" x:Shared="False"/>
-            <!--<local:PlaceWindow x:Key="{x:Type viewModel:PlaceWndVM}" x:Shared="False"/>-->
+
+            <!--DataContexts-->
+            <local:DataBuff x:Key="dataBuff"/>
+            <local:InfoSource x:Key="infoSource"/>
+            <local:UserBuffer x:Key="userBuff"/>
 
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Themes/MetroDark/MetroDark.MSControls.Core.Implicit.xaml" />

@@ -20,7 +20,8 @@ namespace _04___TestingClasses
             this.db.Clients.Load();
             this.db.Cars.Load();
             this.db.RentValues.Load();
-            this.db.Tariffs.Load();           
+            this.db.Tariffs.Load();
+            this.db.Positions.Load();          
             this.db.Users.Load();            
         }
 
@@ -29,7 +30,9 @@ namespace _04___TestingClasses
             try
             {
                 db.RentValues.AddRange(this.RentValues());
-                db.Places.AddRange(this.Places());          
+                db.Places.AddRange(this.Places());
+                db.Positions.AddRange(this.Positions());
+                db.Users.AddRange(this.Users());       
                 db.SaveChanges();
             }
             catch
@@ -102,7 +105,28 @@ namespace _04___TestingClasses
             return new List<RentValue>()
             {
                 new RentValue { Name="Суточный", Price=10 },
-                new RentValue {Name="Месячный", Price=100 }
+                new RentValue {Name="Месячный", Price=100, }
+            };
+        }
+
+        public List<User> Users()
+        {
+            return new List<User>()
+            {
+                new User() {FirstName = "Админ", LastName = "Админ", Login = "admin", Password = "admin", PositionId = 1 },
+                new User() {Login="Cheff", Password="killAmAll", FirstName="Арсений", LastName="Бердяник", PositionId=1 },
+                new User() {Login="Goga", Password="goga", FirstName="Борис", LastName="Гогишвили", PositionId=2 },
+                new User() {Login="Kuzya", Password="Passwd01", FirstName="Семен", LastName="Кузьменко", PositionId=2 },
+            };
+
+        }
+
+        public List<Position> Positions()
+        {
+            return new List<Position>()
+            {
+                new Position() {Name="Администратор" },
+                new Position() {Name="Пользователь" }
             };
         }
 

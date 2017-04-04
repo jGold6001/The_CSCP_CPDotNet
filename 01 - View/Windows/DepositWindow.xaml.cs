@@ -20,14 +20,36 @@ namespace _01___View
     /// </summary>
     public partial class DepositWindow : Window
     {
+        public InfoSource InfoSource
+        {
+            get; set;
+        }
+
         public DepositWindow()
         {
             InitializeComponent();
+            btnCancel.Click += Cancel;
+            btnOk.Click +=Ok;
+            InfoSource = (InfoSource)App.Current.Resources["infoSource"];
         }
+
+        #region Events
         private void OnlyNumbers(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9.]+");
             e.Handled = regex.IsMatch(e.Text);
         }
+
+        private void Cancel(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Ok(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = true;
+        }
+        #endregion
+
     }
 }

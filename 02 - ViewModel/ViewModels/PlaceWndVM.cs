@@ -42,7 +42,6 @@ namespace _02___ViewModel
                 RowDefinition rd = new RowDefinition() { Height = new GridLength(35, GridUnitType.Star) };
                 Button btn = new Button() { Content = Convert.ToString(i + startPosition) };
                 btn.Style = stylePlace;
-                btn.Command = SelectCommand;
                 grid.RowDefinitions.Add(rd);
                 grid.Children.Add(btn);
                 Grid.SetRow(btn, i);
@@ -57,7 +56,6 @@ namespace _02___ViewModel
                 ColumnDefinition cd = new ColumnDefinition() { Width = new GridLength(35, GridUnitType.Star) };
                 Button btn = new Button() { Content = Convert.ToString(i + startPosition) };
                 btn.Style = stylePlace;
-                btn.Command = SelectCommand;
                 grid.ColumnDefinitions.Add(cd);
                 grid.Children.Add(btn);
                 Grid.SetColumn(btn, i);
@@ -111,25 +109,8 @@ namespace _02___ViewModel
             }
         }
 
-
-
         #endregion
 
-        #region Commands
-        private RelayCommand selectCommand;
-        public RelayCommand SelectCommand
-        {
-            get
-            {
-                return selectCommand ?? (selectCommand = new RelayCommand( e =>
-                {
-                   
-                    System.Windows.Forms.MessageBox.Show(e.ToString());
-                }));
-            }
-        }
-
-        #endregion
-
+      
     }
 }
