@@ -48,11 +48,13 @@
     <Compile Include="ClientOps\Calculator.cs" />
     <Compile Include="ClientOps\JSONReader.cs" />
     <Compile Include="ClientOps\Pay.cs" />
+    <Compile Include="ClientOps\RentValueEditor.cs" />
     <Compile Include="DbAdapter\EFAdapter.cs" />
     <Compile Include="DbAdapter\EFClientOp.cs" />
     <Compile Include="DbAdapter\EFUserOp.cs" />
     <Compile Include="Objects\Daily.cs" />
     <Compile Include="Objects\Monthly.cs" />
+    <Compile Include="Objects\UserExtend.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Objects\Record.cs" />
   </ItemGroup>

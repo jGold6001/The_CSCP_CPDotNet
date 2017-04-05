@@ -97,6 +97,16 @@ namespace _01___View
                 Buffer.Brand = Buffer.Brands[0];
                 Buffer.Color = Buffer.Colors[0];
                 Buffer.RentType = Buffer.RentTypes[0];
+
+                Buffer.FirstName = null;
+                Buffer.LastName = null;
+                Buffer.PhoneNumber = null;
+                Buffer.PassportID = null;
+                Buffer.AdditionalInfo = null;
+                Buffer.VehicleID = null;
+                Buffer.VIN = null;
+                Buffer.Deposit = null;
+
             }
                 
                          
@@ -133,10 +143,4 @@ namespace _01___View
         #endregion
     }
 
-
-    public enum DialogName
-    {
-        AddData,
-        EditData
-    }
 }

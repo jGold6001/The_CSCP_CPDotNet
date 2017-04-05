@@ -23,7 +23,13 @@ namespace _02___TD_Logic
         {
 
             /*тесты*/
-            DbLoad();
+
+            EFUserOp user = new EFUserOp();
+            foreach (var item in user.UserList)
+            {
+                Console.WriteLine(item.FirstName);
+            }
+
 
             Console.WriteLine("Press key...");
             Console.ReadKey();

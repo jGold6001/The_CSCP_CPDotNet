@@ -40,8 +40,7 @@ namespace _01___View
                 {
                     userBuff.Position = item.Position.Id;
                     return true;
-                }
-                    
+                }                   
             }
             return false;
         }
@@ -64,7 +63,7 @@ namespace _01___View
         {
             if (Flag())
             {
-                MainWindow mw = new MainWindow(this.SetAccess());
+                MainWindow mw = new MainWindow(/*this.SetAccess()*/);
                 mw.Show();
                 this.Close();
             }

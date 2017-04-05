@@ -97,6 +97,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataBuff.cs" />
+    <Compile Include="DialogName.cs" />
     <Compile Include="InfoSource.cs" />
     <Compile Include="UserBuffer.cs" />
     <Compile Include="Windows\AdminWindow.xaml.cs">
