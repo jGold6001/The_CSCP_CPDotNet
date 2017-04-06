@@ -47,7 +47,7 @@
             <!--DataGrid-->
             <DataGrid x:Name="dgRecords" Style="{DynamicResource spDataGrid}" CanUserAddRows="True"  AutoGenerateColumns="False" CanUserDeleteRows="True" CanUserReorderColumns="True" CanUserSortColumns="True">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Номер места" Binding="{Binding Path=NumberPLace,UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Номер места" Binding="{Binding Path=NumberPLace,UpdateSourceTrigger=PropertyChanged}" SortDirection="Ascending"/>
                     <DataGridTextColumn Header="Клиент" Binding="{Binding Path=ClientLastName, UpdateSourceTrigger=PropertyChanged}"/>
                     <DataGridTextColumn Header="Автомобиль" Binding="{Binding Path=CarBrand,UpdateSourceTrigger=PropertyChanged}"/>
                     <DataGridTextColumn Header="Дата Оплаты" Binding="{Binding Path=DatePayment, StringFormat=\{0:dd.MM.yyyy\}, UpdateSourceTrigger=PropertyChanged}"/>

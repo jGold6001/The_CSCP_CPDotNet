@@ -10,14 +10,82 @@ using System.Threading.Tasks;
 namespace _03___Model
 {
 
-    public class Record 
-    {            
-        public int NumberPLace { get; set; }
-        public string ClientLastName { get; set; }
-        public string CarBrand { get; set; }
-        public DateTime DatePayment { get; set; }
-        public decimal Rent { get; set; }
-        public decimal Debt { get; set; }
+    public class Record : INotifyPropertyChanged
+    {
+        private int numPlace;
+        public int NumberPLace
+        {
+            get { return numPlace; }
+            set
+            {
+                numPlace = value;
+                OnPropertyChanged("NumberPlace");
+            }
+        }
+
+        private string clientLastName;
+        public string ClientLastName
+        {
+            get { return clientLastName; }
+            set
+            {
+                clientLastName = value;
+                OnPropertyChanged("ClientLastName");
+            }
+        }
+
+        private string carBrand;
+        public string CarBrand
+        {
+            get { return carBrand; }
+            set
+            {
+                carBrand = value;
+                OnPropertyChanged("CarBrand");
+            }
+        }
+
+        private DateTime datePay;
+        public DateTime DatePayment
+        {
+            get { return datePay; }
+            set
+            {
+                datePay = value;
+                OnPropertyChanged("DatePayment");
+            }
+        }
+
+        private decimal rent;
+        public decimal Rent
+        {
+            get { return rent; }
+            set
+            {
+                rent = value;
+                OnPropertyChanged("Rent");
+            }
+        }
+
+        private decimal debt;
+        public decimal Debt
+        {
+            get { return debt; }
+            set
+            {
+                debt = value;
+                OnPropertyChanged("Debt");
+            }
+        }
+
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler P = PropertyChanged;
+            P?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        #endregion
     }
 
 }

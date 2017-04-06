@@ -27,7 +27,9 @@ namespace _01___View
     {
         private EFClientOp efClient = new EFClientOp();
         public ObservableCollection<Record> listRecords{ get; set; }
+        private ObservableCollection<Record> findRecords;
         private ObservableCollection<Record> filterRecords;
+
         public Record SelectRecord { get; set; }
         private DataBuff buffer;
         private InfoSource infoSource;
@@ -235,8 +237,9 @@ namespace _01___View
         #region Filter_Events
         private void BtnOk_Click(object sender, RoutedEventArgs e)
         {
+            gridInfo.Visibility = Visibility.Hidden;
             string findWord = tbFind.Text;
-            this.IfFilterListNull();
+            this.IfFindListNotNull();
 
             if (findWord != "")
             {
@@ -244,35 +247,35 @@ namespace _01___View
                 {
                     string firstname = item.Client.FirstName;
                     if (findWord == firstname.ToLower() || findWord == firstname.ToUpper() || findWord == firstname)
-                        this.UpdateListRecords(item);
+                        this.FindRecords(item);
 
                     string lastname = item.Client.LastName;
                     if (findWord == lastname.ToLower() || findWord == lastname.ToUpper() || findWord == lastname)
-                        this.UpdateListRecords(item);
+                        this.FindRecords(item);
 
                     string telNum = item.Client.PhoneNumber.ToString();
                     if (findWord == telNum)
-                        this.UpdateListRecords(item);
+                        this.FindRecords(item);
 
                     string passport = item.Client.PassportID;
                     if (findWord == passport.ToLower() || findWord == passport.ToUpper() || findWord == passport)
-                        this.UpdateListRecords(item);
+                        this.FindRecords(item);
 
                     string carId = item.Car.VehicleID;
                     if (findWord == carId.ToLower() || findWord == carId.ToUpper() || findWord == carId)
-                        this.UpdateListRecords(item);
+                        this.FindRecords(item);
 
                     string brand = item.Car.Brand;
-                    if (findWord == brand.ToLower() || findWord == brand.ToUpper() || findWord == brand)
-                        this.UpdateListRecords(item);
+                    if (findWord == brand.ToLower() || findWord == brand.ToUpper() || findWord == brand || brand.Contains(findWord) || brand.ToUpper().Contains(findWord) || brand.ToLower().Contains(findWord))
+                        this.FindRecords(item);
 
                     string color = item.Car.Color;
                     if (findWord == color.ToLower() || findWord == color.ToUpper() || findWord == color)
-                        this.UpdateListRecords(item);
+                        this.FindRecords(item);
 
                     string vin = item.Car.VIN;
                     if (findWord == vin.ToLower() || findWord == vin.ToUpper() || findWord == vin)
-                        this.UpdateListRecords(item);
+                        this.FindRecords(item);
                 }
 
                 if (cntFindResult == 0)
@@ -286,84 +289,155 @@ namespace _01___View
             else
             {
                 if (dgRecords.ItemsSource != listRecords)
-                    dgRecords.ItemsSource = listRecords;
+                    this.ItemSourceUpdate();
             }
         }
 
         private void ChbClientsDebt_Checked(object sender, RoutedEventArgs e)
-        {         
-            this.IfFilterListNull();
-            foreach (var item in efClient.GetPlaces)
+        {
+            gridInfo.Visibility = Visibility.Hidden;
+            filterRecords = null;
+            if(chbRentDaily.IsChecked == true)
             {
-                if (item.Tariff.Debt > 0)
-                    this.UpdateListRecords(item);
-            }     
+                foreach (var item in efClient.GetPlaces)
+                {
+                    if (item.Tariff.Debt > 0 && item.Tariff.RentValue.Id == 1)
+                        this.FilterRecords(item);
+                }
+            }
+            else if(chbRentMonthly.IsChecked == true)
+            {
+                foreach (var item in efClient.GetPlaces)
+                {
+                    if (item.Tariff.Debt > 0 && item.Tariff.RentValue.Id == 2)
+                        this.FilterRecords(item);
+                }
+            }
+            else
+            {
+                foreach (var item in efClient.GetPlaces)
+                {
+                    if (item.Tariff.Debt > 0)
+                        this.FilterRecords(item);
+                }
+            }
+            
         }
 
         private void ChbClientsDebt_Unchecked(object sender, RoutedEventArgs e)
         {
             filterRecords = null;
-            if (dgRecords.ItemsSource != listRecords)
-                    dgRecords.ItemsSource = listRecords;
-        }
-
-        private void ChbRentDaily_Checked(object sender, RoutedEventArgs e)
-        {
-            if (chbRentMonthly.IsChecked == true)
-            {
-                chbRentMonthly.IsChecked = false;
-                filterRecords = null;
-                if (dgRecords.ItemsSource != listRecords)
-                    dgRecords.ItemsSource = listRecords;
-            }
-
-
-            this.IfFilterListNull();
-            if (dgRecords.ItemsSource == listRecords)
+            if (chbRentDaily.IsChecked == true)
             {
                 foreach (var item in efClient.GetPlaces)
                 {
                     if (item.Tariff.RentValue.Id == 1)
-                        this.UpdateListRecords(item);
+                        this.FilterRecords(item);
                 }
             }
-        }
-
-        private void ChbRentDaily_Unchecked(object sender, RoutedEventArgs e)
-        {
-            //filterRecords = null;
-            //if (dgRecords.ItemsSource != listRecords)
-            //    dgRecords.ItemsSource = listRecords;
-        }
-
-
-
-        private void ChbRentMonthly_Checked(object sender, RoutedEventArgs e)
-        {
-            if (chbRentDaily.IsChecked == true)
-            {
-                chbRentDaily.IsChecked = false;
-                filterRecords = null;
-                if (dgRecords.ItemsSource != listRecords)
-                    dgRecords.ItemsSource = listRecords;
-            }
-
-            this.IfFilterListNull();
-            if (dgRecords.ItemsSource == listRecords)
+            else if (chbRentMonthly.IsChecked == true)
             {
                 foreach (var item in efClient.GetPlaces)
                 {
                     if (item.Tariff.RentValue.Id == 2)
-                        this.UpdateListRecords(item);
+                        this.FilterRecords(item);
+                }
+            }
+            else
+            {
+                if (dgRecords.ItemsSource != listRecords)
+                    this.ItemSourceUpdate();
+            }
+          
+        }
+
+        private void ChbRentDaily_Checked(object sender, RoutedEventArgs e)
+        {
+            gridInfo.Visibility = Visibility.Hidden;
+            if (chbRentMonthly.IsChecked == true)
+                chbRentMonthly.IsChecked = false;
+
+
+            filterRecords = null;
+            if (chbClientsDebt.IsChecked == true)
+            {
+                foreach (var item in efClient.GetPlaces)
+                {
+                    if (item.Tariff.Debt > 0 && item.Tariff.RentValue.Id == 1)
+                        this.FilterRecords(item);
+                }
+            }
+            else
+            {
+                foreach (var item in efClient.GetPlaces)
+                {
+                    if (item.Tariff.RentValue.Id == 1)
+                        this.FilterRecords(item);
+                }
+            }
+
+            
+        }
+
+        private void ChbRentDaily_Unchecked(object sender, RoutedEventArgs e)
+        {
+            filterRecords = null;
+            if (chbClientsDebt.IsChecked == true)
+            {
+                foreach (var item in efClient.GetPlaces)
+                {
+                    if (item.Tariff.Debt > 0)
+                        this.FilterRecords(item);
+                }
+            }
+            else
+            {
+                if (dgRecords.ItemsSource != listRecords)
+                    this.ItemSourceUpdate();
+            }
+        }
+
+        private void ChbRentMonthly_Checked(object sender, RoutedEventArgs e)
+        {
+            gridInfo.Visibility = Visibility.Hidden;
+            if (chbRentDaily.IsChecked == true)
+                chbRentDaily.IsChecked = false;
+
+            filterRecords = null;
+            if (chbClientsDebt.IsChecked == true)
+            {
+                foreach (var item in efClient.GetPlaces)
+                {
+                    if (item.Tariff.Debt > 0 && item.Tariff.RentValue.Id == 2)
+                        this.FilterRecords(item);
+                }
+            }
+            else
+            {
+                foreach (var item in efClient.GetPlaces)
+                {
+                    if (item.Tariff.RentValue.Id == 2)
+                        this.FilterRecords(item);
                 }
             }
         }
 
         private void ChbRentMonthly_Unchecked(object sender, RoutedEventArgs e)
         {
-            //filterRecords = null;
-            //if (dgRecords.ItemsSource != listRecords)
-            //    dgRecords.ItemsSource = listRecords;
+            filterRecords = null;
+            if (chbClientsDebt.IsChecked == true)
+            {
+                foreach (var item in efClient.GetPlaces)
+                {
+                    if (item.Tariff.Debt > 0)
+                        this.FilterRecords(item);
+                }
+            }
+            else
+            {
+                if (dgRecords.ItemsSource != listRecords)
+                    this.ItemSourceUpdate();
+            }
         }
 
         #endregion
@@ -392,7 +466,7 @@ namespace _01___View
         private void DGLoad()
         {
             listRecords = new ObservableCollection<Record>(efClient.RecordList);
-            dgRecords.ItemsSource = listRecords;
+            this.ItemSourceUpdate();
             dgRecords.SelectionChanged += SelectionRecord;
             gridInfo.Visibility = Visibility.Hidden;            
         }       
@@ -497,10 +571,29 @@ namespace _01___View
                     break;
                 }
             }
+            this.ItemSourceUpdate();
             SelectRecord = newRecord;
         }
 
-        private void UpdateListRecords(Place place)
+        private void FilterRecords(Place place)
+        {
+            Record record = new Record()
+            {
+                NumberPLace = place.Number,
+                ClientLastName = place.Client.LastName,
+                CarBrand = place.Car.Brand,
+                DatePayment = place.Tariff.DatePayment,
+                Rent = place.Tariff.RentValue.Price,
+                Debt = place.Tariff.Debt
+            };
+            if(filterRecords == null)
+                filterRecords = new ObservableCollection<Record>();                
+
+            dgRecords.ItemsSource = filterRecords;
+            filterRecords.Add(record);
+        }
+
+        private void FindRecords(Place place)
         {
             cntFindResult++;
             Record record = new Record()
@@ -512,12 +605,11 @@ namespace _01___View
                 Rent = place.Tariff.RentValue.Price,
                 Debt = place.Tariff.Debt
             };
-            if(filterRecords == null)
-            {
-                filterRecords = new ObservableCollection<Record>();
-                dgRecords.ItemsSource = filterRecords;
-            }
-            filterRecords.Add(record);
+            if (findRecords == null)
+                findRecords = new ObservableCollection<Record>();
+
+            dgRecords.ItemsSource = findRecords;
+            findRecords.Add(record);
         }
 
         private void CreateRecord(Place newPlace)
@@ -560,10 +652,15 @@ namespace _01___View
             }
         }
 
-        private void IfFilterListNull()
+        private void IfFindListNotNull()
         {
-            if (filterRecords != null)
-                filterRecords.Clear();
+            if (findRecords != null)
+                findRecords.Clear();
+        }
+
+        private void ItemSourceUpdate()
+        {
+            dgRecords.ItemsSource = listRecords.OrderBy(p => p.NumberPLace);
         }
         #endregion
 
