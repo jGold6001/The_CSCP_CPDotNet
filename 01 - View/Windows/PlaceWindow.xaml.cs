@@ -26,8 +26,7 @@ namespace _01___View
         private PlaceWndName name;
         private int countBusyPlaces = 0;
         private int countFreePlaces = 0;
-        public InfoSource InfoSource{get;set;}
-        
+        public InfoSource InfoSource{get;set;} 
 
         public PlaceWindow(PlaceWndName name)
         {
@@ -53,7 +52,6 @@ namespace _01___View
                 return name == PlaceWndName.SelectPlace ? true : false;
             }
         }
-
         public string Caption
         {
             get
@@ -79,7 +77,6 @@ namespace _01___View
             UploadGgidVertical(gridSection6, 10, 56);
             UploadGgidHorizontal(gridSection7, 14, 66);
         }
-
         private void UploadGgidVertical(Grid grid, int amountRows, int startPosition)
         {
             for (int i = 0; i < amountRows; i++)
@@ -94,7 +91,6 @@ namespace _01___View
                 listBtns.Add(btn);
             }
         }
-
         private void UploadGgidHorizontal(Grid grid, int amountRows, int startPosition)
         {
             for (int i = 0; i < amountRows; i++)
@@ -109,7 +105,6 @@ namespace _01___View
                 listBtns.Add(btn);
             }
         }
-
         private void SetBusyPlaces()
         {
             foreach (Button button in listBtns)
@@ -125,14 +120,12 @@ namespace _01___View
                 }
             }
         }
-
         private void GetCountPlaces()
         {
             countFreePlaces = listBtns.Count - countBusyPlaces;
             InfoSource.BusyPlaces = Convert.ToString(countBusyPlaces);
             InfoSource.FreePlaces = Convert.ToString(countFreePlaces);
         }
-
         private void SetSelectedPlace()
         {
             if(InfoSource.NumPlace !=null)
@@ -148,7 +141,6 @@ namespace _01___View
                 }
             }
         }
-
         private void IfSelectPlaceWnd()
         {
             if(!Flag)
@@ -168,20 +160,23 @@ namespace _01___View
             Button btn = sender as Button;
             InfoSource.NumPlace = btn.Content.ToString();
         }
-
         private void Cancel(object sender, RoutedEventArgs e)
         {
+            InfoSource.NumPlace = null;
             this.Close();
         }
-
         private void Ok(object sender, RoutedEventArgs e)
         {
             if (Flag)
-                this.DialogResult = true;
+            {
+                if (InfoSource.NumPlace != null)
+                    this.DialogResult = true;
+                else
+                    MessageBox.Show("Выберете номер места");
+            }              
             else
                 this.Close();
         }
-
         #endregion
     }
 

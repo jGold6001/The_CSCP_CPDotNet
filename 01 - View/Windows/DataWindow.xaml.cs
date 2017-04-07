@@ -128,16 +128,29 @@ namespace _01___View
 
         private void Ok(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true;
+            if (Buffer.FirstName !="" && Buffer.LastName != "" && Buffer.PassportID != "" &&
+                Buffer.VehicleID != "" && Buffer.Brand != Buffer.Brands[0] && Buffer.VIN != "" && Buffer.Color != Buffer.Colors[0] &&
+                Buffer.Deposit != "")
+            {
+
+                if(Flag)
+                {
+                    string messege = String.Format("Вы действительно хотите изменить запись Места №{0}", Buffer.NumPlace);
+                    if (MessageBox.Show(messege, "", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                        this.DialogResult = true;
+                }
+                else
+                    this.DialogResult = true;
+            }               
+            else
+                MessageBox.Show("Не все поля заполнены");
         }
 
         private void BtnPlace_Click(object sender, RoutedEventArgs e)
         {
             PlaceWindow pw = new PlaceWindow(PlaceWndName.SelectPlace);            
             if(pw.ShowDialog()==true)
-            {
-                Buffer.NumPlace = pw.InfoSource.NumPlace;
-            }            
+                Buffer.NumPlace = pw.InfoSource.NumPlace;           
         }
 
         #endregion

@@ -40,7 +40,7 @@
 
         <!--Pay-->
         <TextBlock Style="{DynamicResource tbDeposit}" Grid.Column="0" Grid.Row="4" Height="19" Margin="0,7" Width="95" >Внесите сумму</TextBlock>
-        <TextBox Grid.Column="2" Grid.Row="4"   MaxLength="7"  PreviewTextInput="OnlyNumbers" Text="{Binding PaySum}"/>
+        <TextBox  Name="tbPaySum" Grid.Column="2" Grid.Row="4"   MaxLength="7"  PreviewTextInput="OnlyNumbers" Text="{Binding PaySum}"/>
 
         <Grid x:Name="gridOKCancel" Grid.Column="2" Grid.Row="6" HorizontalAlignment="Right" Width="180">
             <Grid.ColumnDefinitions>

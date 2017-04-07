@@ -7,7 +7,7 @@
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         mc:Ignorable="d"           
         Title="MainWindow" Height="550" Width="925" MinHeight="550" MinWidth="925" Background="{StaticResource Brush05}">
-    
+
     <!-- Main DockPanel-->
     <DockPanel >
         <!-- wp menu-->
@@ -37,15 +37,16 @@
                 <RowDefinition Height="150*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3.0*"/>
-                <ColumnDefinition MinWidth="200"/>
+                <ColumnDefinition Width="401*"/>
+                <ColumnDefinition Width="287*"/>
+                <ColumnDefinition MinWidth="200" Width="229*"/>
             </Grid.ColumnDefinitions>
 
 
             <!-- Left size-->
 
             <!--DataGrid-->
-            <DataGrid x:Name="dgRecords" Style="{DynamicResource spDataGrid}" CanUserAddRows="True"  AutoGenerateColumns="False" CanUserDeleteRows="True" CanUserReorderColumns="True" CanUserSortColumns="True">
+            <DataGrid x:Name="dgRecords" Style="{DynamicResource spDataGrid}" CanUserAddRows="True"  AutoGenerateColumns="False" CanUserDeleteRows="True" CanUserReorderColumns="True" CanUserSortColumns="True" Grid.ColumnSpan="2">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Номер места" Binding="{Binding Path=NumberPLace,UpdateSourceTrigger=PropertyChanged}" SortDirection="Ascending"/>
                     <DataGridTextColumn Header="Клиент" Binding="{Binding Path=ClientLastName, UpdateSourceTrigger=PropertyChanged}"/>
@@ -54,12 +55,18 @@
                     <DataGridTextColumn Header="Тариф" Binding="{Binding Path=Rent,UpdateSourceTrigger=PropertyChanged}"/>
                     <DataGridTextColumn Header="Задолжность" Binding="{Binding Path=Debt, UpdateSourceTrigger=PropertyChanged}"/>
                 </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu >
+                        <MenuItem Name="dgDelete" Header="Удалить" Foreground="Black"/>
+                        <MenuItem Name="dgEdit" Header="Редактировать" Foreground="Black"/>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
             </DataGrid>
-            
-            <GridSplitter x:Name="gsHorizontal" HorizontalAlignment="Stretch" Height="5" VerticalAlignment="Top"  Grid.Row="1" Background="{StaticResource Brush04}"/>
+
+            <GridSplitter x:Name="gsHorizontal" HorizontalAlignment="Stretch" Height="5" VerticalAlignment="Top"  Grid.Row="1" Background="{StaticResource Brush04}" Grid.ColumnSpan="2"/>
 
             <!--InfoBlock-->
-            <Grid Name="gridInfo" DataContext="{StaticResource infoSource}" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Margin="0,5,0,0">
+            <Grid Name="gridInfo" DataContext="{StaticResource infoSource}" HorizontalAlignment="Stretch" Grid.Row="1" VerticalAlignment="Stretch" Margin="0,5,0,0" Grid.ColumnSpan="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0,9*"/>
                     <RowDefinition Height="30*"/>
@@ -113,8 +120,8 @@
             </Grid>
 
             <!-- Right size-->
-            <GridSplitter x:Name="gsVertical" Grid.Column="1" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Width="5" Grid.RowSpan="2" Background="{StaticResource Brush04}"/>
-            <Grid Name="wpFilter" Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Background="{StaticResource Brush05}" Grid.RowSpan="2" Margin="10,0,0,10">
+            <GridSplitter x:Name="gsVertical" Grid.Column="2" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Width="5" Grid.RowSpan="2" Background="{StaticResource Brush04}"/>
+            <Grid Name="wpFilter" Grid.Column="2" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Background="{StaticResource Brush05}" Grid.RowSpan="2" Margin="10,0,0,10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20*"/>
                     <ColumnDefinition Width="145*"/>

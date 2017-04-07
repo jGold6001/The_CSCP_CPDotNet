@@ -19,11 +19,11 @@
 
         <!--Login-->
         <Label x:Name="lLogin"  Content="Логин" Grid.Column="0"  Grid.Row="0"  />
-        <TextBox x:Name="tbLogin" Grid.Column="2"  Grid.Row="0" Grid.ColumnSpan="3" MaxLength="50" Text="{Binding Login}"/>
+        <TextBox x:Name="tbLogin" Grid.Column="2"  Grid.Row="0" Grid.ColumnSpan="3" MaxLength="25" Text="{Binding Login}"/>
 
         <!--Password-->
         <Label x:Name="lPassword" Content="Пароль" Grid.Column="0" Grid.Row="1" />
-        <PasswordBox x:Name="pbPassword" Grid.Column="2"  Grid.Row="1" Grid.ColumnSpan="3" MaxLength="10" />
+        <PasswordBox x:Name="pbPassword" Grid.Column="2"  Grid.Row="1" Grid.ColumnSpan="3" MaxLength="25" />
 
         <Grid Name="gridOKCancel"  Grid.Column="1"   Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center">
             <Grid.ColumnDefinitions>

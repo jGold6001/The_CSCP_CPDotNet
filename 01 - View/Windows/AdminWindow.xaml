@@ -32,6 +32,12 @@
                             <DataGridTextColumn Header="Пароль" Binding="{Binding Path=Password, UpdateSourceTrigger=PropertyChanged}"/>
                             <DataGridTextColumn Header="Позиция" Binding="{Binding Path=Position,UpdateSourceTrigger=PropertyChanged}"/>
                         </DataGrid.Columns>
+                        <DataGrid.ContextMenu>
+                            <ContextMenu >
+                                <MenuItem Name="dgDelete" Header="Удалить" Foreground="Black"/>
+                                <MenuItem Name="dgEdit" Header="Редактировать" Foreground="Black"/>
+                            </ContextMenu>
+                        </DataGrid.ContextMenu>
                     </DataGrid>
 
                     <Grid Grid.Row="1">

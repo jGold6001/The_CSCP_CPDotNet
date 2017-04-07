@@ -28,9 +28,12 @@ namespace _01___View
             InitializeComponent();
             btnCancel.Click += Cancel;
             btnOk.Click += Ok;
+            tbLogin.KeyUp += LogInKey;
+            pbPassword.KeyUp += LogInKey;
             userBuff = (UserBuffer)App.Current.Resources["userBuff"];
         }
 
+       
         #region Methods
         private bool Flag()
         {
@@ -50,10 +53,37 @@ namespace _01___View
             return (userBuff.Position == 1 ? MainWndAccess.Admin : MainWndAccess.User);
         }
 
+        private void LogIN()
+        {
+            if (tbLogin.Text == "" || pbPassword.Password == "")
+            {
+                MessageBox.Show("Заполните все поля");
+            }
+            else
+            { 
+                if (Flag())
+                {
+                    MainWindow mw = new MainWindow(this.SetAccess());
+                    mw.Show();
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Неверный логин или пароль");
+            }
+            
+        }
+
         #endregion
 
 
         #region Events
+
+        private void LogInKey(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                this.LogIN();
+        }
+
         private void Cancel(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -61,14 +91,7 @@ namespace _01___View
 
         private void Ok(object sender, RoutedEventArgs e)
         {
-            if (Flag())
-            {
-                MainWindow mw = new MainWindow(/*this.SetAccess()*/);
-                mw.Show();
-                this.Close();
-            }
-            else
-                MessageBox.Show("Неверный логин или пароль");
+            this.LogIN();
         }
         #endregion
     }

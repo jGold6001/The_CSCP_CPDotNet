@@ -30,10 +30,17 @@ namespace _01___View
             InitializeComponent();
             btnCancel.Click += Cancel;
             btnOk.Click +=Ok;
+            tbPaySum.KeyUp += TbPaySum_KeyUp;
             InfoSource = (InfoSource)App.Current.Resources["infoSource"];
         }
 
         #region Events
+
+        private void TbPaySum_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                this.Pay();
+        }
         private void OnlyNumbers(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9.]+");
@@ -47,7 +54,25 @@ namespace _01___View
 
         private void Ok(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true;
+            this.Pay();
+        }
+
+
+        #endregion
+
+        #region Methods
+        private void Pay()
+        {
+            decimal minSum = Convert.ToDecimal(InfoSource.MinSum);
+            decimal paySum = Convert.ToDecimal(tbPaySum.Text);
+            if (paySum >= minSum)
+            {
+                string messege = String.Format("Вы действительно хотите внести средства на сумму {0} грн.", InfoSource.PaySum);
+                if (MessageBox.Show(messege, "", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                    this.DialogResult = true;
+            }
+            else
+                MessageBox.Show("Недостающая сумма средств");
         }
         #endregion
 

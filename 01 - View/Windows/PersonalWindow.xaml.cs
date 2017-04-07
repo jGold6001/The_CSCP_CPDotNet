@@ -102,7 +102,36 @@ namespace _01___View
 
         private void Ok(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true;
+            if (BuffUser.FirstName != "" && BuffUser.LastName != "" && BuffUser.Login != "" &&
+                BuffUser.Password != "")
+            {
+
+                if (Flag)
+                {
+                    string messege = String.Format("Вы действительно хотите изменить данные пользователя {0}", BuffUser.Login);
+                    if (MessageBox.Show(messege, "", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                        this.DialogResult = true;
+                }
+                else
+                {
+                    bool flag = false;
+                    foreach (var item in efUser.GetUsers)
+                    {
+                        if (BuffUser.Login == item.Login)
+                        {
+                            flag = true;
+                            break;
+                        }
+                    }
+
+                    if (!flag)
+                        this.DialogResult = true;
+                    else
+                        MessageBox.Show("Заданный логин уже занят");                   
+                }                  
+            }
+            else
+                MessageBox.Show("Не все поля заполнены");
         }
         #endregion
     }

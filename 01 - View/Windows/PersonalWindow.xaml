@@ -24,19 +24,19 @@
         
         <!--Login-->
         <Label x:Name="lLogin" Content="Логин" Grid.Column="0"  Grid.Row="1" />
-        <TextBox x:Name="tbLogin" Grid.Column="1"  Grid.Row="1" TextWrapping="Wrap" Text="{Binding Login}"/>
+        <TextBox x:Name="tbLogin" Grid.Column="1"  Grid.Row="1" TextWrapping="Wrap" Text="{Binding Login}" MaxLength="25"/>
 
         <!--Password-->
         <Label x:Name="lPassword" Content="Пароль" Grid.Column="0" Grid.Row="2" />
-        <TextBox x:Name="tbPassword" Grid.Column="1"  Grid.Row="2" TextWrapping="Wrap" Text="{Binding Password}"/>
+        <TextBox x:Name="tbPassword" Grid.Column="1"  Grid.Row="2" TextWrapping="Wrap" Text="{Binding Password}" MaxLength="25"/>
 
         <!--Name-->
         <Label x:Name="lName" Content="Имя" Grid.Column="0"  Grid.Row="3" />
-        <TextBox x:Name="tbName" Grid.Column="1"  Grid.Row="3" TextWrapping="Wrap" Text="{Binding FirstName}"/>
+        <TextBox x:Name="tbName" Grid.Column="1"  Grid.Row="3" TextWrapping="Wrap" Text="{Binding FirstName}" MaxLength="25"/>
 
         <!--SurName-->
         <Label x:Name="lSurname" Content="Фамилия" Grid.Column="0" Grid.Row="4" />
-        <TextBox x:Name="tbSurname" Grid.Column="1"  Grid.Row="4" TextWrapping="Wrap" Text="{Binding LastName}"/>
+        <TextBox x:Name="tbSurname" Grid.Column="1"  Grid.Row="4" TextWrapping="Wrap" Text="{Binding LastName}" MaxLength="30"/>
 
         <!--Position-->
         <Label x:Name="lPosition" Content="Должность" Grid.Column="0" Grid.Row="5"  />

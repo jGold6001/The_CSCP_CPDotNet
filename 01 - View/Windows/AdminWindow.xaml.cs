@@ -115,13 +115,32 @@ namespace _01___View
         private void BtnDaily_Click(object sender, RoutedEventArgs e)
         {
             dailyPrice = Convert.ToDecimal(tbDaily.Text);
-            rvEditor.SetPrice(dailyID,dailyPrice);
+            if (dailyPrice != efClient.RentTypes[0].Price)
+            {
+                string messege = String.Format("Установить сумму {0} грн. на тариф {1}?", tbDaily.Text, efClient.RentTypes[0].Name);
+                if (MessageBox.Show(messege, "", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    rvEditor.SetPrice(dailyID, dailyPrice);
+                }
+            }
+            else
+                MessageBox.Show("Сумма уже установленна, введите другое значение");
         }
 
         private void BtnMonth_Click(object sender, RoutedEventArgs e)
         {
             monthPrice = Convert.ToDecimal(tbMonth.Text);
-            rvEditor.SetPrice(monthID, monthPrice);
+            if (monthPrice != efClient.RentTypes[1].Price)
+            {
+                string messege = String.Format("Установить сумму {0} грн. на тариф {1}?", tbMonth.Text, efClient.RentTypes[1].Name);
+                if (MessageBox.Show(messege, "", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                {
+                    rvEditor.SetPrice(monthID, monthPrice);
+                }
+            }
+            else
+                MessageBox.Show("Сумма уже установленна, введите другое значение");
+            
         }
         #endregion
 
@@ -130,10 +149,12 @@ namespace _01___View
         {
             btnAdd.Click += btnAdd_Click;
             btnEdit.Click += btnEdit_Click;
+            dgEdit.Click += btnEdit_Click;
             btnDelete.Click += BtnDelete_Click;
+            dgDelete.Click += BtnDelete_Click;
 
             btnDaily.Click += BtnDaily_Click;
-            btnMonth.Click += BtnMonth_Click;
+            btnMonth.Click += BtnMonth_Click;           
         }
         private void BtnDisabled()
         {
@@ -213,7 +234,6 @@ namespace _01___View
         }
         private void CreateUserExetend(User user)
         {
-
             UserExtend userEx = new UserExtend()
             {
                 FirstName = user.FirstName,
@@ -224,6 +244,7 @@ namespace _01___View
             };
             listUsers.Add(userEx);
             SelectUser = userEx;
+
         }
         private Position SetPosition(string positionName)
         {
