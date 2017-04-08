@@ -14,8 +14,6 @@ namespace _03___Model
         {
             
         }
-
-        public IAuthorization IAuthorization { get; set; }
       
         public List<User> GetUsers
         {

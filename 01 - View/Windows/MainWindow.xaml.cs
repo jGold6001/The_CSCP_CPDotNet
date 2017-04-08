@@ -44,7 +44,6 @@ namespace _01___View
             this.DGLoad();
             this.SetClickEvents();
         }
-
         private bool Flag
         {
             get
@@ -462,6 +461,7 @@ namespace _01___View
 
         private void DGLoad()
         {
+            //efClient.UpdateTariff();
             listRecords = new ObservableCollection<Record>(efClient.RecordList);
             this.ItemSourceUpdate();
             dgRecords.SelectionChanged += SelectionRecord;

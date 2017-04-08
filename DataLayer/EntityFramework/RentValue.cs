@@ -14,10 +14,6 @@ namespace DataLayer
         public int Id { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }       
-        public ICollection<Tariff> Tariffs { get; set; }
-        public RentValue()
-        {
-            Tariffs = new List<Tariff>();
-        }
+        
     }
 }

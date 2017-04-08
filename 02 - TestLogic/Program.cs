@@ -23,13 +23,12 @@ namespace _02___TD_Logic
         {
 
             /*тесты*/
-
-            EFUserOp user = new EFUserOp();
-            foreach (var item in user.UserList)
+            EFClientOp cl = new EFClientOp();
+            foreach (var item in cl.GetPlaces)
             {
-                Console.WriteLine(item.FirstName);
+                Console.WriteLine(item.Tariff.RentValue.Name);
             }
-
+            
 
             Console.WriteLine("Press key...");
             Console.ReadKey();

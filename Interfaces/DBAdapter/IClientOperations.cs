@@ -7,11 +7,6 @@ namespace Interfaces
 {
     public interface IClientOperations
     {
-        IDisplayInfo IDisplayInfo { get; set; }
-        IPay IPay { get; set; }
-        IFilter IFilter { get; set; }
-        IRentValueEdit IRentValueEdit { get; set; }
-        IAvaPlace ISelectPlace { get; set; }
-        IRecord IRecord { get; set; }   
+       
     }
 }

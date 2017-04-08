@@ -27,39 +27,13 @@ namespace _03___Model
             rentPrice = tariff.RentValue.Price;
             this.sum = sum;
         }
-       
-        public static DateTime DatePayment(Tariff tariff)
-        {
-            if (tariff.RentValue.Id == 1)
-                return DateTime.Now.AddDays(Convert.ToInt32(tariff.Deposit/tariff.RentValue.Price));
-            else
-                return DateTime.Now.AddMonths(Convert.ToInt32(tariff.Deposit / tariff.RentValue.Price));
-        }
-
+             
         public DateTime DatePayment()
         {
             if (rentVal == 1)
                 return datePayment.AddDays(this.Remainder);
             else
                 return datePayment.AddMonths(this.Remainder);
-        }
-
-        public void Debt()
-        {
-            if (DateTime.Now > datePayment)
-            {
-                debt = this.Period(rentVal, DateTime.Now);
-                deposit = 0;
-            }
-        }
-
-        public void Debt(DateTime date)
-        {
-            if (DateTime.Now > datePayment)
-            {
-                this.Period(rentVal, date);
-                deposit = 0;
-            }
         }
 
         private decimal Period(int rentId, DateTime date)
@@ -84,5 +58,41 @@ namespace _03___Model
         {
             get { return Convert.ToInt32(sum / rentPrice); }
         }
+
+        #region static_methods
+        public static DateTime DatePayment(Tariff tariff)
+        {
+            if (tariff.RentValue.Id == 1)
+                return DateTime.Now.AddDays(Convert.ToInt32(tariff.Deposit / tariff.RentValue.Price));
+            else
+                return DateTime.Now.AddMonths(Convert.ToInt32(tariff.Deposit / tariff.RentValue.Price));
+        }
+
+        public static decimal Debt(Tariff tariff)
+        {
+            if (DateTime.Now > tariff.DatePayment)
+            {
+                tariff.Deposit = 0;
+                int period;
+                if (tariff.RentValue.Id == 1)
+                {
+                    period = (DateTime.Now - tariff.DatePayment).Days;
+                    return tariff.RentValue.Price * (period + 1);
+                }
+                else
+                {
+                    int year = 1;
+                    if (DateTime.Now.Year > tariff.DatePayment.Year)
+                        year = (DateTime.Now.Year - tariff.DatePayment.Year) * 12;
+
+                    int month = (DateTime.Now.Month - tariff.DatePayment.Month) * year;
+                    return tariff.RentValue.Price * month;
+                }
+            }
+            else
+                return 0;
+        }
+
+        #endregion
     }
 }

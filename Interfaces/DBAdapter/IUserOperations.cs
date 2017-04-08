@@ -7,6 +7,6 @@ namespace Interfaces
 {
     public interface IUserOperations
     {
-        IAuthorization IAuthorization { get; set; }
+        
     }
 }

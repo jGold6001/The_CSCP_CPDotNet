@@ -15,14 +15,6 @@ namespace _03___Model
            
         }
 
-        public IDisplayInfo IDisplayInfo { get; set; }
-        public IFilter IFilter { get; set; }
-        public IPay IPay { get; set; }
-        public IRecord IRecord { get; set; }     
-        public IAvaPlace ISelectPlace { get; set; }
-        public IRentValueEdit IRentValueEdit { get; set; }
-
-
         public List<Place> GetPlaces
         {
             get
@@ -34,7 +26,7 @@ namespace _03___Model
                 db.RentValues.Load();
                 return db.Places.ToList();
             }
-        }
+        }       
 
         public List<RentValue> RentTypes
         {
@@ -130,6 +122,19 @@ namespace _03___Model
                 }
             }
             db.SaveChanges();
+        }
+
+        public void UpdateTariff()
+        {
+            foreach (var item in db.Tariffs)
+            {
+                if (DateTime.Now > item.DatePayment)
+                {
+                    item.Debt = Calculator.Debt(item);
+                    item.DatePayment = Calculator.DatePayment(item);
+                }
+            }
+
         }
 
     }
