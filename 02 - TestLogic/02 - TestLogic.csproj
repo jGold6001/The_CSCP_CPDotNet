@@ -70,25 +70,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\01 - View\01 - View.csproj">
+    <ProjectReference Include="..\01 - View\The Car System Control Parking.csproj">
       <Project>{e50c7027-459d-4574-8c06-a46a07d46b8c}</Project>
-      <Name>01 - View</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\03 - Model\03 - Model.csproj">
-      <Project>{4F0CDF54-8798-4FD5-9685-35BAE9E69FBE}</Project>
-      <Name>03 - Model</Name>
+      <Name>The Car System Control Parking</Name>
     </ProjectReference>
     <ProjectReference Include="..\04 - TestingClasses\04 - TestingClasses.csproj">
       <Project>{5699b49c-fb16-493b-9283-332f005695a5}</Project>
       <Name>04 - TestingClasses</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
-      <Project>{d2cccf64-3de3-4390-9557-740dae811172}</Project>
-      <Name>DataLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
-      <Project>{9B33E8D0-5DF0-48A4-A1BC-632374636F23}</Project>
-      <Name>Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

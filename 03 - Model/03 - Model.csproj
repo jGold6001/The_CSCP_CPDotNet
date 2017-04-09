@@ -63,14 +63,8 @@
       <Project>{d2cccf64-3de3-4390-9557-740dae811172}</Project>
       <Name>DataLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
-      <Project>{9b33e8d0-5df0-48a4-a1bc-632374636f23}</Project>
-      <Name>Interfaces</Name>
-    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UserOps\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="ClassesDiagram.cd" />
     <None Include="packages.config" />

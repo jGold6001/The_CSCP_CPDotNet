@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:_01___View.Themes">
+                    xmlns:local="clr-namespace:The_CSCP.Themes">
 
     <Style x:Key="textboxFind" TargetType="TextBox" xmlns:sys="clr-namespace:System;assembly=mscorlib">
         <Setter Property="Background" Value="Transparent"></Setter>

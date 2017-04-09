@@ -1,13 +1,11 @@
-﻿using _03___Model;
-using DataLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 
-namespace _04___TestingClasses
+namespace LoadTestData
 {
     public class DbAdapterTest : EFAdapter
     {
