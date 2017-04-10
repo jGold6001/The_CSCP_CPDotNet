@@ -12,16 +12,16 @@
             <local:UserBuffer x:Key="userBuff"/>
 
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Themes/MetroDark/MetroDark.MSControls.Core.Implicit.xaml" />
-                <ResourceDictionary Source="Themes/MetroDark/MetroDark.MSControls.Toolkit.Implicit.xaml" />
-                <ResourceDictionary Source="Themes/IndividualStyles/Brushes.xaml"/>
-                <ResourceDictionary Source="Themes/IndividualStyles/Buttons.xaml"/>
-                <ResourceDictionary Source="Themes/IndividualStyles/DataGrids.xaml"/>
-                <ResourceDictionary Source="Themes/IndividualStyles/Labels.xaml"/>
-                <ResourceDictionary Source="Themes/IndividualStyles/MenuItem.xaml"/>
-                <ResourceDictionary Source="Themes/IndividualStyles/TabControl.xaml"/>
-                <ResourceDictionary Source="Themes/IndividualStyles/TextBlocks.xaml"/>
-                <ResourceDictionary Source="Themes/IndividualStyles/TextBoxes.xaml"/>
+                <ResourceDictionary Source="FrontEnd/Themes/MetroDark/MetroDark.MSControls.Core.Implicit.xaml" />
+                <ResourceDictionary Source="FrontEnd/Themes/MetroDark/MetroDark.MSControls.Toolkit.Implicit.xaml" />
+                <ResourceDictionary Source="FrontEnd/Themes/IndividualStyles/Brushes.xaml"/>
+                <ResourceDictionary Source="FrontEnd/Themes/IndividualStyles/Buttons.xaml"/>
+                <ResourceDictionary Source="FrontEnd/Themes/IndividualStyles/DataGrids.xaml"/>
+                <ResourceDictionary Source="FrontEnd/Themes/IndividualStyles/Labels.xaml"/>
+                <ResourceDictionary Source="FrontEnd/Themes/IndividualStyles/MenuItem.xaml"/>
+                <ResourceDictionary Source="FrontEnd/Themes/IndividualStyles/TabControl.xaml"/>
+                <ResourceDictionary Source="FrontEnd/Themes/IndividualStyles/TextBlocks.xaml"/>
+                <ResourceDictionary Source="FrontEnd/Themes/IndividualStyles/TextBoxes.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
