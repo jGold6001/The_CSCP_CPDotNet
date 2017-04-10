@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The Car System Control Parking", "01 - View\The Car System Control Parking.csproj", "{E50C7027-459D-4574-8C06-A46A07D46B8C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The Car System Control Parking", "The Car System Control Parking\The Car System Control Parking.csproj", "{E50C7027-459D-4574-8C06-A46A07D46B8C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadTestData", "LoadTestData\LoadTestData.csproj", "{840741AB-9187-4BA4-97C7-8C8D5A29E4BF}"
 EndProject
