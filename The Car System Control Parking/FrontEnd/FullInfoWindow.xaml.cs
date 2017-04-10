@@ -10,19 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace The_Car_System_Control_Parking
+namespace The_CSCP
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for FullInfoWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class FullInfoWindow : Window
     {
-        public MainWindow()
+        public InfoSource InfoSource { get; set; }
+        public FullInfoWindow()
         {
             InitializeComponent();
+            btnOk.Click += Cancel;
+            InfoSource = (InfoSource)App.Current.Resources["infoSource"];
+        }
+
+
+        private void Cancel(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:The_CSCP.Themes">
+
+    <SolidColorBrush x:Key="brushOrange" Color="#FFF16530" />
+    <SolidColorBrush x:Key="brushOrangeRed" Color="OrangeRed" />
+    <SolidColorBrush x:Key="brushRed" Color="Red" />
+    <SolidColorBrush x:Key="brushWhite" Color="White" />
+    <SolidColorBrush x:Key="brushCyan" Color="#FF00AADE" />
+    <SolidColorBrush x:Key="brushGray" Color="#FF565656" />
+    <SolidColorBrush x:Key="brushTeal" Color="#FF065A74" />
+
+</ResourceDictionary>
