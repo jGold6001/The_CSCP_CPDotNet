@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="The_CSCP.Calculator" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAACAAAAABAAAAAQAAgAAAAACAAAAAgAAgBAAAI=</HashCode>
+      <FileName>BackEnd\ClientLogic\Calculator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="The_CSCP.DataBuff" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAEAAGAqAQBAghAAIAAAQAAAgIAAiACgAAgBigCBAoo=</HashCode>
+      <FileName>BackEnd\ClientLogic\DataBuff.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="The_CSCP.EFClientOp" Collapsed="true">
+    <Position X="3.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAMAAAAAAAAAAAAABAAABAAAAAAAAAACAAAAAgAEAAA=</HashCode>
+      <FileName>BackEnd\ClientLogic\EFClientOp.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="The_CSCP.InfoSource" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAATQAIAAUAAAAAIAAACAAAgAAACAAAIAkABiABAEY=</HashCode>
+      <FileName>BackEnd\ClientLogic\InfoSource.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="The_CSCP.JSONReader" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAABAAA=</HashCode>
+      <FileName>BackEnd\ClientLogic\JSONReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="The_CSCP.Pay" Collapsed="true">
+    <Position X="2.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACSAAAAIAAAAAAAAAAAAAAAAEAQAAAAEA=</HashCode>
+      <FileName>BackEnd\ClientLogic\Pay.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="The_CSCP.Record" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAIAAAAABAAIACAIAAAgKBQCAAAEAgAAAAAAAA=</HashCode>
+      <FileName>BackEnd\ClientLogic\Record.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="The_CSCP.RentValueEditor" Collapsed="true">
+    <Position X="4.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BackEnd\ClientLogic\RentValueEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="The_CSCP.EFAdapter" Collapsed="true">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAQAAAAAAAABAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>BackEnd\EFAdapter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="The_CSCP.EFUserOp" Collapsed="true">
+    <Position X="6.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAKAAAAAAAAAAAAgAAAABAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>BackEnd\UserLogic\EFUserOp.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="The_CSCP.UserBuffer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAABAAAAgIAAAIAAAgAAAAAAiAAAQKgAAEAg=</HashCode>
+      <FileName>BackEnd\UserLogic\UserBuffer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="The_CSCP.UserExtend" Collapsed="true">
+    <Position X="8.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAgAAAAAAAAAAAAAAACAAAQAAAAAAg=</HashCode>
+      <FileName>BackEnd\UserLogic\UserExtend.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="The_CSCP.IClientOperations" Collapsed="true">
+    <Position X="2.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IClientOperations.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="The_CSCP.IDBAdapter" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IDBAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="The_CSCP.IPay" Collapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IPay.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="The_CSCP.IRentValueEdit" Collapsed="true">
+    <Position X="1.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IRentValueEdit.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="The_CSCP.IUserOperations" Collapsed="true">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IUserOperations.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="The_CSCP.DialogName" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BackEnd\DialogName.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
